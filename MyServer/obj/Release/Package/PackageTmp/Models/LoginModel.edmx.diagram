@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9a67d08c88fa4a1ba94abb2731af9b9c" Name="Diagram1">
+        <EntityTypeShape EntityType="EuroplakatModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.AspNetUserLogins" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.AspNetUsers" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.atribut" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.faktura" Width="1.5" PointX="3" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.fakturaStavke" Width="1.5" PointX="11.25" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.klijent" Width="1.5" PointX="0.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.klijentVeze" Width="1.5" PointX="3" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.link" Width="1.5" PointX="14.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.mrezaPlakat" Width="1.5" PointX="8.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.plakat" Width="1.5" PointX="6" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.plakatSlika" Width="1.5" PointX="8.25" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.ponuda" Width="1.5" PointX="9" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.ponudaKontakt" Width="1.5" PointX="11.25" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.ponudaStavkaDodatak" Width="1.5" PointX="16.5" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.ponudaStavke" Width="1.5" PointX="14.25" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.porukaSistemska" Width="1.5" PointX="14.25" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.radniNalog" Width="1.5" PointX="17.25" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.radniNalogSlika" Width="1.5" PointX="21.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.radniNalogStavke" Width="1.5" PointX="19.5" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.trosak" Width="1.5" PointX="9" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.turaSedmica" Width="1.5" PointX="17.25" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.turaSedmicaZaposleni" Width="1.5" PointX="19.5" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.ugovor" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.ugovorStavke" Width="1.5" PointX="11.25" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.zaposleni" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.plakatLog" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.ponudaLog" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.ponudaStavkeLog" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.radniNalogStavkeLog" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.ugovorLog" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroplakatModel.ugovorStavkeLog" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="EuroplakatModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_faktura_klijent" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_faktura_ponuda" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_fakturastavke_faktura" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_fakturaStavke_plakat" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_fakturaStavke_trosak" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_stavkeFakture_stavkePonude" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_klijentVeza_klijent" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_klijentVeza_klijentVezani" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_plakat_vlasnik" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_ponuda_agencija" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_ponuda_klijent" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_ponuda_podklijent" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_ponuda_pool" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_ugovor_Klijent" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_link_ponuda" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_link_radniNalog" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_mrezaPlakat_plakat" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_plakat_zaposleni" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_plakatSlika_plakat" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_ponudaStavke_plakat" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_stavke_plakat" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK__ponudaKon__ponud__3864608B" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_ponuda_zaposleni" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_ponuda_zaposleni1" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_ponudaStavke_ponuda" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_porukaSistemska_ponuda" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK__ponudaSta__ponud__3B40CD36" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK__ponudaSta__trosa__3C34F16F" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_ponudaStavke_trosak" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_ponudaStavke_zaposleni" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_radniNalog_ponudaStavka" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_porukaSistemska_radniNalog" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_porukaSistemska_zaposleni" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_radniNalogStavke_radniNalog" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_radniNalogSlika_radniNalogStavke" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK__radniNalo__turaS__7DCDAAA2" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_radniNalogStavke_zaposleni" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK__turaSedmi__turaS__7BE56230" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK__turaSedmi__zapos__7CD98669" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_stavke_ugovor" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_ugovor_zaposleni" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.FK_ugovorStavke_zaposleni" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroplakatModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

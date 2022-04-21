@@ -1,0 +1,1776 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EuroplakatModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="atribut">
+    <Key>
+      <PropertyRef Name="atributId" />
+    </Key>
+    <Property Name="atributId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kljuc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="vrijednost" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="faktura">
+    <Key>
+      <PropertyRef Name="fakturaId" />
+    </Key>
+    <Property Name="fakturaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="klijentId" Type="Int32" />
+    <Property Name="datumFakture" Type="DateTime" Precision="0" />
+    <Property Name="datumValute" Type="DateTime" Precision="0" />
+    <Property Name="fakturisanoOd" Type="DateTime" Precision="0" />
+    <Property Name="fakturisanoDo" Type="DateTime" Precision="0" />
+    <Property Name="iznosBezPdv" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="pdv" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="iznosSaPdv" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="valutaId" Type="Int32" />
+    <Property Name="iznosValuta" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ponudaId" Type="Int32" />
+    <Property Name="brojFakture" Type="Int32" />
+    <NavigationProperty Name="klijent" Relationship="Self.FK_faktura_klijent" FromRole="faktura" ToRole="klijent" />
+    <NavigationProperty Name="ponuda" Relationship="Self.FK_faktura_ponuda" FromRole="faktura" ToRole="ponuda" />
+    <NavigationProperty Name="fakturaStavke" Relationship="Self.FK_fakturastavke_faktura" FromRole="faktura" ToRole="fakturaStavke" />
+  </EntityType>
+  <EntityType Name="fakturaStavke">
+    <Key>
+      <PropertyRef Name="fakturaStavkeId" />
+    </Key>
+    <Property Name="fakturaStavkeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fakturaId" Type="Int32" />
+    <Property Name="plakatId" Type="Int32" />
+    <Property Name="trosakId" Type="Int32" />
+    <Property Name="kolicina" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="cijena" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="rabat" Type="Decimal" Precision="5" Scale="3" />
+    <Property Name="cijenaSaPopustom" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ponudaStavkaId" Type="Int32" />
+    <NavigationProperty Name="faktura" Relationship="Self.FK_fakturastavke_faktura" FromRole="fakturaStavke" ToRole="faktura" />
+    <NavigationProperty Name="plakat" Relationship="Self.FK_fakturaStavke_plakat" FromRole="fakturaStavke" ToRole="plakat" />
+    <NavigationProperty Name="trosak" Relationship="Self.FK_fakturaStavke_trosak" FromRole="fakturaStavke" ToRole="trosak" />
+    <NavigationProperty Name="ponudaStavke" Relationship="Self.FK_stavkeFakture_stavkePonude" FromRole="fakturaStavke" ToRole="ponudaStavke" />
+  </EntityType>
+  <EntityType Name="klijent">
+    <Key>
+      <PropertyRef Name="klijentId" />
+    </Key>
+    <Property Name="klijentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="klijentTipId" Type="Int32" />
+    <Property Name="klijentVrstaId" Type="Int32" />
+    <Property Name="JIB" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="PDVBroj" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="posta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="mjestoId" Type="Int32" />
+    <Property Name="adresa" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="eMail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="kontaktOsoba" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="odgovornaOsoba" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="webStranica" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="valutaId" Type="Int32" />
+    <Property Name="isPdv" Type="Boolean" />
+    <Property Name="aktivan" Type="Boolean" />
+    <Property Name="jezikId" Type="Int32" />
+    <NavigationProperty Name="faktura" Relationship="Self.FK_faktura_klijent" FromRole="klijent" ToRole="faktura" />
+    <NavigationProperty Name="klijentVeze" Relationship="Self.FK_klijentVeza_klijent" FromRole="klijent" ToRole="klijentVeze" />
+    <NavigationProperty Name="klijentVeze1" Relationship="Self.FK_klijentVeza_klijentVezani" FromRole="klijent" ToRole="klijentVeze" />
+    <NavigationProperty Name="plakat" Relationship="Self.FK_plakat_vlasnik" FromRole="klijent" ToRole="plakat" />
+    <NavigationProperty Name="ponuda" Relationship="Self.FK_ponuda_agencija" FromRole="klijent" ToRole="ponuda" />
+    <NavigationProperty Name="ponuda1" Relationship="Self.FK_ponuda_klijent" FromRole="klijent" ToRole="ponuda" />
+    <NavigationProperty Name="ponuda2" Relationship="Self.FK_ponuda_podklijent" FromRole="klijent" ToRole="ponuda" />
+    <NavigationProperty Name="ponuda3" Relationship="Self.FK_ponuda_pool" FromRole="klijent" ToRole="ponuda" />
+    <NavigationProperty Name="ugovor" Relationship="Self.FK_ugovor_Klijent" FromRole="klijent" ToRole="ugovor" />
+  </EntityType>
+  <EntityType Name="klijentVeze">
+    <Key>
+      <PropertyRef Name="klijentVezaId" />
+    </Key>
+    <Property Name="klijentVezaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="klijentTipVezeId" Type="Int32" />
+    <Property Name="klijentId" Type="Int32" />
+    <Property Name="klijentVezaniId" Type="Int32" />
+    <Property Name="pocetak" Type="DateTime" Precision="0" />
+    <Property Name="kraj" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="klijent" Relationship="Self.FK_klijentVeza_klijent" FromRole="klijentVeze" ToRole="klijent" />
+    <NavigationProperty Name="klijent1" Relationship="Self.FK_klijentVeza_klijentVezani" FromRole="klijentVeze" ToRole="klijent" />
+  </EntityType>
+  <EntityType Name="link">
+    <Key>
+      <PropertyRef Name="linkId" />
+    </Key>
+    <Property Name="linkId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="datumOd" Type="DateTime" Precision="0" />
+    <Property Name="datumDo" Type="DateTime" Precision="0" />
+    <Property Name="sifra" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ponudaId" Type="Int32" />
+    <Property Name="radniNalogId" Type="Int32" />
+    <NavigationProperty Name="ponuda" Relationship="Self.FK_link_ponuda" FromRole="link" ToRole="ponuda" />
+    <NavigationProperty Name="radniNalog" Relationship="Self.FK_link_radniNalog" FromRole="link" ToRole="radniNalog" />
+  </EntityType>
+  <EntityType Name="mrezaPlakat">
+    <Key>
+      <PropertyRef Name="mrezaPlakatId" />
+    </Key>
+    <Property Name="mrezaPlakatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mrezaId" Type="Int32" />
+    <Property Name="plakatId" Type="Int32" />
+    <Property Name="datumOd" Type="DateTime" Precision="0" />
+    <Property Name="datumDo" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="plakat" Relationship="Self.FK_mrezaPlakat_plakat" FromRole="mrezaPlakat" ToRole="plakat" />
+  </EntityType>
+  <EntityType Name="plakat">
+    <Key>
+      <PropertyRef Name="plakatId" />
+    </Key>
+    <Property Name="plakatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="inventarniBroj" Type="Int32" />
+    <Property Name="redniBroj" Type="Int32" />
+    <Property Name="posta" Type="String" MaxLength="19" FixedLength="false" Unicode="false" />
+    <Property Name="mjestoId" Type="Int32" />
+    <Property Name="adresa" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="plakatTipId" Type="Int32" />
+    <Property Name="koordinate" Type="Geography" />
+    <Property Name="cijena" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="isOsvjetljen" Type="Boolean" />
+    <Property Name="isDvostrano" Type="Boolean" />
+    <Property Name="plakatKategorijaIzvrsnostiId" Type="Int32" />
+    <Property Name="vlasnikId" Type="Int32" />
+    <Property Name="cjenovnaKategorijaId" Type="Int32" />
+    <Property Name="statusPlakatId" Type="Int32" />
+    <Property Name="dimenzija" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="vrstaOkviraId" Type="Int32" />
+    <Property Name="dimenzijaId" Type="Int32" />
+    <Property Name="turaId" Type="Int32" />
+    <Property Name="zaposleniId" Type="Int32" />
+    <NavigationProperty Name="fakturaStavke" Relationship="Self.FK_fakturaStavke_plakat" FromRole="plakat" ToRole="fakturaStavke" />
+    <NavigationProperty Name="klijent" Relationship="Self.FK_plakat_vlasnik" FromRole="plakat" ToRole="klijent" />
+    <NavigationProperty Name="mrezaPlakat" Relationship="Self.FK_mrezaPlakat_plakat" FromRole="plakat" ToRole="mrezaPlakat" />
+    <NavigationProperty Name="zaposleni" Relationship="Self.FK_plakat_zaposleni" FromRole="plakat" ToRole="zaposleni" />
+    <NavigationProperty Name="plakatSlika" Relationship="Self.FK_plakatSlika_plakat" FromRole="plakat" ToRole="plakatSlika" />
+    <NavigationProperty Name="ponudaStavke" Relationship="Self.FK_ponudaStavke_plakat" FromRole="plakat" ToRole="ponudaStavke" />
+    <NavigationProperty Name="ugovorStavke" Relationship="Self.FK_stavke_plakat" FromRole="plakat" ToRole="ugovorStavke" />
+  </EntityType>
+  <EntityType Name="plakatSlika">
+    <Key>
+      <PropertyRef Name="plakatSlika1" />
+    </Key>
+    <Property Name="plakatSlika1" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="plakatId" Type="Int32" />
+    <Property Name="slika" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="plakat" Relationship="Self.FK_plakatSlika_plakat" FromRole="plakatSlika" ToRole="plakat" />
+  </EntityType>
+  <EntityType Name="ponuda">
+    <Key>
+      <PropertyRef Name="ponudaId" />
+    </Key>
+    <Property Name="ponudaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="brojZahtjeva" Type="Int32" />
+    <Property Name="poolId" Type="Int32" />
+    <Property Name="agencijaId" Type="Int32" />
+    <Property Name="klijentId" Type="Int32" />
+    <Property Name="podklijentId" Type="Int32" />
+    <Property Name="datumZahtjeva" Type="DateTime" Precision="0" />
+    <Property Name="plakatTipId" Type="Int32" />
+    <Property Name="kampanja" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="isDatumska" Type="Boolean" />
+    <Property Name="pocetakKampanje" Type="DateTime" Precision="0" />
+    <Property Name="trajanjeKampanje" Type="Int32" />
+    <Property Name="budzetKampanje" Type="Int32" />
+    <Property Name="rabat" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="ponudaStatusId" Type="Int32" />
+    <Property Name="brojPonude" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="datumPonude" Type="DateTime" Precision="0" />
+    <Property Name="brojDanaVazenjaPonude" Type="Int32" />
+    <Property Name="protokol" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="datumOtkazivanja" Type="DateTime" Precision="0" />
+    <Property Name="brojDanaOtk" Type="Int32" />
+    <Property Name="datumSlanja" Type="DateTime" Precision="0" />
+    <Property Name="isParcijalnoPlacanje" Type="Boolean" />
+    <Property Name="rokPlacanja" Type="Int32" />
+    <Property Name="krajKampanje" Type="DateTime" annotation:StoreGeneratedPattern="Computed" Precision="0" />
+    <Property Name="trajanjeKampanjeId" Type="Int32" />
+    <Property Name="isMreza" Type="Boolean" />
+    <Property Name="zaposleniId" Type="Int32" />
+    <Property Name="accountManagerId" Type="Int32" />
+    <NavigationProperty Name="faktura" Relationship="Self.FK_faktura_ponuda" FromRole="ponuda" ToRole="faktura" />
+    <NavigationProperty Name="klijent" Relationship="Self.FK_ponuda_agencija" FromRole="ponuda" ToRole="klijent" />
+    <NavigationProperty Name="klijent1" Relationship="Self.FK_ponuda_klijent" FromRole="ponuda" ToRole="klijent" />
+    <NavigationProperty Name="klijent2" Relationship="Self.FK_ponuda_podklijent" FromRole="ponuda" ToRole="klijent" />
+    <NavigationProperty Name="klijent3" Relationship="Self.FK_ponuda_pool" FromRole="ponuda" ToRole="klijent" />
+    <NavigationProperty Name="link" Relationship="Self.FK_link_ponuda" FromRole="ponuda" ToRole="link" />
+    <NavigationProperty Name="ponudaKontakt" Relationship="Self.FK__ponudaKon__ponud__3864608B" FromRole="ponuda" ToRole="ponudaKontakt" />
+    <NavigationProperty Name="zaposleni" Relationship="Self.FK_ponuda_zaposleni" FromRole="ponuda" ToRole="zaposleni" />
+    <NavigationProperty Name="zaposleni1" Relationship="Self.FK_ponuda_zaposleni1" FromRole="ponuda" ToRole="zaposleni" />
+    <NavigationProperty Name="ponudaStavke" Relationship="Self.FK_ponudaStavke_ponuda" FromRole="ponuda" ToRole="ponudaStavke" />
+    <NavigationProperty Name="porukaSistemska" Relationship="Self.FK_porukaSistemska_ponuda" FromRole="ponuda" ToRole="porukaSistemska" />
+  </EntityType>
+  <EntityType Name="ponudaKontakt">
+    <Key>
+      <PropertyRef Name="ponudaKontaktId" />
+    </Key>
+    <Property Name="ponudaKontaktId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ponudaId" Type="Int32" />
+    <Property Name="tipKontaktaId" Type="Int32" />
+    <Property Name="kontaktOsoba" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="kontakt" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ponuda" Relationship="Self.FK__ponudaKon__ponud__3864608B" FromRole="ponudaKontakt" ToRole="ponuda" />
+  </EntityType>
+  <EntityType Name="ponudaStavkaDodatak">
+    <Key>
+      <PropertyRef Name="ponudaStavkaDodatakId" />
+    </Key>
+    <Property Name="ponudaStavkaDodatakId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ponudaStavkeId" Type="Int32" />
+    <Property Name="trosakId" Type="Int32" />
+    <Property Name="datumZahtjeva" Type="DateTime" Precision="0" />
+    <Property Name="datumRealizacije" Type="DateTime" Precision="0" />
+    <Property Name="cijena" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="opis" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ponudaStavke" Relationship="Self.FK__ponudaSta__ponud__3B40CD36" FromRole="ponudaStavkaDodatak" ToRole="ponudaStavke" />
+    <NavigationProperty Name="trosak" Relationship="Self.FK__ponudaSta__trosa__3C34F16F" FromRole="ponudaStavkaDodatak" ToRole="trosak" />
+  </EntityType>
+  <EntityType Name="ponudaStavke">
+    <Key>
+      <PropertyRef Name="ponudaStavkeId" />
+    </Key>
+    <Property Name="ponudaStavkeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ponudaId" Type="Int32" />
+    <Property Name="plakatId" Type="Int32" />
+    <Property Name="trosakId" Type="Int32" />
+    <Property Name="kolicina" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="cijena" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="rabat" Type="Decimal" Precision="5" Scale="3" />
+    <Property Name="cijenaSaPopustom" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="cijenaDan" Type="Decimal" Precision="9" Scale="3" />
+    <Property Name="mrezaId" Type="Int32" />
+    <Property Name="zaposleniId" Type="Int32" />
+    <NavigationProperty Name="fakturaStavke" Relationship="Self.FK_stavkeFakture_stavkePonude" FromRole="ponudaStavke" ToRole="fakturaStavke" />
+    <NavigationProperty Name="plakat" Relationship="Self.FK_ponudaStavke_plakat" FromRole="ponudaStavke" ToRole="plakat" />
+    <NavigationProperty Name="ponuda" Relationship="Self.FK_ponudaStavke_ponuda" FromRole="ponudaStavke" ToRole="ponuda" />
+    <NavigationProperty Name="ponudaStavkaDodatak" Relationship="Self.FK__ponudaSta__ponud__3B40CD36" FromRole="ponudaStavke" ToRole="ponudaStavkaDodatak" />
+    <NavigationProperty Name="trosak" Relationship="Self.FK_ponudaStavke_trosak" FromRole="ponudaStavke" ToRole="trosak" />
+    <NavigationProperty Name="zaposleni" Relationship="Self.FK_ponudaStavke_zaposleni" FromRole="ponudaStavke" ToRole="zaposleni" />
+    <NavigationProperty Name="radniNalogStavke" Relationship="Self.FK_radniNalog_ponudaStavka" FromRole="ponudaStavke" ToRole="radniNalogStavke" />
+  </EntityType>
+  <EntityType Name="porukaSistemska">
+    <Key>
+      <PropertyRef Name="porukaSistemskaId" />
+    </Key>
+    <Property Name="porukaSistemskaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="zaposleniId" Type="Int32" />
+    <Property Name="vrijeme" Type="DateTime" Precision="3" />
+    <Property Name="sadrzaj" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+    <Property Name="isPoslano" Type="Boolean" />
+    <Property Name="ponudaId" Type="Int32" />
+    <Property Name="putanja" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+    <Property Name="putanjaUvjeti" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+    <Property Name="isAccount" Type="Boolean" />
+    <Property Name="radniNalogId" Type="Int32" />
+    <NavigationProperty Name="ponuda" Relationship="Self.FK_porukaSistemska_ponuda" FromRole="porukaSistemska" ToRole="ponuda" />
+    <NavigationProperty Name="radniNalog" Relationship="Self.FK_porukaSistemska_radniNalog" FromRole="porukaSistemska" ToRole="radniNalog" />
+    <NavigationProperty Name="zaposleni" Relationship="Self.FK_porukaSistemska_zaposleni" FromRole="porukaSistemska" ToRole="zaposleni" />
+  </EntityType>
+  <EntityType Name="radniNalog">
+    <Key>
+      <PropertyRef Name="radniNalogId" />
+    </Key>
+    <Property Name="radniNalogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="datum" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="link" Relationship="Self.FK_link_radniNalog" FromRole="radniNalog" ToRole="link" />
+    <NavigationProperty Name="porukaSistemska" Relationship="Self.FK_porukaSistemska_radniNalog" FromRole="radniNalog" ToRole="porukaSistemska" />
+    <NavigationProperty Name="radniNalogStavke" Relationship="Self.FK_radniNalogStavke_radniNalog" FromRole="radniNalog" ToRole="radniNalogStavke" />
+  </EntityType>
+  <EntityType Name="radniNalogSlika">
+    <Key>
+      <PropertyRef Name="radniNalogSlikaId" />
+    </Key>
+    <Property Name="radniNalogSlikaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="radniNalogStavkaId" Type="Int32" />
+    <Property Name="slika" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="radniNalogStavke" Relationship="Self.FK_radniNalogSlika_radniNalogStavke" FromRole="radniNalogSlika" ToRole="radniNalogStavke" />
+  </EntityType>
+  <EntityType Name="radniNalogStavke">
+    <Key>
+      <PropertyRef Name="radniNalogStavke1" />
+    </Key>
+    <Property Name="radniNalogStavke1" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="radniNalogId" Type="Int32" />
+    <Property Name="ponudaStavkaId" Type="Int32" />
+    <Property Name="idejno" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="isPrijeLijepiti" Type="Boolean" />
+    <Property Name="opis" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="isFotografisano" Type="Boolean" />
+    <Property Name="turaSedmicaId" Type="Int32" />
+    <Property Name="isDemontirano" Type="Boolean" />
+    <Property Name="zaposleniId" Type="Int32" />
+    <NavigationProperty Name="ponudaStavke" Relationship="Self.FK_radniNalog_ponudaStavka" FromRole="radniNalogStavke" ToRole="ponudaStavke" />
+    <NavigationProperty Name="radniNalog" Relationship="Self.FK_radniNalogStavke_radniNalog" FromRole="radniNalogStavke" ToRole="radniNalog" />
+    <NavigationProperty Name="radniNalogSlika" Relationship="Self.FK_radniNalogSlika_radniNalogStavke" FromRole="radniNalogStavke" ToRole="radniNalogSlika" />
+    <NavigationProperty Name="turaSedmica" Relationship="Self.FK__radniNalo__turaS__7DCDAAA2" FromRole="radniNalogStavke" ToRole="turaSedmica" />
+    <NavigationProperty Name="zaposleni" Relationship="Self.FK_radniNalogStavke_zaposleni" FromRole="radniNalogStavke" ToRole="zaposleni" />
+  </EntityType>
+  <EntityType Name="trosak">
+    <Key>
+      <PropertyRef Name="trosakId" />
+    </Key>
+    <Property Name="trosakId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cijena" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="aktivan" Type="Boolean" />
+    <NavigationProperty Name="fakturaStavke" Relationship="Self.FK_fakturaStavke_trosak" FromRole="trosak" ToRole="fakturaStavke" />
+    <NavigationProperty Name="ponudaStavkaDodatak" Relationship="Self.FK__ponudaSta__trosa__3C34F16F" FromRole="trosak" ToRole="ponudaStavkaDodatak" />
+    <NavigationProperty Name="ponudaStavke" Relationship="Self.FK_ponudaStavke_trosak" FromRole="trosak" ToRole="ponudaStavke" />
+  </EntityType>
+  <EntityType Name="turaSedmica">
+    <Key>
+      <PropertyRef Name="turaSedmicaId" />
+    </Key>
+    <Property Name="turaSedmicaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="turaId" Type="Int32" />
+    <Property Name="sedmicaId" Type="Int32" />
+    <NavigationProperty Name="radniNalogStavke" Relationship="Self.FK__radniNalo__turaS__7DCDAAA2" FromRole="turaSedmica" ToRole="radniNalogStavke" />
+    <NavigationProperty Name="turaSedmicaZaposleni" Relationship="Self.FK__turaSedmi__turaS__7BE56230" FromRole="turaSedmica" ToRole="turaSedmicaZaposleni" />
+  </EntityType>
+  <EntityType Name="turaSedmicaZaposleni">
+    <Key>
+      <PropertyRef Name="turaSedmicaZaposleniId" />
+    </Key>
+    <Property Name="turaSedmicaZaposleniId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="turaSedmicaId" Type="Int32" />
+    <Property Name="zaposleniId" Type="Int32" />
+    <NavigationProperty Name="turaSedmica" Relationship="Self.FK__turaSedmi__turaS__7BE56230" FromRole="turaSedmicaZaposleni" ToRole="turaSedmica" />
+    <NavigationProperty Name="zaposleni" Relationship="Self.FK__turaSedmi__zapos__7CD98669" FromRole="turaSedmicaZaposleni" ToRole="zaposleni" />
+  </EntityType>
+  <EntityType Name="ugovor">
+    <Key>
+      <PropertyRef Name="ugovorId" />
+    </Key>
+    <Property Name="ugovorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="datumUgovora" Type="DateTime" Precision="0" />
+    <Property Name="vlasnikId" Type="Int32" />
+    <Property Name="pocetak" Type="DateTime" Precision="0" />
+    <Property Name="kraj" Type="DateTime" Precision="0" />
+    <Property Name="vrijednost" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="vrstaUgovoraId" Type="Int32" />
+    <Property Name="brojUgovora" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="zaposleniId" Type="Int32" />
+    <NavigationProperty Name="klijent" Relationship="Self.FK_ugovor_Klijent" FromRole="ugovor" ToRole="klijent" />
+    <NavigationProperty Name="ugovorStavke" Relationship="Self.FK_stavke_ugovor" FromRole="ugovor" ToRole="ugovorStavke" />
+    <NavigationProperty Name="zaposleni" Relationship="Self.FK_ugovor_zaposleni" FromRole="ugovor" ToRole="zaposleni" />
+  </EntityType>
+  <EntityType Name="ugovorStavke">
+    <Key>
+      <PropertyRef Name="ugovorStavkaId" />
+    </Key>
+    <Property Name="ugovorStavkaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ugovorId" Type="Int32" />
+    <Property Name="plakatId" Type="Int32" />
+    <Property Name="cijena" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="zaposleniId" Type="Int32" />
+    <NavigationProperty Name="plakat" Relationship="Self.FK_stavke_plakat" FromRole="ugovorStavke" ToRole="plakat" />
+    <NavigationProperty Name="ugovor" Relationship="Self.FK_stavke_ugovor" FromRole="ugovorStavke" ToRole="ugovor" />
+    <NavigationProperty Name="zaposleni" Relationship="Self.FK_ugovorStavke_zaposleni" FromRole="ugovorStavke" ToRole="zaposleni" />
+  </EntityType>
+  <EntityType Name="zaposleni">
+    <Key>
+      <PropertyRef Name="zaposleniId" />
+    </Key>
+    <Property Name="zaposleniId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="jmb" Type="String" MaxLength="13" FixedLength="true" Unicode="false" />
+    <Property Name="datumZaposlenja" Type="DateTime" Precision="0" />
+    <Property Name="datumKrajaZaposlenja" Type="DateTime" Precision="0" />
+    <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="eMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="posta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="mjestoId" Type="Int32" />
+    <Property Name="aspNetUserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="aktivan" Type="Boolean" />
+    <NavigationProperty Name="plakat" Relationship="Self.FK_plakat_zaposleni" FromRole="zaposleni" ToRole="plakat" />
+    <NavigationProperty Name="ponuda" Relationship="Self.FK_ponuda_zaposleni" FromRole="zaposleni" ToRole="ponuda" />
+    <NavigationProperty Name="ponuda1" Relationship="Self.FK_ponuda_zaposleni1" FromRole="zaposleni" ToRole="ponuda" />
+    <NavigationProperty Name="ponudaStavke" Relationship="Self.FK_ponudaStavke_zaposleni" FromRole="zaposleni" ToRole="ponudaStavke" />
+    <NavigationProperty Name="porukaSistemska" Relationship="Self.FK_porukaSistemska_zaposleni" FromRole="zaposleni" ToRole="porukaSistemska" />
+    <NavigationProperty Name="radniNalogStavke" Relationship="Self.FK_radniNalogStavke_zaposleni" FromRole="zaposleni" ToRole="radniNalogStavke" />
+    <NavigationProperty Name="turaSedmicaZaposleni" Relationship="Self.FK__turaSedmi__zapos__7CD98669" FromRole="zaposleni" ToRole="turaSedmicaZaposleni" />
+    <NavigationProperty Name="ugovor" Relationship="Self.FK_ugovor_zaposleni" FromRole="zaposleni" ToRole="ugovor" />
+    <NavigationProperty Name="ugovorStavke" Relationship="Self.FK_ugovorStavke_zaposleni" FromRole="zaposleni" ToRole="ugovorStavke" />
+  </EntityType>
+  <EntityType Name="plakatLog">
+    <Key>
+      <PropertyRef Name="plakatId" />
+      <PropertyRef Name="plakatLogId" />
+    </Key>
+    <Property Name="plakatId" Type="Int32" Nullable="false" />
+    <Property Name="inventarniBroj" Type="Int32" />
+    <Property Name="redniBroj" Type="Int32" />
+    <Property Name="posta" Type="String" MaxLength="19" FixedLength="false" Unicode="false" />
+    <Property Name="mjestoId" Type="Int32" />
+    <Property Name="adresa" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="plakatTipId" Type="Int32" />
+    <Property Name="koordinate" Type="Geography" />
+    <Property Name="cijena" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="isOsvjetljen" Type="Boolean" />
+    <Property Name="isDvostrano" Type="Boolean" />
+    <Property Name="plakatKategorijaIzvrsnostiId" Type="Int32" />
+    <Property Name="vlasnikId" Type="Int32" />
+    <Property Name="cjenovnaKategorijaId" Type="Int32" />
+    <Property Name="statusPlakatId" Type="Int32" />
+    <Property Name="dimenzija" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="vrstaOkviraId" Type="Int32" />
+    <Property Name="dimenzijaId" Type="Int32" />
+    <Property Name="turaId" Type="Int32" />
+    <Property Name="zaposleniId" Type="Int32" />
+    <Property Name="akcija" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="vrijeme" Type="DateTime" Precision="3" />
+    <Property Name="plakatLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="ponudaLog">
+    <Key>
+      <PropertyRef Name="ponudaLogId" />
+    </Key>
+    <Property Name="ponudaLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ponudaId" Type="Int32" />
+    <Property Name="brojZahtjeva" Type="Int32" />
+    <Property Name="poolId" Type="Int32" />
+    <Property Name="agencijaId" Type="Int32" />
+    <Property Name="klijentId" Type="Int32" />
+    <Property Name="podklijentId" Type="Int32" />
+    <Property Name="datumZahtjeva" Type="DateTime" Precision="0" />
+    <Property Name="plakatTipId" Type="Int32" />
+    <Property Name="kampanja" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="isDatumska" Type="Boolean" />
+    <Property Name="pocetakKampanje" Type="DateTime" Precision="0" />
+    <Property Name="trajanjeKampanje" Type="Int32" />
+    <Property Name="budzetKampanje" Type="Int32" />
+    <Property Name="rabat" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="ponudaStatusId" Type="Int32" />
+    <Property Name="brojPonude" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="datumPonude" Type="DateTime" Precision="0" />
+    <Property Name="brojDanaVazenjaPonude" Type="Int32" />
+    <Property Name="protokol" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="datumOtkazivanja" Type="DateTime" Precision="0" />
+    <Property Name="brojDanaOtk" Type="Int32" />
+    <Property Name="datumSlanja" Type="DateTime" Precision="0" />
+    <Property Name="isParcijalnoPlacanje" Type="Boolean" />
+    <Property Name="rokPlacanja" Type="Int32" />
+    <Property Name="trajanjeKampanjeId" Type="Int32" />
+    <Property Name="isMreza" Type="Boolean" />
+    <Property Name="zaposleniId" Type="Int32" />
+    <Property Name="akcija" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="vrijeme" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ponudaStavkeLog">
+    <Key>
+      <PropertyRef Name="ponudaStavkeLogId" />
+    </Key>
+    <Property Name="ponudaStavkeId" Type="Int32" />
+    <Property Name="ponudaId" Type="Int32" />
+    <Property Name="plakatId" Type="Int32" />
+    <Property Name="trosakId" Type="Int32" />
+    <Property Name="kolicina" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="cijena" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="rabat" Type="Decimal" Precision="5" Scale="3" />
+    <Property Name="cijenaSaPopustom" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="mrezaId" Type="Int32" />
+    <Property Name="zaposleniId" Type="Int32" />
+    <Property Name="akcija" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="vrijeme" Type="DateTime" Precision="3" />
+    <Property Name="ponudaStavkeLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="radniNalogStavkeLog">
+    <Key>
+      <PropertyRef Name="radniNalogStavkeLog1" />
+    </Key>
+    <Property Name="radniNalogStavkeLog1" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="radniNalogStavke" Type="Int32" />
+    <Property Name="radniNalogId" Type="Int32" />
+    <Property Name="ponudaStavkaId" Type="Int32" />
+    <Property Name="idejno" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="isPrijeLijepiti" Type="Boolean" />
+    <Property Name="opis" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="isFotografisano" Type="Boolean" />
+    <Property Name="turaSedmicaId" Type="Int32" />
+    <Property Name="isDemontirano" Type="Boolean" />
+    <Property Name="zaposleniId" Type="Int32" />
+    <Property Name="akcija" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="vrijeme" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ugovorLog">
+    <Key>
+      <PropertyRef Name="ugovorId" />
+      <PropertyRef Name="ugovorLogId" />
+    </Key>
+    <Property Name="ugovorId" Type="Int32" Nullable="false" />
+    <Property Name="datumUgovora" Type="DateTime" Precision="0" />
+    <Property Name="vlasnikId" Type="Int32" />
+    <Property Name="pocetak" Type="DateTime" Precision="0" />
+    <Property Name="kraj" Type="DateTime" Precision="0" />
+    <Property Name="vrijednost" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="vrstaUgovoraId" Type="Int32" />
+    <Property Name="brojUgovora" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="zaposleniId" Type="Int32" />
+    <Property Name="akcija" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="vrijeme" Type="DateTime" Precision="3" />
+    <Property Name="ugovorLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="ugovorStavkeLog">
+    <Key>
+      <PropertyRef Name="ugovorStavkaId" />
+      <PropertyRef Name="ugovorStavkaLogId" />
+    </Key>
+    <Property Name="ugovorStavkaId" Type="Int32" Nullable="false" />
+    <Property Name="ugovorId" Type="Int32" />
+    <Property Name="plakatId" Type="Int32" />
+    <Property Name="cijena" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="zaposleniId" Type="Int32" />
+    <Property Name="akcija" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="vrijeme" Type="DateTime" Precision="3" />
+    <Property Name="ugovorStavkaLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_faktura_klijent">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="faktura" Type="Self.faktura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="faktura">
+        <PropertyRef Name="klijentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_faktura_ponuda">
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="0..1" />
+    <End Role="faktura" Type="Self.faktura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ponuda">
+        <PropertyRef Name="ponudaId" />
+      </Principal>
+      <Dependent Role="faktura">
+        <PropertyRef Name="ponudaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_fakturastavke_faktura">
+    <End Role="faktura" Type="Self.faktura" Multiplicity="0..1" />
+    <End Role="fakturaStavke" Type="Self.fakturaStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="faktura">
+        <PropertyRef Name="fakturaId" />
+      </Principal>
+      <Dependent Role="fakturaStavke">
+        <PropertyRef Name="fakturaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_fakturaStavke_plakat">
+    <End Role="plakat" Type="Self.plakat" Multiplicity="0..1" />
+    <End Role="fakturaStavke" Type="Self.fakturaStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plakat">
+        <PropertyRef Name="plakatId" />
+      </Principal>
+      <Dependent Role="fakturaStavke">
+        <PropertyRef Name="plakatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_fakturaStavke_trosak">
+    <End Role="trosak" Type="Self.trosak" Multiplicity="0..1" />
+    <End Role="fakturaStavke" Type="Self.fakturaStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="trosak">
+        <PropertyRef Name="trosakId" />
+      </Principal>
+      <Dependent Role="fakturaStavke">
+        <PropertyRef Name="trosakId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stavkeFakture_stavkePonude">
+    <End Role="ponudaStavke" Type="Self.ponudaStavke" Multiplicity="0..1" />
+    <End Role="fakturaStavke" Type="Self.fakturaStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ponudaStavke">
+        <PropertyRef Name="ponudaStavkeId" />
+      </Principal>
+      <Dependent Role="fakturaStavke">
+        <PropertyRef Name="ponudaStavkaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_klijentVeza_klijent">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="klijentVeze" Type="Self.klijentVeze" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="klijentVeze">
+        <PropertyRef Name="klijentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_klijentVeza_klijentVezani">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="klijentVeze" Type="Self.klijentVeze" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="klijentVeze">
+        <PropertyRef Name="klijentVezaniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plakat_vlasnik">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="plakat" Type="Self.plakat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="plakat">
+        <PropertyRef Name="vlasnikId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponuda_agencija">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="ponuda">
+        <PropertyRef Name="agencijaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponuda_klijent">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="ponuda">
+        <PropertyRef Name="klijentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponuda_podklijent">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="ponuda">
+        <PropertyRef Name="podklijentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponuda_pool">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="ponuda">
+        <PropertyRef Name="poolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ugovor_Klijent">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="ugovor" Type="Self.ugovor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="ugovor">
+        <PropertyRef Name="vlasnikId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_link_ponuda">
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="0..1" />
+    <End Role="link" Type="Self.link" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ponuda">
+        <PropertyRef Name="ponudaId" />
+      </Principal>
+      <Dependent Role="link">
+        <PropertyRef Name="ponudaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_link_radniNalog">
+    <End Role="radniNalog" Type="Self.radniNalog" Multiplicity="0..1" />
+    <End Role="link" Type="Self.link" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="radniNalog">
+        <PropertyRef Name="radniNalogId" />
+      </Principal>
+      <Dependent Role="link">
+        <PropertyRef Name="radniNalogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mrezaPlakat_plakat">
+    <End Role="plakat" Type="Self.plakat" Multiplicity="0..1" />
+    <End Role="mrezaPlakat" Type="Self.mrezaPlakat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plakat">
+        <PropertyRef Name="plakatId" />
+      </Principal>
+      <Dependent Role="mrezaPlakat">
+        <PropertyRef Name="plakatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plakat_zaposleni">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="plakat" Type="Self.plakat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="plakat">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plakatSlika_plakat">
+    <End Role="plakat" Type="Self.plakat" Multiplicity="0..1" />
+    <End Role="plakatSlika" Type="Self.plakatSlika" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plakat">
+        <PropertyRef Name="plakatId" />
+      </Principal>
+      <Dependent Role="plakatSlika">
+        <PropertyRef Name="plakatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponudaStavke_plakat">
+    <End Role="plakat" Type="Self.plakat" Multiplicity="0..1" />
+    <End Role="ponudaStavke" Type="Self.ponudaStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plakat">
+        <PropertyRef Name="plakatId" />
+      </Principal>
+      <Dependent Role="ponudaStavke">
+        <PropertyRef Name="plakatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stavke_plakat">
+    <End Role="plakat" Type="Self.plakat" Multiplicity="0..1" />
+    <End Role="ugovorStavke" Type="Self.ugovorStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plakat">
+        <PropertyRef Name="plakatId" />
+      </Principal>
+      <Dependent Role="ugovorStavke">
+        <PropertyRef Name="plakatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ponudaKon__ponud__3864608B">
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="0..1" />
+    <End Role="ponudaKontakt" Type="Self.ponudaKontakt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ponuda">
+        <PropertyRef Name="ponudaId" />
+      </Principal>
+      <Dependent Role="ponudaKontakt">
+        <PropertyRef Name="ponudaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponuda_zaposleni">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="ponuda">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponuda_zaposleni1">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="ponuda">
+        <PropertyRef Name="accountManagerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponudaStavke_ponuda">
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="0..1" />
+    <End Role="ponudaStavke" Type="Self.ponudaStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ponuda">
+        <PropertyRef Name="ponudaId" />
+      </Principal>
+      <Dependent Role="ponudaStavke">
+        <PropertyRef Name="ponudaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_porukaSistemska_ponuda">
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="0..1" />
+    <End Role="porukaSistemska" Type="Self.porukaSistemska" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ponuda">
+        <PropertyRef Name="ponudaId" />
+      </Principal>
+      <Dependent Role="porukaSistemska">
+        <PropertyRef Name="ponudaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ponudaSta__ponud__3B40CD36">
+    <End Role="ponudaStavke" Type="Self.ponudaStavke" Multiplicity="0..1" />
+    <End Role="ponudaStavkaDodatak" Type="Self.ponudaStavkaDodatak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ponudaStavke">
+        <PropertyRef Name="ponudaStavkeId" />
+      </Principal>
+      <Dependent Role="ponudaStavkaDodatak">
+        <PropertyRef Name="ponudaStavkeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ponudaSta__trosa__3C34F16F">
+    <End Role="trosak" Type="Self.trosak" Multiplicity="0..1" />
+    <End Role="ponudaStavkaDodatak" Type="Self.ponudaStavkaDodatak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="trosak">
+        <PropertyRef Name="trosakId" />
+      </Principal>
+      <Dependent Role="ponudaStavkaDodatak">
+        <PropertyRef Name="trosakId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponudaStavke_trosak">
+    <End Role="trosak" Type="Self.trosak" Multiplicity="0..1" />
+    <End Role="ponudaStavke" Type="Self.ponudaStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="trosak">
+        <PropertyRef Name="trosakId" />
+      </Principal>
+      <Dependent Role="ponudaStavke">
+        <PropertyRef Name="trosakId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponudaStavke_zaposleni">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="ponudaStavke" Type="Self.ponudaStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="ponudaStavke">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_radniNalog_ponudaStavka">
+    <End Role="ponudaStavke" Type="Self.ponudaStavke" Multiplicity="0..1" />
+    <End Role="radniNalogStavke" Type="Self.radniNalogStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ponudaStavke">
+        <PropertyRef Name="ponudaStavkeId" />
+      </Principal>
+      <Dependent Role="radniNalogStavke">
+        <PropertyRef Name="ponudaStavkaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_porukaSistemska_radniNalog">
+    <End Role="radniNalog" Type="Self.radniNalog" Multiplicity="0..1" />
+    <End Role="porukaSistemska" Type="Self.porukaSistemska" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="radniNalog">
+        <PropertyRef Name="radniNalogId" />
+      </Principal>
+      <Dependent Role="porukaSistemska">
+        <PropertyRef Name="radniNalogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_porukaSistemska_zaposleni">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="porukaSistemska" Type="Self.porukaSistemska" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="porukaSistemska">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_radniNalogStavke_radniNalog">
+    <End Role="radniNalog" Type="Self.radniNalog" Multiplicity="0..1" />
+    <End Role="radniNalogStavke" Type="Self.radniNalogStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="radniNalog">
+        <PropertyRef Name="radniNalogId" />
+      </Principal>
+      <Dependent Role="radniNalogStavke">
+        <PropertyRef Name="radniNalogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_radniNalogSlika_radniNalogStavke">
+    <End Role="radniNalogStavke" Type="Self.radniNalogStavke" Multiplicity="0..1" />
+    <End Role="radniNalogSlika" Type="Self.radniNalogSlika" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="radniNalogStavke">
+        <PropertyRef Name="radniNalogStavke1" />
+      </Principal>
+      <Dependent Role="radniNalogSlika">
+        <PropertyRef Name="radniNalogStavkaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__radniNalo__turaS__7DCDAAA2">
+    <End Role="turaSedmica" Type="Self.turaSedmica" Multiplicity="0..1" />
+    <End Role="radniNalogStavke" Type="Self.radniNalogStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="turaSedmica">
+        <PropertyRef Name="turaSedmicaId" />
+      </Principal>
+      <Dependent Role="radniNalogStavke">
+        <PropertyRef Name="turaSedmicaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_radniNalogStavke_zaposleni">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="radniNalogStavke" Type="Self.radniNalogStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="radniNalogStavke">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__turaSedmi__turaS__7BE56230">
+    <End Role="turaSedmica" Type="Self.turaSedmica" Multiplicity="0..1" />
+    <End Role="turaSedmicaZaposleni" Type="Self.turaSedmicaZaposleni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="turaSedmica">
+        <PropertyRef Name="turaSedmicaId" />
+      </Principal>
+      <Dependent Role="turaSedmicaZaposleni">
+        <PropertyRef Name="turaSedmicaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__turaSedmi__zapos__7CD98669">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="turaSedmicaZaposleni" Type="Self.turaSedmicaZaposleni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="turaSedmicaZaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stavke_ugovor">
+    <End Role="ugovor" Type="Self.ugovor" Multiplicity="0..1" />
+    <End Role="ugovorStavke" Type="Self.ugovorStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ugovor">
+        <PropertyRef Name="ugovorId" />
+      </Principal>
+      <Dependent Role="ugovorStavke">
+        <PropertyRef Name="ugovorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ugovor_zaposleni">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="ugovor" Type="Self.ugovor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="ugovor">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ugovorStavke_zaposleni">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="ugovorStavke" Type="Self.ugovorStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="ugovorStavke">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="EuroplakatEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="atribut" EntityType="Self.atribut" />
+    <EntitySet Name="faktura" EntityType="Self.faktura" />
+    <EntitySet Name="fakturaStavke" EntityType="Self.fakturaStavke" />
+    <EntitySet Name="klijent" EntityType="Self.klijent" />
+    <EntitySet Name="klijentVeze" EntityType="Self.klijentVeze" />
+    <EntitySet Name="link" EntityType="Self.link" />
+    <EntitySet Name="mrezaPlakat" EntityType="Self.mrezaPlakat" />
+    <EntitySet Name="plakat" EntityType="Self.plakat" />
+    <EntitySet Name="plakatSlika" EntityType="Self.plakatSlika" />
+    <EntitySet Name="ponuda" EntityType="Self.ponuda" />
+    <EntitySet Name="ponudaKontakt" EntityType="Self.ponudaKontakt" />
+    <EntitySet Name="ponudaStavkaDodatak" EntityType="Self.ponudaStavkaDodatak" />
+    <EntitySet Name="ponudaStavke" EntityType="Self.ponudaStavke" />
+    <EntitySet Name="porukaSistemska" EntityType="Self.porukaSistemska" />
+    <EntitySet Name="radniNalog" EntityType="Self.radniNalog" />
+    <EntitySet Name="radniNalogSlika" EntityType="Self.radniNalogSlika" />
+    <EntitySet Name="radniNalogStavke" EntityType="Self.radniNalogStavke" />
+    <EntitySet Name="trosak" EntityType="Self.trosak" />
+    <EntitySet Name="turaSedmica" EntityType="Self.turaSedmica" />
+    <EntitySet Name="turaSedmicaZaposleni" EntityType="Self.turaSedmicaZaposleni" />
+    <EntitySet Name="ugovor" EntityType="Self.ugovor" />
+    <EntitySet Name="ugovorStavke" EntityType="Self.ugovorStavke" />
+    <EntitySet Name="zaposleni" EntityType="Self.zaposleni" />
+    <EntitySet Name="plakatLog" EntityType="Self.plakatLog" />
+    <EntitySet Name="ponudaLog" EntityType="Self.ponudaLog" />
+    <EntitySet Name="ponudaStavkeLog" EntityType="Self.ponudaStavkeLog" />
+    <EntitySet Name="radniNalogStavkeLog" EntityType="Self.radniNalogStavkeLog" />
+    <EntitySet Name="ugovorLog" EntityType="Self.ugovorLog" />
+    <EntitySet Name="ugovorStavkeLog" EntityType="Self.ugovorStavkeLog" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_faktura_klijent" Association="Self.FK_faktura_klijent">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="faktura" EntitySet="faktura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_faktura_ponuda" Association="Self.FK_faktura_ponuda">
+      <End Role="ponuda" EntitySet="ponuda" />
+      <End Role="faktura" EntitySet="faktura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_fakturastavke_faktura" Association="Self.FK_fakturastavke_faktura">
+      <End Role="faktura" EntitySet="faktura" />
+      <End Role="fakturaStavke" EntitySet="fakturaStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_fakturaStavke_plakat" Association="Self.FK_fakturaStavke_plakat">
+      <End Role="plakat" EntitySet="plakat" />
+      <End Role="fakturaStavke" EntitySet="fakturaStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_fakturaStavke_trosak" Association="Self.FK_fakturaStavke_trosak">
+      <End Role="trosak" EntitySet="trosak" />
+      <End Role="fakturaStavke" EntitySet="fakturaStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stavkeFakture_stavkePonude" Association="Self.FK_stavkeFakture_stavkePonude">
+      <End Role="ponudaStavke" EntitySet="ponudaStavke" />
+      <End Role="fakturaStavke" EntitySet="fakturaStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_klijentVeza_klijent" Association="Self.FK_klijentVeza_klijent">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="klijentVeze" EntitySet="klijentVeze" />
+    </AssociationSet>
+    <AssociationSet Name="FK_klijentVeza_klijentVezani" Association="Self.FK_klijentVeza_klijentVezani">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="klijentVeze" EntitySet="klijentVeze" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plakat_vlasnik" Association="Self.FK_plakat_vlasnik">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="plakat" EntitySet="plakat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponuda_agencija" Association="Self.FK_ponuda_agencija">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="ponuda" EntitySet="ponuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponuda_klijent" Association="Self.FK_ponuda_klijent">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="ponuda" EntitySet="ponuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponuda_podklijent" Association="Self.FK_ponuda_podklijent">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="ponuda" EntitySet="ponuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponuda_pool" Association="Self.FK_ponuda_pool">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="ponuda" EntitySet="ponuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ugovor_Klijent" Association="Self.FK_ugovor_Klijent">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="ugovor" EntitySet="ugovor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_link_ponuda" Association="Self.FK_link_ponuda">
+      <End Role="ponuda" EntitySet="ponuda" />
+      <End Role="link" EntitySet="link" />
+    </AssociationSet>
+    <AssociationSet Name="FK_link_radniNalog" Association="Self.FK_link_radniNalog">
+      <End Role="radniNalog" EntitySet="radniNalog" />
+      <End Role="link" EntitySet="link" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mrezaPlakat_plakat" Association="Self.FK_mrezaPlakat_plakat">
+      <End Role="plakat" EntitySet="plakat" />
+      <End Role="mrezaPlakat" EntitySet="mrezaPlakat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plakat_zaposleni" Association="Self.FK_plakat_zaposleni">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="plakat" EntitySet="plakat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plakatSlika_plakat" Association="Self.FK_plakatSlika_plakat">
+      <End Role="plakat" EntitySet="plakat" />
+      <End Role="plakatSlika" EntitySet="plakatSlika" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponudaStavke_plakat" Association="Self.FK_ponudaStavke_plakat">
+      <End Role="plakat" EntitySet="plakat" />
+      <End Role="ponudaStavke" EntitySet="ponudaStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stavke_plakat" Association="Self.FK_stavke_plakat">
+      <End Role="plakat" EntitySet="plakat" />
+      <End Role="ugovorStavke" EntitySet="ugovorStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ponudaKon__ponud__3864608B" Association="Self.FK__ponudaKon__ponud__3864608B">
+      <End Role="ponuda" EntitySet="ponuda" />
+      <End Role="ponudaKontakt" EntitySet="ponudaKontakt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponuda_zaposleni" Association="Self.FK_ponuda_zaposleni">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="ponuda" EntitySet="ponuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponuda_zaposleni1" Association="Self.FK_ponuda_zaposleni1">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="ponuda" EntitySet="ponuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponudaStavke_ponuda" Association="Self.FK_ponudaStavke_ponuda">
+      <End Role="ponuda" EntitySet="ponuda" />
+      <End Role="ponudaStavke" EntitySet="ponudaStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_porukaSistemska_ponuda" Association="Self.FK_porukaSistemska_ponuda">
+      <End Role="ponuda" EntitySet="ponuda" />
+      <End Role="porukaSistemska" EntitySet="porukaSistemska" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ponudaSta__ponud__3B40CD36" Association="Self.FK__ponudaSta__ponud__3B40CD36">
+      <End Role="ponudaStavke" EntitySet="ponudaStavke" />
+      <End Role="ponudaStavkaDodatak" EntitySet="ponudaStavkaDodatak" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ponudaSta__trosa__3C34F16F" Association="Self.FK__ponudaSta__trosa__3C34F16F">
+      <End Role="trosak" EntitySet="trosak" />
+      <End Role="ponudaStavkaDodatak" EntitySet="ponudaStavkaDodatak" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponudaStavke_trosak" Association="Self.FK_ponudaStavke_trosak">
+      <End Role="trosak" EntitySet="trosak" />
+      <End Role="ponudaStavke" EntitySet="ponudaStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponudaStavke_zaposleni" Association="Self.FK_ponudaStavke_zaposleni">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="ponudaStavke" EntitySet="ponudaStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_radniNalog_ponudaStavka" Association="Self.FK_radniNalog_ponudaStavka">
+      <End Role="ponudaStavke" EntitySet="ponudaStavke" />
+      <End Role="radniNalogStavke" EntitySet="radniNalogStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_porukaSistemska_radniNalog" Association="Self.FK_porukaSistemska_radniNalog">
+      <End Role="radniNalog" EntitySet="radniNalog" />
+      <End Role="porukaSistemska" EntitySet="porukaSistemska" />
+    </AssociationSet>
+    <AssociationSet Name="FK_porukaSistemska_zaposleni" Association="Self.FK_porukaSistemska_zaposleni">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="porukaSistemska" EntitySet="porukaSistemska" />
+    </AssociationSet>
+    <AssociationSet Name="FK_radniNalogStavke_radniNalog" Association="Self.FK_radniNalogStavke_radniNalog">
+      <End Role="radniNalog" EntitySet="radniNalog" />
+      <End Role="radniNalogStavke" EntitySet="radniNalogStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_radniNalogSlika_radniNalogStavke" Association="Self.FK_radniNalogSlika_radniNalogStavke">
+      <End Role="radniNalogStavke" EntitySet="radniNalogStavke" />
+      <End Role="radniNalogSlika" EntitySet="radniNalogSlika" />
+    </AssociationSet>
+    <AssociationSet Name="FK__radniNalo__turaS__7DCDAAA2" Association="Self.FK__radniNalo__turaS__7DCDAAA2">
+      <End Role="turaSedmica" EntitySet="turaSedmica" />
+      <End Role="radniNalogStavke" EntitySet="radniNalogStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_radniNalogStavke_zaposleni" Association="Self.FK_radniNalogStavke_zaposleni">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="radniNalogStavke" EntitySet="radniNalogStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK__turaSedmi__turaS__7BE56230" Association="Self.FK__turaSedmi__turaS__7BE56230">
+      <End Role="turaSedmica" EntitySet="turaSedmica" />
+      <End Role="turaSedmicaZaposleni" EntitySet="turaSedmicaZaposleni" />
+    </AssociationSet>
+    <AssociationSet Name="FK__turaSedmi__zapos__7CD98669" Association="Self.FK__turaSedmi__zapos__7CD98669">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="turaSedmicaZaposleni" EntitySet="turaSedmicaZaposleni" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stavke_ugovor" Association="Self.FK_stavke_ugovor">
+      <End Role="ugovor" EntitySet="ugovor" />
+      <End Role="ugovorStavke" EntitySet="ugovorStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ugovor_zaposleni" Association="Self.FK_ugovor_zaposleni">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="ugovor" EntitySet="ugovor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ugovorStavke_zaposleni" Association="Self.FK_ugovorStavke_zaposleni">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="ugovorStavke" EntitySet="ugovorStavke" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(EuroplakatModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(EuroplakatModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="checkPoslanePonude" />
+    <FunctionImport Name="createFaktura">
+      <Parameter Name="ponudaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="demontirajPlakat">
+      <Parameter Name="radniNalogStavke" Mode="In" Type="Int32" />
+      <Parameter Name="logovaniId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getLokacijeZauzetost" ReturnType="Collection(EuroplakatModel.getLokacijeZauzetost_Result)">
+      <Parameter Name="pocetak" Mode="In" Type="DateTime" />
+      <Parameter Name="trajanje" Mode="In" Type="Int32" />
+      <Parameter Name="plakatTipId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getMrezaPlakati" ReturnType="Collection(EuroplakatModel.getMrezaPlakati_Result)">
+      <Parameter Name="mrezaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getMrezaSlike" ReturnType="Collection(EuroplakatModel.getMrezaSlike_Result)">
+      <Parameter Name="mrezaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getMrezeDTOByPonuda" ReturnType="Collection(EuroplakatModel.getMrezeDTOByPonuda_Result)">
+      <Parameter Name="ponudaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getNalogStavlaJSON">
+      <Parameter Name="zaposleniId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getNalogStavlaJSONSabiha" ReturnType="Collection(EuroplakatModel.getNalogStavlaJSONSabiha_Result)">
+      <Parameter Name="zaposleni" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="getPlakatiDTOByPonuda" ReturnType="Collection(EuroplakatModel.getPlakatiDTOByPonuda_Result)">
+      <Parameter Name="ponudaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getPlakatiDTOByUgovor" ReturnType="Collection(EuroplakatModel.getPlakatiDTOByUgovor_Result)">
+      <Parameter Name="ugovorId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getPlakatiRegijaTipPeriod" ReturnType="Collection(EuroplakatModel.getPlakatiRegijaTipPeriod_Result)">
+      <Parameter Name="regijaId" Mode="In" Type="Int32" />
+      <Parameter Name="plakatTipId" Mode="In" Type="Int32" />
+      <Parameter Name="pocetak" Mode="In" Type="DateTime" />
+      <Parameter Name="kraj" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="getPlakatiZauzetost" ReturnType="Collection(EuroplakatModel.getPlakatiZauzetost_Result)">
+      <Parameter Name="pocetak" Mode="In" Type="DateTime" />
+      <Parameter Name="trajanje" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getPonudaPaged">
+      <Parameter Name="pageNo" Mode="In" Type="Int32" />
+      <Parameter Name="pageSize" Mode="In" Type="Int32" />
+      <Parameter Name="filterDatumPonude" Mode="In" Type="DateTime" />
+      <Parameter Name="filterPonudaStatusId" Mode="In" Type="Int32" />
+      <Parameter Name="filterKlijent" Mode="In" Type="String" />
+      <Parameter Name="filterKampanja" Mode="In" Type="String" />
+      <Parameter Name="filterPlakatTipId" Mode="In" Type="Int32" />
+      <Parameter Name="filterProtokol" Mode="In" Type="String" />
+      <Parameter Name="filterPocetak" Mode="In" Type="DateTime" />
+      <Parameter Name="filterKraj" Mode="In" Type="DateTime" />
+      <Parameter Name="sortPolje" Mode="In" Type="Int32" />
+      <Parameter Name="isMreza" Mode="In" Type="Boolean" />
+      <Parameter Name="brojSlogova" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getPonudaSlike" ReturnType="Collection(EuroplakatModel.getPonudaSlike_Result)">
+      <Parameter Name="ponudaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getPonudaSlike1" ReturnType="Collection(EuroplakatModel.getPonudaSlike1_Result)">
+      <Parameter Name="ponudaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getPrihvacenaPonudaPaged">
+      <Parameter Name="pageNo" Mode="In" Type="Int32" />
+      <Parameter Name="pageSize" Mode="In" Type="Int32" />
+      <Parameter Name="filterPocetak" Mode="In" Type="DateTime" />
+      <Parameter Name="filterDatumPonude" Mode="In" Type="DateTime" />
+      <Parameter Name="filterKlijent" Mode="In" Type="String" />
+      <Parameter Name="filterKampanja" Mode="In" Type="String" />
+      <Parameter Name="filterPlakatTipId" Mode="In" Type="Int32" />
+      <Parameter Name="filterProtokol" Mode="In" Type="String" />
+      <Parameter Name="brojSlogova" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getRadneNaloge" ReturnType="Collection(EuroplakatModel.getRadneNaloge_Result)" />
+    <FunctionImport Name="getRadneNalogePaged">
+      <Parameter Name="pageNo" Mode="In" Type="Int32" />
+      <Parameter Name="pageSize" Mode="In" Type="Int32" />
+      <Parameter Name="brojSlogova" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getRadniNalogSlike" ReturnType="Collection(EuroplakatModel.getRadniNalogSlike_Result)">
+      <Parameter Name="radniNalogId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getRadniNalogStavkeDemontaza" />
+    <FunctionImport Name="getRadniNalogStavkeIdejno" />
+    <FunctionImport Name="getRadniNalogStavkePaged">
+      <Parameter Name="pageNo" Mode="In" Type="Int32" />
+      <Parameter Name="pageSize" Mode="In" Type="Int32" />
+      <Parameter Name="brojSlogova" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getSedmice" ReturnType="Collection(EuroplakatModel.getSedmice_Result)" />
+    <FunctionImport Name="getSlikePonuda" ReturnType="Collection(EuroplakatModel.getSlikePonuda_Result)">
+      <Parameter Name="ponudaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getSlobodnePlakate" ReturnType="Collection(EuroplakatModel.getSlobodnePlakate_Result)">
+      <Parameter Name="plakatId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getStavkeRN" ReturnType="Collection(EuroplakatModel.getStavkeRN_Result)" />
+    <FunctionImport Name="getStorniranePonude" ReturnType="Collection(EuroplakatModel.getStorniranePonude_Result)" />
+    <FunctionImport Name="getTrosakDTOByPonuda" ReturnType="Collection(EuroplakatModel.getTrosakDTOByPonuda_Result)">
+      <Parameter Name="ponudaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getTuraDvijeSedmice" ReturnType="Collection(EuroplakatModel.getTuraDvijeSedmice_Result)" />
+    <FunctionImport Name="getTure" ReturnType="Collection(EuroplakatModel.getTure_Result)" />
+    <FunctionImport Name="geTureJSON">
+      <Parameter Name="zaposleni" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="geTureJSONSabiha" ReturnType="Collection(EuroplakatModel.geTureJSONSabiha_Result)">
+      <Parameter Name="zaposleni" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="getZaposleniEmail" ReturnType="Collection(String)">
+      <Parameter Name="zaposleniId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="insertPosaljiPonudu">
+      <Parameter Name="accountZaposleniId" Mode="In" Type="Int32" />
+      <Parameter Name="logovaniZaposleniId" Mode="In" Type="Int32" />
+      <Parameter Name="ponudaId" Mode="In" Type="Int32" />
+      <Parameter Name="radniNalogId" Mode="In" Type="Int32" />
+      <Parameter Name="putanjaUvjeti" Mode="In" Type="String" />
+      <Parameter Name="porukaSistemskaLId" Mode="InOut" Type="Int32" />
+      <Parameter Name="porukaSistemskaAId" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="insertPosaljiRadniNalog">
+      <Parameter Name="accountZaposleniId" Mode="In" Type="Int32" />
+      <Parameter Name="logovaniZaposleniId" Mode="In" Type="Int32" />
+      <Parameter Name="ponudaId" Mode="In" Type="Int32" />
+      <Parameter Name="radniNalogId" Mode="In" Type="Int32" />
+      <Parameter Name="putanjaUvjeti" Mode="In" Type="String" />
+      <Parameter Name="porukaSistemskaLId" Mode="InOut" Type="Int32" />
+      <Parameter Name="porukaSistemskaAId" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="isPlakatZauzet">
+      <Parameter Name="plakatId" Mode="In" Type="Int32" />
+      <Parameter Name="datumOd" Mode="In" Type="DateTime" />
+      <Parameter Name="datumDo" Mode="In" Type="DateTime" />
+      <Parameter Name="rezultat" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="isValidLink" ReturnType="Collection(EuroplakatModel.isValidLink_Result)">
+      <Parameter Name="ponudaId" Mode="In" Type="Int32" />
+      <Parameter Name="link" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="isValidLinkRN" ReturnType="Collection(EuroplakatModel.isValidLinkRN_Result)">
+      <Parameter Name="radniNalogId" Mode="In" Type="Int32" />
+      <Parameter Name="link" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="IsZauzetaMreza">
+      <Parameter Name="plakatId" Mode="In" Type="Int32" />
+      <Parameter Name="mrezaId" Mode="In" Type="Int32" />
+      <Parameter Name="datumOd" Mode="In" Type="DateTime" />
+      <Parameter Name="datumDo" Mode="In" Type="DateTime" />
+      <Parameter Name="rezultat" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="odbijPonudu">
+      <Parameter Name="ponudaId" Mode="In" Type="Int32" />
+      <Parameter Name="logovaniId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="prihvatiPonudu">
+      <Parameter Name="ponudaId" Mode="In" Type="Int32" />
+      <Parameter Name="logovaniId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="realizujPonudu">
+      <Parameter Name="radniNalogStavkaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="stornirajPonudu">
+      <Parameter Name="ponudaId" Mode="In" Type="Int32" />
+      <Parameter Name="logovaniId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="updateIsRanije" />
+    <FunctionImport Name="updatePorukaSistemska">
+      <Parameter Name="porukaSistemskaLId" Mode="In" Type="Int32" />
+      <Parameter Name="porukaSistemskaAId" Mode="In" Type="Int32" />
+      <Parameter Name="ponudaId" Mode="In" Type="Int32" />
+      <Parameter Name="putanja" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getLokacijeZauzetost_Result">
+    <Property Type="Int32" Name="plakatId" Nullable="false" />
+    <Property Type="String" Name="adresa" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="dimenzija" Nullable="true" MaxLength="4000" />
+    <Property Type="Decimal" Name="cijena" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Int32" Name="inventarniBroj" Nullable="true" />
+    <Property Type="Int32" Name="redniBroj" Nullable="true" />
+    <Property Type="String" Name="posta" Nullable="true" MaxLength="19" />
+    <Property Type="Int32" Name="mjestoId" Nullable="true" />
+    <Property Type="Int32" Name="plakatTipId" Nullable="true" />
+    <Property Type="Boolean" Name="isOsvjetljen" Nullable="true" />
+    <Property Type="Boolean" Name="isDvostrano" Nullable="true" />
+    <Property Type="Int32" Name="plakatKategorijaIzvrsnostiId" Nullable="true" />
+    <Property Type="Int32" Name="vlasnikId" Nullable="true" />
+    <Property Type="Int32" Name="cjenovnaKategorijaId" Nullable="true" />
+    <Property Type="Int32" Name="statusPlakatId" Nullable="true" />
+    <Property Type="Int32" Name="vrstaOkviraId" Nullable="true" />
+    <Property Type="String" Name="vrstaOkvira" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="koordinate" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getMrezaPlakati_Result">
+    <Property Type="Int32" Name="plakatId" Nullable="true" />
+    <Property Type="Int32" Name="inventarniBroj" Nullable="true" />
+    <Property Type="Int32" Name="redniBroj" Nullable="true" />
+    <Property Type="String" Name="posta" Nullable="true" MaxLength="19" />
+    <Property Type="String" Name="adresa" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="isOsvjetljen" Nullable="true" />
+    <Property Type="Boolean" Name="isDvostrano" Nullable="true" />
+    <Property Type="String" Name="plakatTip" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="getMrezaSlike_Result">
+    <Property Type="Int32" Name="plakatSlikaId" Nullable="false" />
+    <Property Type="Int32" Name="plakatId" Nullable="true" />
+    <Property Type="String" Name="plakat" Nullable="true" MaxLength="301" />
+    <Property Type="Int32" Name="inventarniBroj" Nullable="true" />
+    <Property Type="Int32" Name="redniBroj" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getMrezeDTOByPonuda_Result">
+    <Property Type="Int32" Name="MrezaId" Nullable="false" />
+    <Property Type="String" Name="Naziv" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="getNalogStavlaJSONSabiha_Result">
+    <Property Type="String" Name="turaId" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tura" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="radniNalogStavkaId" Nullable="false" />
+    <Property Type="DateTime" Name="datum" Nullable="true" />
+    <Property Type="Int32" Name="plakatId" Nullable="true" />
+    <Property Type="Int32" Name="inventarniBroj" Nullable="true" />
+    <Property Type="Int32" Name="redniBroj" Nullable="false" />
+    <Property Type="String" Name="posta" Nullable="false" MaxLength="19" />
+    <Property Type="String" Name="mjesto" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ulica" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Format" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="akcija" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Napomena" Nullable="false" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="getPlakatiDTOByPonuda_Result">
+    <Property Type="Int32" Name="PlakatId" Nullable="false" />
+    <Property Type="String" Name="Naziv" Nullable="true" MaxLength="250" />
+    <Property Type="Decimal" Name="Cijena" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="Kolicina" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="Rabat" Nullable="false" Precision="5" Scale="3" />
+    <Property Type="Decimal" Name="CijenaSaPopustom" Nullable="false" Precision="9" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="getPlakatiDTOByUgovor_Result">
+    <Property Type="Int32" Name="PlakatId" Nullable="false" />
+    <Property Type="String" Name="Naziv" Nullable="true" MaxLength="250" />
+    <Property Type="Decimal" Name="Cijena" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Int32" Name="InventarniBroj" Nullable="true" />
+    <Property Type="Int32" Name="RedniBroj" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getPlakatiRegijaTipPeriod_Result">
+    <Property Type="Int32" Name="plakatId" Nullable="false" />
+    <Property Type="DateTime" Name="pocetakKampanje" Nullable="true" />
+    <Property Type="DateTime" Name="krajKampanje" Nullable="true" />
+    <Property Type="Int32" Name="isSlobodan" Nullable="false" />
+    <Property Type="Int32" Name="ponudaId" Nullable="true" />
+    <Property Type="DateTime" Name="zauzetoOd" Nullable="true" />
+    <Property Type="DateTime" Name="zauzetoDo" Nullable="true" />
+    <Property Type="Int32" Name="plakatTipId" Nullable="true" />
+    <Property Type="String" Name="plakatTip" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="plakatOznaka" Nullable="true" MaxLength="5" />
+    <Property Type="Int32" Name="plakatId1" Nullable="false" />
+    <Property Type="Int32" Name="inventarniBroj" Nullable="true" />
+    <Property Type="String" Name="Regija" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="regijaOznaka" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="mjesto" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="adresa" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="isOsvjetljen" Nullable="true" />
+    <Property Type="Boolean" Name="isDvostrano" Nullable="true" />
+    <Property Type="String" Name="klijent" Nullable="false" MaxLength="1008" />
+  </ComplexType>
+  <ComplexType Name="getPlakatiZauzetost_Result">
+    <Property Type="Int32" Name="PlakatId" Nullable="false" />
+    <Property Type="String" Name="Naziv" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Klijenti" Nullable="true" MaxLength="4000" />
+    <Property Type="Decimal" Name="Cijena" Nullable="true" Precision="9" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="getPonudaSlike_Result">
+    <Property Type="Int32" Name="plakatSlikaId" Nullable="false" />
+    <Property Type="Int32" Name="plakatId" Nullable="true" />
+    <Property Type="String" Name="plakat" Nullable="true" MaxLength="301" />
+    <Property Type="Int32" Name="inventurniBroj" Nullable="true" />
+    <Property Type="Int64" Name="rb" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getPonudaSlike1_Result">
+    <Property Type="Int32" Name="plakatSlikaId" Nullable="false" />
+    <Property Type="Int32" Name="plakatId" Nullable="true" />
+    <Property Type="String" Name="plakat" Nullable="true" MaxLength="301" />
+    <Property Type="Int32" Name="inventarniBroj" Nullable="true" />
+    <Property Type="Int32" Name="redniBroj" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getRadneNaloge_Result">
+    <Property Type="Int32" Name="radniNalogId" Nullable="false" />
+    <Property Type="DateTime" Name="datum" Nullable="true" />
+    <Property Type="String" Name="kampanja" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="naziv" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="brojPovrsina" Nullable="true" />
+    <Property Type="Int32" Name="ponudaId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getRadniNalogSlike_Result">
+    <Property Type="Int32" Name="radniNalogSlikaId" Nullable="false" />
+    <Property Type="Int32" Name="radniNalogStavkaId" Nullable="true" />
+    <Property Type="String" Name="plakat" Nullable="true" MaxLength="301" />
+    <Property Type="Int32" Name="inventarniBroj" Nullable="true" />
+    <Property Type="Int32" Name="redniBroj" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getSedmice_Result">
+    <Property Type="Int32" Name="sedmicaId" Nullable="false" />
+    <Property Type="String" Name="sedmica" Nullable="true" MaxLength="95" />
+  </ComplexType>
+  <ComplexType Name="getSlikePonuda_Result">
+    <Property Type="String" Name="plakat" Nullable="false" MaxLength="355" />
+    <Property Type="Binary" Name="slika" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getSlobodnePlakate_Result">
+    <Property Type="Int32" Name="plakatId" Nullable="false" />
+    <Property Type="String" Name="adresa" Nullable="true" MaxLength="301" />
+  </ComplexType>
+  <ComplexType Name="getStavkeRN_Result">
+    <Property Type="DateTime" Name="datum" Nullable="true" />
+    <Property Type="Int32" Name="radniNalogStavke" Nullable="true" />
+    <Property Type="Int32" Name="radniNalogId" Nullable="true" />
+    <Property Type="Int32" Name="ponudaStavkaId" Nullable="true" />
+    <Property Type="String" Name="kampanja" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="pocetakKampanje" Nullable="true" />
+    <Property Type="Int32" Name="trajanjeKampanje" Nullable="true" />
+    <Property Type="Int32" Name="ponudaStatusId" Nullable="true" />
+    <Property Type="String" Name="ponudaStatus" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="turaSedmicaId" Nullable="true" />
+    <Property Type="Int32" Name="tura" Nullable="true" />
+    <Property Type="String" Name="idejno" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="isFotografisano" Nullable="true" />
+    <Property Type="Boolean" Name="isPrijeLijepiti" Nullable="true" />
+    <Property Type="String" Name="boja" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="getStorniranePonude_Result">
+    <Property Type="Int32" Name="ponudaId" Nullable="false" />
+    <Property Type="String" Name="kampanja" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="protokol" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="pocetakKampanje" Nullable="true" />
+    <Property Type="DateTime" Name="krajKampanje" Nullable="true" />
+    <Property Type="String" Name="plakatTip" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="klijent" Nullable="false" MaxLength="1045" />
+  </ComplexType>
+  <ComplexType Name="getTrosakDTOByPonuda_Result">
+    <Property Type="Int32" Name="TrosakId" Nullable="false" />
+    <Property Type="String" Name="Naziv" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="Cijena" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="Kolicina" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="Rabat" Nullable="false" Precision="5" Scale="3" />
+    <Property Type="Decimal" Name="CijenaSaPopustom" Nullable="false" Precision="9" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="getTuraDvijeSedmice_Result">
+    <Property Type="Int32" Name="brojSedmice" Nullable="true" />
+    <Property Type="DateTime" Name="datumOd" Nullable="true" />
+    <Property Type="DateTime" Name="datumDo" Nullable="true" />
+    <Property Type="String" Name="tura" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="getTure_Result">
+    <Property Type="Int32" Name="turaSedmicaId" Nullable="false" />
+    <Property Type="String" Name="tura" Nullable="true" MaxLength="165" />
+  </ComplexType>
+  <ComplexType Name="geTureJSONSabiha_Result">
+    <Property Type="String" Name="slikaCount" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="datumID" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tura" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="isValidLink_Result">
+    <Property Type="Int32" Name="linkId" Nullable="false" />
+    <Property Type="String" Name="naziv" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="datumOd" Nullable="true" />
+    <Property Type="DateTime" Name="datumDo" Nullable="true" />
+    <Property Type="String" Name="sifra" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ponudaId" Nullable="true" />
+    <Property Type="Int32" Name="radniNalogId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="isValidLinkRN_Result">
+    <Property Type="Int32" Name="linkId" Nullable="false" />
+    <Property Type="String" Name="naziv" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="datumOd" Nullable="true" />
+    <Property Type="DateTime" Name="datumDo" Nullable="true" />
+    <Property Type="String" Name="sifra" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ponudaId" Nullable="true" />
+    <Property Type="Int32" Name="radniNalogId" Nullable="true" />
+  </ComplexType>
+</Schema>

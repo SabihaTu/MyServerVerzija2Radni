@@ -1,0 +1,3459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EuroplakatModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.imp.BLOK2' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="BLOK2">
+          <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+          <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+          <Property Name="Pttbroj" Type="float" />
+          <Property Name="InvBroj" Type="float" />
+          <Property Name="RedBroj" Type="float" />
+          <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+          <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+          <Property Name="CIJENA PO DANU" Type="float" />
+          <Property Name="Cijena2" Type="float" />
+          <Property Name="Cijena4" Type="float" />
+          <Property Name="Ocjena" Type="nvarchar" MaxLength="255" />
+          <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+          <Property Name="Okvir" Type="nvarchar" MaxLength="255" />
+          <Property Name="Osvijetljena" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR DIREKCIJA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS" Type="float" />
+          <Property Name="UGOVOR GRAD/OPCINA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS1" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR PRIVATNA LICA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS2" Type="float" />
+          <Property Name="UKUPNO" Type="float" />
+          <Property Name="NADLEZNI ORGAN" Type="nvarchar" MaxLength="255" />
+          <Property Name="DOZVOLA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ3" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA3" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.imp.CLfin' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CLfin">
+          <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+          <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+          <Property Name="Pttbroj" Type="float" />
+          <Property Name="InvBroj" Type="float" />
+          <Property Name="RedBroj" Type="float" />
+          <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+          <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+          <Property Name="CIJENA PO DANU" Type="float" />
+          <Property Name="Cijena2" Type="float" />
+          <Property Name="Cijena4" Type="float" />
+          <Property Name="Ocjena" Type="nvarchar" MaxLength="255" />
+          <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+          <Property Name="Okvir" Type="nvarchar" MaxLength="255" />
+          <Property Name="Osvijetljena" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR DIREKCIJA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS" Type="float" />
+          <Property Name="UGOVOR GRAD/OPCINA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS1" Type="float" />
+          <Property Name="UGOVOR PRIVATNA LICA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS2" Type="nvarchar" MaxLength="255" />
+          <Property Name="UKUPNO" Type="float" />
+          <Property Name="NADLEZNI ORGAN" Type="nvarchar" MaxLength="255" />
+          <Property Name="DOZVOLA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ3 " Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA3" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.imp.CNOK2' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CNOK2">
+          <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+          <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+          <Property Name="Pttbroj" Type="float" />
+          <Property Name="InvBroj" Type="float" />
+          <Property Name="RedBroj" Type="float" />
+          <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+          <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+          <Property Name="CIJENA PO DANU" Type="float" />
+          <Property Name="Cijena2" Type="float" />
+          <Property Name="Cijena4" Type="float" />
+          <Property Name="Ocjena" Type="nvarchar" MaxLength="255" />
+          <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+          <Property Name="Okvir" Type="nvarchar" MaxLength="255" />
+          <Property Name="Osvijetljena" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR DIREKCIJA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR GRAD/OPCINA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS1" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR PRIVATNA LICA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS2" Type="nvarchar" MaxLength="255" />
+          <Property Name="UKUPNO" Type="float" />
+          <Property Name="NADLEZNI ORGAN" Type="nvarchar" MaxLength="255" />
+          <Property Name="DOZVOLA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ3 " Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA3" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+          <Property Name="F37" Type="nvarchar" MaxLength="255" />
+          <Property Name="F38" Type="nvarchar" MaxLength="255" />
+          <Property Name="F39" Type="nvarchar" MaxLength="255" />
+          <Property Name="F40" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.imp.CPfin' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CPfin">
+          <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+          <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+          <Property Name="Pttbroj" Type="float" />
+          <Property Name="InvBroj" Type="float" />
+          <Property Name="RedBroj" Type="float" />
+          <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+          <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cijena2" Type="float" />
+          <Property Name="Cijena4" Type="float" />
+          <Property Name="Ocjena" Type="nvarchar" MaxLength="255" />
+          <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR DIREKCIJA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR GRAD/OPCINA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS1" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR PRIVATNA LICA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS2" Type="nvarchar" MaxLength="255" />
+          <Property Name="UKUPNO" Type="nvarchar" MaxLength="255" />
+          <Property Name="NADLEZNI ORGAN" Type="nvarchar" MaxLength="255" />
+          <Property Name="DOZVOLA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ3 " Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA3" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.imp.LDOK2' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="LDOK2">
+          <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+          <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+          <Property Name="Pttbroj" Type="float" />
+          <Property Name="InvBroj" Type="float" />
+          <Property Name="RedBroj" Type="float" />
+          <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+          <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+          <Property Name="CIJENA PO DANU" Type="float" />
+          <Property Name="Cijena2" Type="float" />
+          <Property Name="Cijena4" Type="float" />
+          <Property Name="Ocjena" Type="nvarchar" MaxLength="255" />
+          <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+          <Property Name="Osvijetljena" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR DIREKCIJA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR GRAD/OPCINA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS1" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR PRIVATNA LICA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS2" Type="float" />
+          <Property Name="UKUPNO" Type="float" />
+          <Property Name="NADLEZNI ORGAN" Type="nvarchar" MaxLength="255" />
+          <Property Name="DOZVOLA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ3 " Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA3" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Europlakat.imp.SBOK2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SBOK2">
+    <Key>
+      <PropertyRef Name="Osvijetljena" />
+    </Key>
+    <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+    <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+    <Property Name="Pttbroj" Type="float" />
+    <Property Name="InvBroj" Type="float" />
+    <Property Name="RedBroj" Type="float" />
+    <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+    <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+    <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+    <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+    <Property Name="CIJENA PO DANU" Type="float" />
+    <Property Name="Cijena2" Type="float" />
+    <Property Name="Cijena4" Type="float" />
+    <Property Name="Ocjena" Type="nvarchar" MaxLength="255" />
+    <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+    <Property Name="Status" Type="nvarchar" MaxLength="255" />
+    <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+    <Property Name="F17" Type="nvarchar" MaxLength="255" />
+    <Property Name="Osvijetljena" Type="bit" Nullable="false" />
+    <Property Name="UGOVOR DIREKCIJA" Type="nvarchar" MaxLength="255" />
+    <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+    <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+    <Property Name="IZNOS" Type="float" />
+    <Property Name="UGOVOR GRAD/OPCINA" Type="nvarchar" MaxLength="255" />
+    <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+    <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+    <Property Name="IZNOS1" Type="float" />
+    <Property Name="UGOVOR PRIVATNA LICA" Type="nvarchar" MaxLength="255" />
+    <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+    <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+    <Property Name="IZNOS2" Type="nvarchar" MaxLength="255" />
+    <Property Name="UKUPNO" Type="float" />
+    <Property Name="NADLEZNI ORGAN" Type="nvarchar" MaxLength="255" />
+    <Property Name="DOZVOLA" Type="nvarchar" MaxLength="255" />
+    <Property Name="BROJ3 " Type="nvarchar" MaxLength="255" />
+    <Property Name="DATUM ISTEKA3" Type="nvarchar" MaxLength="255" />
+    <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.imp.TFfin' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TFfin">
+          <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+          <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+          <Property Name="Pttbroj" Type="float" />
+          <Property Name="InvBroj" Type="float" />
+          <Property Name="RedBroj" Type="float" />
+          <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+          <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+          <Property Name="CIJENA PO DANU" Type="float" />
+          <Property Name="Cijena2" Type="float" />
+          <Property Name="Cijena4" Type="float" />
+          <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+          <Property Name="Okvir" Type="nvarchar" MaxLength="255" />
+          <Property Name="Osvijetljena" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR DIREKCIJA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS" Type="float" />
+          <Property Name="UGOVOR GRAD/OPCINA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS1" Type="float" />
+          <Property Name="UGOVOR PRIVATNA LICA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS2" Type="float" />
+          <Property Name="UKUPNO" Type="float" />
+          <Property Name="NADLEZNI ORGAN" Type="nvarchar" MaxLength="255" />
+          <Property Name="DOZVOLA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ3" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA3" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Europlakat.imp.TNOK2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TNOK2">
+    <Key>
+      <PropertyRef Name="Osvijetljena" />
+    </Key>
+    <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+    <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+    <Property Name="Pttbroj" Type="float" />
+    <Property Name="InvBroj" Type="float" />
+    <Property Name="RedBroj" Type="float" />
+    <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+    <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+    <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+    <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+    <Property Name="CIJENA PO DANU" Type="float" />
+    <Property Name="Cijena2" Type="float" />
+    <Property Name="Cijena4" Type="float" />
+    <Property Name="Ocjena" Type="nvarchar" MaxLength="255" />
+    <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+    <Property Name="Status" Type="nvarchar" MaxLength="255" />
+    <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+    <Property Name="Okvir" Type="nvarchar" MaxLength="255" />
+    <Property Name="Osvijetljena" Type="bit" Nullable="false" />
+    <Property Name="UGOVOR DIREKCIJA" Type="nvarchar" MaxLength="255" />
+    <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+    <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+    <Property Name="IZNOS" Type="float" />
+    <Property Name="UGOVOR GRAD/OPCINA" Type="nvarchar" MaxLength="255" />
+    <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+    <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+    <Property Name="IZNOS1" Type="float" />
+    <Property Name="UGOVOR PRIVATNA LICA" Type="nvarchar" MaxLength="255" />
+    <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+    <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+    <Property Name="IZNOS2" Type="nvarchar" MaxLength="255" />
+    <Property Name="UKUPNO" Type="float" />
+    <Property Name="NADLEZNI ORGAN" Type="nvarchar" MaxLength="255" />
+    <Property Name="DOZVOLA" Type="nvarchar" MaxLength="255" />
+    <Property Name="BROJ3" Type="nvarchar" MaxLength="255" />
+    <Property Name="DATUM ISTEKA3" Type="nvarchar" MaxLength="255" />
+    <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.imp.VRSTEOKVIRA' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VRSTEOKVIRA">
+          <Property Name="Grupa" Type="nvarchar" MaxLength="255" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="255" />
+          <Property Name="Napomena" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.imp.WSOK' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="WSOK">
+          <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+          <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+          <Property Name="Pttbroj" Type="float" />
+          <Property Name="InvBroj" Type="float" />
+          <Property Name="RedBroj" Type="float" />
+          <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+          <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+          <Property Name="CIJENA PO DANU" Type="float" />
+          <Property Name="Cijena2" Type="float" />
+          <Property Name="Cijena4" Type="float" />
+          <Property Name="Ocjena" Type="nvarchar" MaxLength="255" />
+          <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+          <Property Name="Okvir" Type="nvarchar" MaxLength="255" />
+          <Property Name="Osvijetljena" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR DIREKCIJA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS" Type="float" />
+          <Property Name="UGOVOR GRAD/OPCINA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS1" Type="float" />
+          <Property Name="UGOVOR PRIVATNA LICA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS2" Type="float" />
+          <Property Name="UKUPNO" Type="float" />
+          <Property Name="NADLEZNI ORGAN" Type="nvarchar" MaxLength="255" />
+          <Property Name="DOZVOLA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ3 " Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA3" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.BLfin' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="BLfin">
+          <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+          <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+          <Property Name="Pttbroj" Type="float" />
+          <Property Name="InvBroj" Type="float" />
+          <Property Name="RedBroj" Type="float" />
+          <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+          <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cijena2" Type="float" />
+          <Property Name="Cijena4" Type="float" />
+          <Property Name="Ocjena" Type="nvarchar" MaxLength="255" />
+          <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+          <Property Name="Osvijetljena" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR " Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS" Type="float" />
+          <Property Name="UGOVOR OPCINA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS1" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR PRIVATNO" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS2" Type="float" />
+          <Property Name="UKUPNO" Type="float" />
+          <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.'cijenePovrsinaSifreOk1'' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="'cijenePovrsinaSifreOk1'">
+          <Property Name="Grupa" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost1" Type="float" />
+          <Property Name="Vrijednost2" Type="float" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="255" />
+          <Property Name="Napomena" Type="nvarchar" MaxLength="255" />
+          <Property Name="PO DANU " Type="float" />
+          <Property Name="GRAD" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.CLfin' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CLfin1">
+          <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+          <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+          <Property Name="Pttbroj" Type="float" />
+          <Property Name="InvBroj" Type="float" />
+          <Property Name="RedBroj" Type="float" />
+          <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+          <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cijena2" Type="float" />
+          <Property Name="Cijena4" Type="float" />
+          <Property Name="Ocjena" Type="nvarchar" MaxLength="255" />
+          <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+          <Property Name="Osvijetljena" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR " Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS" Type="float" />
+          <Property Name="UGOVOR OPCINA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS1" Type="float" />
+          <Property Name="UGOVOR PRIVATNO" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS2" Type="nvarchar" MaxLength="255" />
+          <Property Name="UKUPNO" Type="float" />
+          <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.CNfin' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CNfin">
+          <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+          <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+          <Property Name="Pttbroj" Type="float" />
+          <Property Name="InvBroj" Type="float" />
+          <Property Name="RedBroj" Type="float" />
+          <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+          <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cijena2" Type="float" />
+          <Property Name="Cijena4" Type="float" />
+          <Property Name="Ocjena" Type="nvarchar" MaxLength="255" />
+          <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+          <Property Name="Osvijetljena" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR " Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR OPCINA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS1" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR PRIVATNO" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS2" Type="nvarchar" MaxLength="255" />
+          <Property Name="UKUPNO" Type="float" />
+          <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+          <Property Name="F31" Type="nvarchar" MaxLength="255" />
+          <Property Name="F32" Type="nvarchar" MaxLength="255" />
+          <Property Name="F33" Type="nvarchar" MaxLength="255" />
+          <Property Name="F34" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.CPfin' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CPfin1">
+          <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+          <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+          <Property Name="Pttbroj" Type="float" />
+          <Property Name="InvBroj" Type="float" />
+          <Property Name="RedBroj" Type="float" />
+          <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+          <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cijena2" Type="float" />
+          <Property Name="Cijena4" Type="float" />
+          <Property Name="Ocjena" Type="nvarchar" MaxLength="255" />
+          <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR " Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR OPCINA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS1" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR PRIVATNO" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS2" Type="nvarchar" MaxLength="255" />
+          <Property Name="UKUPNO" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.'dimenzijePovrsinaSifrarnOk'' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="'dimenzijePovrsinaSifrarnOk'">
+          <Property Name="Grupa" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="255" />
+          <Property Name="Napomena" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.'KALENDARLIJEPLJENJA'' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="'KALENDARLIJEPLJENJA'">
+          <Property Name="Grupa" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost" Type="float" />
+          <Property Name="Vrijednost1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="255" />
+          <Property Name="Napomena" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.LDfin' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="LDfin">
+          <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+          <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+          <Property Name="Pttbroj" Type="float" />
+          <Property Name="InvBroj" Type="float" />
+          <Property Name="RedBroj" Type="float" />
+          <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+          <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cijena2" Type="float" />
+          <Property Name="Cijena4" Type="float" />
+          <Property Name="Ocjena" Type="nvarchar" MaxLength="255" />
+          <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+          <Property Name="Osvijetljena" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR " Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR OPCINA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS1" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR PRIVATNO" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS2" Type="nvarchar" MaxLength="255" />
+          <Property Name="UKUPNO" Type="float" />
+          <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.ostaliTroskovi' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ostaliTroskovi">
+          <Property Name="Grupa" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost" Type="float" />
+          <Property Name="Vrijednost1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="255" />
+          <Property Name="Napomena" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.PTTBROJEVIGRADOVIok' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="PTTBROJEVIGRADOVIok">
+          <Property Name="Grupa" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost" Type="float" />
+          <Property Name="Vrijednost1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="255" />
+          <Property Name="Napomena" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.REGIJEOK' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="REGIJEOK">
+          <Property Name="Grupa" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="255" />
+          <Property Name="Napomena" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Europlakat.import.SBfi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SBfi">
+    <Key>
+      <PropertyRef Name="Osvijetljena" />
+    </Key>
+    <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+    <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+    <Property Name="Pttbroj" Type="float" />
+    <Property Name="InvBroj" Type="float" />
+    <Property Name="RedBroj" Type="float" />
+    <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+    <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+    <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+    <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+    <Property Name="Cijena2" Type="float" />
+    <Property Name="Cijena4" Type="float" />
+    <Property Name="Ocjena" Type="nvarchar" MaxLength="255" />
+    <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+    <Property Name="Status" Type="nvarchar" MaxLength="255" />
+    <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+    <Property Name="Osvijetljena" Type="bit" Nullable="false" />
+    <Property Name="UGOVOR " Type="nvarchar" MaxLength="255" />
+    <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+    <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+    <Property Name="IZNOS" Type="float" />
+    <Property Name="UGOVOR OPCINA" Type="nvarchar" MaxLength="255" />
+    <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+    <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+    <Property Name="IZNOS1" Type="float" />
+    <Property Name="UGOVOR PRIVATNO" Type="nvarchar" MaxLength="255" />
+    <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+    <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+    <Property Name="IZNOS2" Type="nvarchar" MaxLength="255" />
+    <Property Name="UKUPNO" Type="float" />
+    <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.STATUSPOVRSINE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="STATUSPOVRSINE">
+          <Property Name="Grupa" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="255" />
+          <Property Name="Napomena" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.TFfin' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TFfin1">
+          <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+          <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+          <Property Name="Pttbroj" Type="float" />
+          <Property Name="InvBroj" Type="float" />
+          <Property Name="RedBroj" Type="float" />
+          <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+          <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cijena2" Type="float" />
+          <Property Name="Cijena4" Type="float" />
+          <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+          <Property Name="Osvijetljena" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR " Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS" Type="float" />
+          <Property Name="UGOVOR OPCINA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS1" Type="float" />
+          <Property Name="UGOVOR PRIVATNO" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS2" Type="float" />
+          <Property Name="UKUPNO" Type="float" />
+          <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.TIPPOVRSINEok' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TIPPOVRSINEok">
+          <Property Name="Grupa" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="255" />
+          <Property Name="Napomena" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.TIPUGOVORA' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TIPUGOVORA">
+          <Property Name="Grupa" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost" Type="float" />
+          <Property Name="Vrijednost1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="255" />
+          <Property Name="Napomena" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Europlakat.import.TNfin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TNfin">
+    <Key>
+      <PropertyRef Name="Osvijetljena" />
+    </Key>
+    <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+    <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+    <Property Name="Pttbroj" Type="float" />
+    <Property Name="InvBroj" Type="float" />
+    <Property Name="RedBroj" Type="float" />
+    <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+    <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+    <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+    <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+    <Property Name="Cijena2" Type="float" />
+    <Property Name="Cijena4" Type="float" />
+    <Property Name="Ocjena" Type="nvarchar" MaxLength="255" />
+    <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+    <Property Name="Status" Type="nvarchar" MaxLength="255" />
+    <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+    <Property Name="Osvijetljena" Type="bit" Nullable="false" />
+    <Property Name="UGOVOR " Type="nvarchar" MaxLength="255" />
+    <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+    <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+    <Property Name="IZNOS" Type="float" />
+    <Property Name="UGOVOR OPCINA" Type="nvarchar" MaxLength="255" />
+    <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+    <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+    <Property Name="IZNOS1" Type="float" />
+    <Property Name="UGOVOR PRIVATNO" Type="nvarchar" MaxLength="255" />
+    <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+    <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+    <Property Name="IZNOS2" Type="nvarchar" MaxLength="255" />
+    <Property Name="UKUPNO" Type="float" />
+    <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.TUREok'' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TUREok'">
+          <Property Name="Grupa" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="255" />
+          <Property Name="Napomena" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="NOVI NAZIV" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.'VRSTEOKVIRa'' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="'VRSTEOKVIRa'">
+          <Property Name="Grupa" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vrijednost2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="255" />
+          <Property Name="Napomena" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Europlakat.import.'WSfin' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="'WSfin">
+          <Property Name="TipPovrsine" Type="nvarchar" MaxLength="255" />
+          <Property Name="Regija" Type="nvarchar" MaxLength="255" />
+          <Property Name="Pttbroj" Type="float" />
+          <Property Name="InvBroj" Type="float" />
+          <Property Name="RedBroj" Type="float" />
+          <Property Name="Grad" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tura" Type="nvarchar" MaxLength="255" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="255" />
+          <Property Name="TrenutnoStanje" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cijena2" Type="float" />
+          <Property Name="Cijena4" Type="float" />
+          <Property Name="Ocjena" Type="nvarchar" MaxLength="255" />
+          <Property Name="DVO/JED" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dimenzije" Type="nvarchar" MaxLength="255" />
+          <Property Name="Osvijetljena" Type="nvarchar" MaxLength="255" />
+          <Property Name="UGOVOR " Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS" Type="float" />
+          <Property Name="UGOVOR OPCINA" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ1" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA1" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS1" Type="float" />
+          <Property Name="UGOVOR PRIVATNO" Type="nvarchar" MaxLength="255" />
+          <Property Name="BROJ2" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA2" Type="nvarchar" MaxLength="255" />
+          <Property Name="IZNOS2" Type="float" />
+          <Property Name="UKUPNO" Type="float" />
+          <Property Name="DOZVOLA" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATUM ISTEKA3" Type="nvarchar" MaxLength="255" />
+          <Property Name="CijenaZakupa" Type="float" />
+          <Property Name="CijenaOpcina" Type="float" />
+          <Property Name="CijenaDirekcija" Type="float" />
+          <Property Name="Vlasnik" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="atribut">
+    <Key>
+      <PropertyRef Name="atributId" />
+    </Key>
+    <Property Name="atributId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kljuc" Type="varchar" MaxLength="50" />
+    <Property Name="vrijednost" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="faktura">
+    <Key>
+      <PropertyRef Name="fakturaId" />
+    </Key>
+    <Property Name="fakturaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="klijentId" Type="int" />
+    <Property Name="datumFakture" Type="date" />
+    <Property Name="datumValute" Type="date" />
+    <Property Name="fakturisanoOd" Type="date" />
+    <Property Name="fakturisanoDo" Type="date" />
+    <Property Name="iznosBezPdv" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="pdv" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="iznosSaPdv" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="valutaId" Type="int" />
+    <Property Name="iznosValuta" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="ponudaId" Type="int" />
+    <Property Name="brojFakture" Type="int" />
+  </EntityType>
+  <EntityType Name="fakturaStavke">
+    <Key>
+      <PropertyRef Name="fakturaStavkeId" />
+    </Key>
+    <Property Name="fakturaStavkeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fakturaId" Type="int" />
+    <Property Name="plakatId" Type="int" />
+    <Property Name="trosakId" Type="int" />
+    <Property Name="kolicina" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="cijena" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="rabat" Type="numeric" Precision="5" Scale="3" />
+    <Property Name="cijenaSaPopustom" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="ponudaStavkaId" Type="int" />
+  </EntityType>
+  <EntityType Name="klijent">
+    <Key>
+      <PropertyRef Name="klijentId" />
+    </Key>
+    <Property Name="klijentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="250" />
+    <Property Name="klijentTipId" Type="int" />
+    <Property Name="klijentVrstaId" Type="int" />
+    <Property Name="JIB" Type="varchar" MaxLength="13" />
+    <Property Name="PDVBroj" Type="varchar" MaxLength="13" />
+    <Property Name="posta" Type="varchar" MaxLength="10" />
+    <Property Name="mjestoId" Type="int" />
+    <Property Name="adresa" Type="nvarchar" MaxLength="250" />
+    <Property Name="telefon" Type="varchar" MaxLength="50" />
+    <Property Name="eMail" Type="varchar" MaxLength="100" />
+    <Property Name="kontaktOsoba" Type="nvarchar" MaxLength="100" />
+    <Property Name="odgovornaOsoba" Type="nvarchar" MaxLength="100" />
+    <Property Name="webStranica" Type="varchar" MaxLength="100" />
+    <Property Name="valutaId" Type="int" />
+    <Property Name="isPdv" Type="bit" />
+    <Property Name="aktivan" Type="bit" />
+    <Property Name="jezikId" Type="int" />
+  </EntityType>
+  <EntityType Name="klijentVeze">
+    <Key>
+      <PropertyRef Name="klijentVezaId" />
+    </Key>
+    <Property Name="klijentVezaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="klijentTipVezeId" Type="int" />
+    <Property Name="klijentId" Type="int" />
+    <Property Name="klijentVezaniId" Type="int" />
+    <Property Name="pocetak" Type="date" />
+    <Property Name="kraj" Type="date" />
+  </EntityType>
+  <EntityType Name="link">
+    <Key>
+      <PropertyRef Name="linkId" />
+    </Key>
+    <Property Name="linkId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="500" />
+    <Property Name="datumOd" Type="date" />
+    <Property Name="datumDo" Type="date" />
+    <Property Name="sifra" Type="nvarchar" MaxLength="50" />
+    <Property Name="ponudaId" Type="int" />
+    <Property Name="radniNalogId" Type="int" />
+  </EntityType>
+  <EntityType Name="mrezaPlakat">
+    <Key>
+      <PropertyRef Name="mrezaPlakatId" />
+    </Key>
+    <Property Name="mrezaPlakatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mrezaId" Type="int" />
+    <Property Name="plakatId" Type="int" />
+    <Property Name="datumOd" Type="date" />
+    <Property Name="datumDo" Type="date" />
+  </EntityType>
+  <EntityType Name="plakat">
+    <Key>
+      <PropertyRef Name="plakatId" />
+    </Key>
+    <Property Name="plakatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="inventarniBroj" Type="int" />
+    <Property Name="redniBroj" Type="int" />
+    <Property Name="posta" Type="varchar" MaxLength="19" />
+    <Property Name="mjestoId" Type="int" />
+    <Property Name="adresa" Type="nvarchar" MaxLength="250" />
+    <Property Name="plakatTipId" Type="int" />
+    <Property Name="koordinate" Type="geography" />
+    <Property Name="cijena" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="isOsvjetljen" Type="bit" />
+    <Property Name="isDvostrano" Type="bit" />
+    <Property Name="plakatKategorijaIzvrsnostiId" Type="int" />
+    <Property Name="vlasnikId" Type="int" />
+    <Property Name="cjenovnaKategorijaId" Type="int" />
+    <Property Name="statusPlakatId" Type="int" />
+    <Property Name="dimenzija" Type="nvarchar" MaxLength="50" />
+    <Property Name="vrstaOkviraId" Type="int" />
+    <Property Name="dimenzijaId" Type="int" />
+    <Property Name="turaId" Type="int" />
+    <Property Name="zaposleniId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Europlakat.osn.plakatLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="plakatLog">
+    <Key>
+      <PropertyRef Name="plakatId" />
+      <PropertyRef Name="plakatLogId" />
+    </Key>
+    <Property Name="plakatId" Type="int" Nullable="false" />
+    <Property Name="inventarniBroj" Type="int" />
+    <Property Name="redniBroj" Type="int" />
+    <Property Name="posta" Type="varchar" MaxLength="19" />
+    <Property Name="mjestoId" Type="int" />
+    <Property Name="adresa" Type="nvarchar" MaxLength="250" />
+    <Property Name="plakatTipId" Type="int" />
+    <Property Name="koordinate" Type="geography" />
+    <Property Name="cijena" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="isOsvjetljen" Type="bit" />
+    <Property Name="isDvostrano" Type="bit" />
+    <Property Name="plakatKategorijaIzvrsnostiId" Type="int" />
+    <Property Name="vlasnikId" Type="int" />
+    <Property Name="cjenovnaKategorijaId" Type="int" />
+    <Property Name="statusPlakatId" Type="int" />
+    <Property Name="dimenzija" Type="nvarchar" MaxLength="50" />
+    <Property Name="vrstaOkviraId" Type="int" />
+    <Property Name="dimenzijaId" Type="int" />
+    <Property Name="turaId" Type="int" />
+    <Property Name="zaposleniId" Type="int" />
+    <Property Name="akcija" Type="char" MaxLength="1" />
+    <Property Name="vrijeme" Type="datetime" />
+    <Property Name="plakatLogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="plakatSlika">
+    <Key>
+      <PropertyRef Name="plakatSlika" />
+    </Key>
+    <Property Name="plakatSlika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="plakatId" Type="int" />
+    <Property Name="slika" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="ponuda">
+    <Key>
+      <PropertyRef Name="ponudaId" />
+    </Key>
+    <Property Name="ponudaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="brojZahtjeva" Type="int" />
+    <Property Name="poolId" Type="int" />
+    <Property Name="agencijaId" Type="int" />
+    <Property Name="klijentId" Type="int" />
+    <Property Name="podklijentId" Type="int" />
+    <Property Name="datumZahtjeva" Type="date" />
+    <Property Name="plakatTipId" Type="int" />
+    <Property Name="kampanja" Type="nvarchar" MaxLength="100" />
+    <Property Name="isDatumska" Type="bit" />
+    <Property Name="pocetakKampanje" Type="date" />
+    <Property Name="trajanjeKampanje" Type="int" />
+    <Property Name="budzetKampanje" Type="int" />
+    <Property Name="rabat" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="ponudaStatusId" Type="int" />
+    <Property Name="brojPonude" Type="nvarchar" MaxLength="20" />
+    <Property Name="datumPonude" Type="date" />
+    <Property Name="brojDanaVazenjaPonude" Type="int" />
+    <Property Name="protokol" Type="nvarchar" MaxLength="15" />
+    <Property Name="datumOtkazivanja" Type="date" />
+    <Property Name="brojDanaOtk" Type="int" />
+    <Property Name="datumSlanja" Type="date" />
+    <Property Name="isParcijalnoPlacanje" Type="bit" />
+    <Property Name="rokPlacanja" Type="int" />
+    <Property Name="krajKampanje" Type="date" StoreGeneratedPattern="Computed" />
+    <Property Name="trajanjeKampanjeId" Type="int" />
+    <Property Name="isMreza" Type="bit" />
+    <Property Name="zaposleniId" Type="int" />
+    <Property Name="accountManagerId" Type="int" />
+  </EntityType>
+  <EntityType Name="ponudaKontakt">
+    <Key>
+      <PropertyRef Name="ponudaKontaktId" />
+    </Key>
+    <Property Name="ponudaKontaktId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ponudaId" Type="int" />
+    <Property Name="tipKontaktaId" Type="int" />
+    <Property Name="kontaktOsoba" Type="nvarchar" MaxLength="100" />
+    <Property Name="kontakt" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Europlakat.osn.ponudaLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ponudaLog">
+    <Key>
+      <PropertyRef Name="ponudaLogId" />
+    </Key>
+    <Property Name="ponudaLogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ponudaId" Type="int" />
+    <Property Name="brojZahtjeva" Type="int" />
+    <Property Name="poolId" Type="int" />
+    <Property Name="agencijaId" Type="int" />
+    <Property Name="klijentId" Type="int" />
+    <Property Name="podklijentId" Type="int" />
+    <Property Name="datumZahtjeva" Type="date" />
+    <Property Name="plakatTipId" Type="int" />
+    <Property Name="kampanja" Type="nvarchar" MaxLength="100" />
+    <Property Name="isDatumska" Type="bit" />
+    <Property Name="pocetakKampanje" Type="date" />
+    <Property Name="trajanjeKampanje" Type="int" />
+    <Property Name="budzetKampanje" Type="int" />
+    <Property Name="rabat" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="ponudaStatusId" Type="int" />
+    <Property Name="brojPonude" Type="nvarchar" MaxLength="20" />
+    <Property Name="datumPonude" Type="date" />
+    <Property Name="brojDanaVazenjaPonude" Type="int" />
+    <Property Name="protokol" Type="nvarchar" MaxLength="15" />
+    <Property Name="datumOtkazivanja" Type="date" />
+    <Property Name="brojDanaOtk" Type="int" />
+    <Property Name="datumSlanja" Type="date" />
+    <Property Name="isParcijalnoPlacanje" Type="bit" />
+    <Property Name="rokPlacanja" Type="int" />
+    <Property Name="trajanjeKampanjeId" Type="int" />
+    <Property Name="isMreza" Type="bit" />
+    <Property Name="zaposleniId" Type="int" />
+    <Property Name="akcija" Type="char" MaxLength="1" />
+    <Property Name="vrijeme" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ponudaStavkaDodatak">
+    <Key>
+      <PropertyRef Name="ponudaStavkaDodatakId" />
+    </Key>
+    <Property Name="ponudaStavkaDodatakId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ponudaStavkeId" Type="int" />
+    <Property Name="trosakId" Type="int" />
+    <Property Name="datumZahtjeva" Type="date" />
+    <Property Name="datumRealizacije" Type="date" />
+    <Property Name="cijena" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="opis" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ponudaStavke">
+    <Key>
+      <PropertyRef Name="ponudaStavkeId" />
+    </Key>
+    <Property Name="ponudaStavkeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ponudaId" Type="int" />
+    <Property Name="plakatId" Type="int" />
+    <Property Name="trosakId" Type="int" />
+    <Property Name="kolicina" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="cijena" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="rabat" Type="numeric" Precision="5" Scale="3" />
+    <Property Name="cijenaSaPopustom" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="cijenaDan" Type="numeric" Precision="9" Scale="3" />
+    <Property Name="mrezaId" Type="int" />
+    <Property Name="zaposleniId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Europlakat.osn.ponudaStavkeLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ponudaStavkeLog">
+    <Key>
+      <PropertyRef Name="ponudaStavkeLogId" />
+    </Key>
+    <Property Name="ponudaStavkeId" Type="int" />
+    <Property Name="ponudaId" Type="int" />
+    <Property Name="plakatId" Type="int" />
+    <Property Name="trosakId" Type="int" />
+    <Property Name="kolicina" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="cijena" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="rabat" Type="numeric" Precision="5" Scale="3" />
+    <Property Name="cijenaSaPopustom" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="mrezaId" Type="int" />
+    <Property Name="zaposleniId" Type="int" />
+    <Property Name="akcija" Type="char" MaxLength="1" />
+    <Property Name="vrijeme" Type="datetime" />
+    <Property Name="ponudaStavkeLogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="porukaSistemska">
+    <Key>
+      <PropertyRef Name="porukaSistemskaId" />
+    </Key>
+    <Property Name="porukaSistemskaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="zaposleniId" Type="int" />
+    <Property Name="vrijeme" Type="datetime" />
+    <Property Name="sadrzaj" Type="nvarchar" MaxLength="800" />
+    <Property Name="isPoslano" Type="bit" />
+    <Property Name="ponudaId" Type="int" />
+    <Property Name="putanja" Type="nvarchar" MaxLength="800" />
+    <Property Name="putanjaUvjeti" Type="nvarchar" MaxLength="800" />
+    <Property Name="isAccount" Type="bit" />
+    <Property Name="radniNalogId" Type="int" />
+  </EntityType>
+  <EntityType Name="radniNalog">
+    <Key>
+      <PropertyRef Name="radniNalogId" />
+    </Key>
+    <Property Name="radniNalogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="datum" Type="date" />
+  </EntityType>
+  <EntityType Name="radniNalogSlika">
+    <Key>
+      <PropertyRef Name="radniNalogSlikaId" />
+    </Key>
+    <Property Name="radniNalogSlikaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="radniNalogStavkaId" Type="int" />
+    <Property Name="slika" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="radniNalogStavke">
+    <Key>
+      <PropertyRef Name="radniNalogStavke" />
+    </Key>
+    <Property Name="radniNalogStavke" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="radniNalogId" Type="int" />
+    <Property Name="ponudaStavkaId" Type="int" />
+    <Property Name="idejno" Type="nvarchar" MaxLength="200" />
+    <Property Name="isPrijeLijepiti" Type="bit" />
+    <Property Name="opis" Type="nvarchar" MaxLength="250" />
+    <Property Name="isFotografisano" Type="bit" />
+    <Property Name="turaSedmicaId" Type="int" />
+    <Property Name="isDemontirano" Type="bit" />
+    <Property Name="zaposleniId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Europlakat.osn.radniNalogStavkeLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="radniNalogStavkeLog">
+    <Key>
+      <PropertyRef Name="radniNalogStavkeLog" />
+    </Key>
+    <Property Name="radniNalogStavkeLog" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="radniNalogStavke" Type="int" />
+    <Property Name="radniNalogId" Type="int" />
+    <Property Name="ponudaStavkaId" Type="int" />
+    <Property Name="idejno" Type="nvarchar" MaxLength="200" />
+    <Property Name="isPrijeLijepiti" Type="bit" />
+    <Property Name="opis" Type="nvarchar" MaxLength="250" />
+    <Property Name="isFotografisano" Type="bit" />
+    <Property Name="turaSedmicaId" Type="int" />
+    <Property Name="isDemontirano" Type="bit" />
+    <Property Name="zaposleniId" Type="int" />
+    <Property Name="akcija" Type="char" MaxLength="1" />
+    <Property Name="vrijeme" Type="datetime" />
+  </EntityType>
+  <EntityType Name="trosak">
+    <Key>
+      <PropertyRef Name="trosakId" />
+    </Key>
+    <Property Name="trosakId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="100" />
+    <Property Name="cijena" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="aktivan" Type="bit" />
+  </EntityType>
+  <EntityType Name="turaSedmica">
+    <Key>
+      <PropertyRef Name="turaSedmicaId" />
+    </Key>
+    <Property Name="turaSedmicaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="turaId" Type="int" />
+    <Property Name="sedmicaId" Type="int" />
+  </EntityType>
+  <EntityType Name="turaSedmicaZaposleni">
+    <Key>
+      <PropertyRef Name="turaSedmicaZaposleniId" />
+    </Key>
+    <Property Name="turaSedmicaZaposleniId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="turaSedmicaId" Type="int" />
+    <Property Name="zaposleniId" Type="int" />
+  </EntityType>
+  <EntityType Name="ugovor">
+    <Key>
+      <PropertyRef Name="ugovorId" />
+    </Key>
+    <Property Name="ugovorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="datumUgovora" Type="date" />
+    <Property Name="vlasnikId" Type="int" />
+    <Property Name="pocetak" Type="date" />
+    <Property Name="kraj" Type="date" />
+    <Property Name="vrijednost" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="vrstaUgovoraId" Type="int" />
+    <Property Name="brojUgovora" Type="nvarchar" MaxLength="50" />
+    <Property Name="zaposleniId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Europlakat.osn.ugovorLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ugovorLog">
+    <Key>
+      <PropertyRef Name="ugovorId" />
+      <PropertyRef Name="ugovorLogId" />
+    </Key>
+    <Property Name="ugovorId" Type="int" Nullable="false" />
+    <Property Name="datumUgovora" Type="date" />
+    <Property Name="vlasnikId" Type="int" />
+    <Property Name="pocetak" Type="date" />
+    <Property Name="kraj" Type="date" />
+    <Property Name="vrijednost" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="vrstaUgovoraId" Type="int" />
+    <Property Name="brojUgovora" Type="nvarchar" MaxLength="50" />
+    <Property Name="zaposleniId" Type="int" />
+    <Property Name="akcija" Type="char" MaxLength="1" />
+    <Property Name="vrijeme" Type="datetime" />
+    <Property Name="ugovorLogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ugovorStavke">
+    <Key>
+      <PropertyRef Name="ugovorStavkaId" />
+    </Key>
+    <Property Name="ugovorStavkaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ugovorId" Type="int" />
+    <Property Name="plakatId" Type="int" />
+    <Property Name="cijena" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="zaposleniId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Europlakat.osn.ugovorStavkeLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ugovorStavkeLog">
+    <Key>
+      <PropertyRef Name="ugovorStavkaId" />
+      <PropertyRef Name="ugovorStavkaLogId" />
+    </Key>
+    <Property Name="ugovorStavkaId" Type="int" Nullable="false" />
+    <Property Name="ugovorId" Type="int" />
+    <Property Name="plakatId" Type="int" />
+    <Property Name="cijena" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="zaposleniId" Type="int" />
+    <Property Name="akcija" Type="char" MaxLength="1" />
+    <Property Name="vrijeme" Type="datetime" />
+    <Property Name="ugovorStavkaLogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="zaposleni">
+    <Key>
+      <PropertyRef Name="zaposleniId" />
+    </Key>
+    <Property Name="zaposleniId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ime" Type="nvarchar" MaxLength="50" />
+    <Property Name="prezime" Type="nvarchar" MaxLength="50" />
+    <Property Name="jmb" Type="char" MaxLength="13" />
+    <Property Name="datumZaposlenja" Type="date" />
+    <Property Name="datumKrajaZaposlenja" Type="date" />
+    <Property Name="telefon" Type="varchar" MaxLength="50" />
+    <Property Name="eMail" Type="varchar" MaxLength="50" />
+    <Property Name="posta" Type="varchar" MaxLength="10" />
+    <Property Name="mjestoId" Type="int" />
+    <Property Name="aspNetUserId" Type="nvarchar" MaxLength="128" />
+    <Property Name="aktivan" Type="bit" />
+  </EntityType>
+  <EntityType Name="cjenovnaKategorija">
+    <Key>
+      <PropertyRef Name="cjenovnaKategorijaId" />
+    </Key>
+    <Property Name="cjenovnaKategorijaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="aktivan" Type="bit" />
+    <Property Name="cijena" Type="numeric" Precision="9" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Europlakat.sfr.cjenovnaKategorijaLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="cjenovnaKategorijaLog">
+    <Key>
+      <PropertyRef Name="cjenovnaKategorijaLogId" />
+      <PropertyRef Name="cjenovnaKategorijaId" />
+    </Key>
+    <Property Name="cjenovnaKategorijaLogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cjenovnaKategorijaId" Type="int" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="aktivan" Type="bit" />
+    <Property Name="cijena" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="vrijeme" Type="datetime" />
+    <Property Name="akcija" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="dimenzija">
+    <Key>
+      <PropertyRef Name="dimenzijaId" />
+    </Key>
+    <Property Name="dimenzijaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="aktivan" Type="bit" />
+  </EntityType>
+  <EntityType Name="jezik">
+    <Key>
+      <PropertyRef Name="jezikId" />
+    </Key>
+    <Property Name="jezikId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="oznaka" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="klijentTip">
+    <Key>
+      <PropertyRef Name="klijentTipId" />
+    </Key>
+    <Property Name="klijentTipId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="aktivan" Type="bit" />
+  </EntityType>
+  <EntityType Name="klijentTipVeza">
+    <Key>
+      <PropertyRef Name="klijentTipVezaId" />
+    </Key>
+    <Property Name="klijentTipVezaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="aktivan" Type="bit" />
+  </EntityType>
+  <EntityType Name="klijentVrsta">
+    <Key>
+      <PropertyRef Name="klijentVrstaId" />
+    </Key>
+    <Property Name="klijentVrstaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="aktivan" Type="bit" />
+  </EntityType>
+  <EntityType Name="kurs">
+    <Key>
+      <PropertyRef Name="kursId" />
+    </Key>
+    <Property Name="kursId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="valutaId" Type="int" />
+    <Property Name="datum" Type="date" />
+    <Property Name="kurs" Type="numeric" Precision="16" Scale="9" />
+  </EntityType>
+  <EntityType Name="mjesto">
+    <Key>
+      <PropertyRef Name="mjestoId" />
+    </Key>
+    <Property Name="mjestoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="regijaId" Type="int" />
+    <Property Name="posta" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="mreza">
+    <Key>
+      <PropertyRef Name="mrezaId" />
+    </Key>
+    <Property Name="mrezaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="aktivan" Type="bit" />
+  </EntityType>
+  <EntityType Name="plakatKategorijaIzvrsnosti">
+    <Key>
+      <PropertyRef Name="plakatKategorijaIzvrsnostiId" />
+    </Key>
+    <Property Name="plakatKategorijaIzvrsnostiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="100" />
+    <Property Name="aktivan" Type="bit" />
+  </EntityType>
+  <EntityType Name="plakatTip">
+    <Key>
+      <PropertyRef Name="plakatTipId" />
+    </Key>
+    <Property Name="plakatTipId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="oznaka" Type="varchar" MaxLength="5" />
+    <Property Name="minimalnoVrijeme" Type="int" />
+    <Property Name="cjenovnaKategorijaId" Type="int" />
+    <Property Name="zaposleniId" Type="int" />
+  </EntityType>
+  <EntityType Name="plakatTipDimenzija">
+    <Key>
+      <PropertyRef Name="plakatTipDimenzijaId" />
+    </Key>
+    <Property Name="plakatTipDimenzijaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="oznaka" Type="varchar" MaxLength="5" />
+    <Property Name="dimenzija" Type="nvarchar" MaxLength="50" />
+    <Property Name="minimalnoVrijeme" Type="int" />
+    <Property Name="plakatTipId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Europlakat.sfr.plakatTipLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="plakatTipLog">
+    <Key>
+      <PropertyRef Name="plakatTipId" />
+      <PropertyRef Name="plakatTipLogId" />
+    </Key>
+    <Property Name="plakatTipId" Type="int" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="oznaka" Type="varchar" MaxLength="5" />
+    <Property Name="minimalnoVrijeme" Type="int" />
+    <Property Name="cjenovnaKategorijaId" Type="int" />
+    <Property Name="zaposleniId" Type="int" />
+    <Property Name="akcija" Type="char" MaxLength="1" />
+    <Property Name="vrijeme" Type="datetime" />
+    <Property Name="plakatTipLogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ponudaStatus">
+    <Key>
+      <PropertyRef Name="ponudaStatusId" />
+    </Key>
+    <Property Name="ponudaStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="boja" Type="varchar" MaxLength="10" />
+    <Property Name="zaposleniId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Europlakat.sfr.ponudaStatusLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ponudaStatusLog">
+    <Key>
+      <PropertyRef Name="ponudaStatusId" />
+      <PropertyRef Name="ponudaStatusLogId" />
+    </Key>
+    <Property Name="ponudaStatusId" Type="int" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="boja" Type="varchar" MaxLength="10" />
+    <Property Name="zaposleniId" Type="int" />
+    <Property Name="akcija" Type="char" MaxLength="1" />
+    <Property Name="vrijeme" Type="datetime" />
+    <Property Name="ponudaStatusLogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="regija">
+    <Key>
+      <PropertyRef Name="regijaId" />
+    </Key>
+    <Property Name="regijaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="100" />
+    <Property Name="sjediste" Type="nvarchar" MaxLength="50" />
+    <Property Name="oznaka" Type="nvarchar" MaxLength="10" />
+    <Property Name="aktivan" Type="bit" />
+  </EntityType>
+  <EntityType Name="sedmica">
+    <Key>
+      <PropertyRef Name="sedmicaId" />
+    </Key>
+    <Property Name="sedmicaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="brojSedmice" Type="int" />
+    <Property Name="datumOd" Type="date" />
+    <Property Name="datumDo" Type="date" />
+    <Property Name="godina" Type="int" />
+  </EntityType>
+  <EntityType Name="statusPlakat">
+    <Key>
+      <PropertyRef Name="statusPlakatId" />
+    </Key>
+    <Property Name="statusPlakatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="oznaka" Type="char" MaxLength="1" />
+    <Property Name="aktivan" Type="bit" />
+  </EntityType>
+  <EntityType Name="tipKontakta">
+    <Key>
+      <PropertyRef Name="tipKontaktaId" />
+    </Key>
+    <Property Name="tipKontaktaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="aktivan" Type="bit" />
+  </EntityType>
+  <EntityType Name="trajanjeKampanje">
+    <Key>
+      <PropertyRef Name="trajanjeKampanjeId" />
+    </Key>
+    <Property Name="trajanjeKampanjeId" Type="int" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="trajanje" Type="int" />
+    <Property Name="isAktivan" Type="bit" />
+  </EntityType>
+  <EntityType Name="tura">
+    <Key>
+      <PropertyRef Name="turaId" />
+    </Key>
+    <Property Name="turaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="100" />
+    <Property Name="aktivan" Type="bit" />
+  </EntityType>
+  <EntityType Name="valuta">
+    <Key>
+      <PropertyRef Name="valutaId" />
+    </Key>
+    <Property Name="valutaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="oznaka" Type="varchar" MaxLength="10" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="vrstaOkvira">
+    <Key>
+      <PropertyRef Name="vrstaOkviraId" />
+    </Key>
+    <Property Name="vrstaOkviraId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="50" />
+    <Property Name="isAktivan" Type="bit" />
+  </EntityType>
+  <EntityType Name="vrstaUgovora">
+    <Key>
+      <PropertyRef Name="VrstaUgovoraId" />
+    </Key>
+    <Property Name="VrstaUgovoraId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar" MaxLength="500" />
+    <Property Name="aktivan" Type="bit" />
+    <Property Name="napomena" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="log">
+    <Key>
+      <PropertyRef Name="logId" />
+    </Key>
+    <Property Name="logId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="vrijeme" Type="datetime" />
+    <Property Name="poruka" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <Association Name="FK__ponudaKon__ponud__3864608B">
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="0..1" />
+    <End Role="ponudaKontakt" Type="Self.ponudaKontakt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ponuda">
+        <PropertyRef Name="ponudaId" />
+      </Principal>
+      <Dependent Role="ponudaKontakt">
+        <PropertyRef Name="ponudaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ponudaKon__tipKo__395884C4">
+    <End Role="tipKontakta" Type="Self.tipKontakta" Multiplicity="0..1" />
+    <End Role="ponudaKontakt" Type="Self.ponudaKontakt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipKontakta">
+        <PropertyRef Name="tipKontaktaId" />
+      </Principal>
+      <Dependent Role="ponudaKontakt">
+        <PropertyRef Name="tipKontaktaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ponudaSta__ponud__3B40CD36">
+    <End Role="ponudaStavke" Type="Self.ponudaStavke" Multiplicity="0..1" />
+    <End Role="ponudaStavkaDodatak" Type="Self.ponudaStavkaDodatak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ponudaStavke">
+        <PropertyRef Name="ponudaStavkeId" />
+      </Principal>
+      <Dependent Role="ponudaStavkaDodatak">
+        <PropertyRef Name="ponudaStavkeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ponudaSta__trosa__3C34F16F">
+    <End Role="trosak" Type="Self.trosak" Multiplicity="0..1" />
+    <End Role="ponudaStavkaDodatak" Type="Self.ponudaStavkaDodatak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="trosak">
+        <PropertyRef Name="trosakId" />
+      </Principal>
+      <Dependent Role="ponudaStavkaDodatak">
+        <PropertyRef Name="trosakId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__radniNalo__turaS__7DCDAAA2">
+    <End Role="turaSedmica" Type="Self.turaSedmica" Multiplicity="0..1" />
+    <End Role="radniNalogStavke" Type="Self.radniNalogStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="turaSedmica">
+        <PropertyRef Name="turaSedmicaId" />
+      </Principal>
+      <Dependent Role="radniNalogStavke">
+        <PropertyRef Name="turaSedmicaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__turaSedmi__sedmi__7814D14C">
+    <End Role="sedmica" Type="Self.sedmica" Multiplicity="0..1" />
+    <End Role="turaSedmica" Type="Self.turaSedmica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sedmica">
+        <PropertyRef Name="sedmicaId" />
+      </Principal>
+      <Dependent Role="turaSedmica">
+        <PropertyRef Name="sedmicaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__turaSedmi__turaI__7908F585">
+    <End Role="tura" Type="Self.tura" Multiplicity="0..1" />
+    <End Role="turaSedmica" Type="Self.turaSedmica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tura">
+        <PropertyRef Name="turaId" />
+      </Principal>
+      <Dependent Role="turaSedmica">
+        <PropertyRef Name="turaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__turaSedmi__turaS__7BE56230">
+    <End Role="turaSedmica" Type="Self.turaSedmica" Multiplicity="0..1" />
+    <End Role="turaSedmicaZaposleni" Type="Self.turaSedmicaZaposleni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="turaSedmica">
+        <PropertyRef Name="turaSedmicaId" />
+      </Principal>
+      <Dependent Role="turaSedmicaZaposleni">
+        <PropertyRef Name="turaSedmicaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__turaSedmi__zapos__7CD98669">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="turaSedmicaZaposleni" Type="Self.turaSedmicaZaposleni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="turaSedmicaZaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ugovor__vrstaUgo__37703C52">
+    <End Role="vrstaUgovora" Type="Self.vrstaUgovora" Multiplicity="0..1" />
+    <End Role="ugovor" Type="Self.ugovor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vrstaUgovora">
+        <PropertyRef Name="VrstaUgovoraId" />
+      </Principal>
+      <Dependent Role="ugovor">
+        <PropertyRef Name="vrstaUgovoraId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_faktura_klijent">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="faktura" Type="Self.faktura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="faktura">
+        <PropertyRef Name="klijentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_faktura_ponuda">
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="0..1" />
+    <End Role="faktura" Type="Self.faktura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ponuda">
+        <PropertyRef Name="ponudaId" />
+      </Principal>
+      <Dependent Role="faktura">
+        <PropertyRef Name="ponudaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_faktura_valuta">
+    <End Role="valuta" Type="Self.valuta" Multiplicity="0..1" />
+    <End Role="faktura" Type="Self.faktura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="valuta">
+        <PropertyRef Name="valutaId" />
+      </Principal>
+      <Dependent Role="faktura">
+        <PropertyRef Name="valutaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_fakturastavke_faktura">
+    <End Role="faktura" Type="Self.faktura" Multiplicity="0..1" />
+    <End Role="fakturaStavke" Type="Self.fakturaStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="faktura">
+        <PropertyRef Name="fakturaId" />
+      </Principal>
+      <Dependent Role="fakturaStavke">
+        <PropertyRef Name="fakturaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_fakturaStavke_plakat">
+    <End Role="plakat" Type="Self.plakat" Multiplicity="0..1" />
+    <End Role="fakturaStavke" Type="Self.fakturaStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plakat">
+        <PropertyRef Name="plakatId" />
+      </Principal>
+      <Dependent Role="fakturaStavke">
+        <PropertyRef Name="plakatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_fakturaStavke_trosak">
+    <End Role="trosak" Type="Self.trosak" Multiplicity="0..1" />
+    <End Role="fakturaStavke" Type="Self.fakturaStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="trosak">
+        <PropertyRef Name="trosakId" />
+      </Principal>
+      <Dependent Role="fakturaStavke">
+        <PropertyRef Name="trosakId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_klijent_jezik">
+    <End Role="jezik" Type="Self.jezik" Multiplicity="0..1" />
+    <End Role="klijent" Type="Self.klijent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="jezik">
+        <PropertyRef Name="jezikId" />
+      </Principal>
+      <Dependent Role="klijent">
+        <PropertyRef Name="jezikId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_klijent_mjesto">
+    <End Role="mjesto" Type="Self.mjesto" Multiplicity="0..1" />
+    <End Role="klijent" Type="Self.klijent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mjesto">
+        <PropertyRef Name="mjestoId" />
+      </Principal>
+      <Dependent Role="klijent">
+        <PropertyRef Name="mjestoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_klijent_tip">
+    <End Role="klijentTip" Type="Self.klijentTip" Multiplicity="0..1" />
+    <End Role="klijent" Type="Self.klijent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijentTip">
+        <PropertyRef Name="klijentTipId" />
+      </Principal>
+      <Dependent Role="klijent">
+        <PropertyRef Name="klijentTipId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_klijent_valuta">
+    <End Role="valuta" Type="Self.valuta" Multiplicity="0..1" />
+    <End Role="klijent" Type="Self.klijent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="valuta">
+        <PropertyRef Name="valutaId" />
+      </Principal>
+      <Dependent Role="klijent">
+        <PropertyRef Name="valutaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_klijent_vrsta">
+    <End Role="klijentVrsta" Type="Self.klijentVrsta" Multiplicity="0..1" />
+    <End Role="klijent" Type="Self.klijent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijentVrsta">
+        <PropertyRef Name="klijentVrstaId" />
+      </Principal>
+      <Dependent Role="klijent">
+        <PropertyRef Name="klijentVrstaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_klijentVeza_klijent">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="klijentVeze" Type="Self.klijentVeze" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="klijentVeze">
+        <PropertyRef Name="klijentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_klijentVeza_klijentVezani">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="klijentVeze" Type="Self.klijentVeze" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="klijentVeze">
+        <PropertyRef Name="klijentVezaniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_klijentVeza_tip">
+    <End Role="klijentTipVeza" Type="Self.klijentTipVeza" Multiplicity="0..1" />
+    <End Role="klijentVeze" Type="Self.klijentVeze" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijentTipVeza">
+        <PropertyRef Name="klijentTipVezaId" />
+      </Principal>
+      <Dependent Role="klijentVeze">
+        <PropertyRef Name="klijentTipVezeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_kurs_valuta">
+    <End Role="valuta" Type="Self.valuta" Multiplicity="0..1" />
+    <End Role="kurs" Type="Self.kurs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="valuta">
+        <PropertyRef Name="valutaId" />
+      </Principal>
+      <Dependent Role="kurs">
+        <PropertyRef Name="valutaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_link_ponuda">
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="0..1" />
+    <End Role="link" Type="Self.link" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ponuda">
+        <PropertyRef Name="ponudaId" />
+      </Principal>
+      <Dependent Role="link">
+        <PropertyRef Name="ponudaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_link_radniNalog">
+    <End Role="radniNalog" Type="Self.radniNalog" Multiplicity="0..1" />
+    <End Role="link" Type="Self.link" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="radniNalog">
+        <PropertyRef Name="radniNalogId" />
+      </Principal>
+      <Dependent Role="link">
+        <PropertyRef Name="radniNalogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mjesto_regija">
+    <End Role="regija" Type="Self.regija" Multiplicity="0..1" />
+    <End Role="mjesto" Type="Self.mjesto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="regija">
+        <PropertyRef Name="regijaId" />
+      </Principal>
+      <Dependent Role="mjesto">
+        <PropertyRef Name="regijaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mrezaPlakat_mreza">
+    <End Role="mreza" Type="Self.mreza" Multiplicity="0..1" />
+    <End Role="mrezaPlakat" Type="Self.mrezaPlakat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mreza">
+        <PropertyRef Name="mrezaId" />
+      </Principal>
+      <Dependent Role="mrezaPlakat">
+        <PropertyRef Name="mrezaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mrezaPlakat_plakat">
+    <End Role="plakat" Type="Self.plakat" Multiplicity="0..1" />
+    <End Role="mrezaPlakat" Type="Self.mrezaPlakat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plakat">
+        <PropertyRef Name="plakatId" />
+      </Principal>
+      <Dependent Role="mrezaPlakat">
+        <PropertyRef Name="plakatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plakat_cjenovnaKategorija">
+    <End Role="cjenovnaKategorija" Type="Self.cjenovnaKategorija" Multiplicity="0..1" />
+    <End Role="plakat" Type="Self.plakat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cjenovnaKategorija">
+        <PropertyRef Name="cjenovnaKategorijaId" />
+      </Principal>
+      <Dependent Role="plakat">
+        <PropertyRef Name="cjenovnaKategorijaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plakat_dimenzija">
+    <End Role="dimenzija" Type="Self.dimenzija" Multiplicity="0..1" />
+    <End Role="plakat" Type="Self.plakat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dimenzija">
+        <PropertyRef Name="dimenzijaId" />
+      </Principal>
+      <Dependent Role="plakat">
+        <PropertyRef Name="dimenzijaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plakat_kategorija">
+    <End Role="plakatKategorijaIzvrsnosti" Type="Self.plakatKategorijaIzvrsnosti" Multiplicity="0..1" />
+    <End Role="plakat" Type="Self.plakat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plakatKategorijaIzvrsnosti">
+        <PropertyRef Name="plakatKategorijaIzvrsnostiId" />
+      </Principal>
+      <Dependent Role="plakat">
+        <PropertyRef Name="plakatKategorijaIzvrsnostiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plakat_mjesto">
+    <End Role="mjesto" Type="Self.mjesto" Multiplicity="0..1" />
+    <End Role="plakat" Type="Self.plakat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mjesto">
+        <PropertyRef Name="mjestoId" />
+      </Principal>
+      <Dependent Role="plakat">
+        <PropertyRef Name="mjestoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plakat_statusPlakat">
+    <End Role="statusPlakat" Type="Self.statusPlakat" Multiplicity="0..1" />
+    <End Role="plakat" Type="Self.plakat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="statusPlakat">
+        <PropertyRef Name="statusPlakatId" />
+      </Principal>
+      <Dependent Role="plakat">
+        <PropertyRef Name="statusPlakatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plakat_tip">
+    <End Role="plakatTip" Type="Self.plakatTip" Multiplicity="0..1" />
+    <End Role="plakat" Type="Self.plakat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plakatTip">
+        <PropertyRef Name="plakatTipId" />
+      </Principal>
+      <Dependent Role="plakat">
+        <PropertyRef Name="plakatTipId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plakat_tura">
+    <End Role="tura" Type="Self.tura" Multiplicity="0..1" />
+    <End Role="plakat" Type="Self.plakat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tura">
+        <PropertyRef Name="turaId" />
+      </Principal>
+      <Dependent Role="plakat">
+        <PropertyRef Name="turaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plakat_vlasnik">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="plakat" Type="Self.plakat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="plakat">
+        <PropertyRef Name="vlasnikId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plakat_vrstaOkvira">
+    <End Role="vrstaOkvira" Type="Self.vrstaOkvira" Multiplicity="0..1" />
+    <End Role="plakat" Type="Self.plakat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vrstaOkvira">
+        <PropertyRef Name="vrstaOkviraId" />
+      </Principal>
+      <Dependent Role="plakat">
+        <PropertyRef Name="vrstaOkviraId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plakat_zaposleni">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="plakat" Type="Self.plakat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="plakat">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plakatSlika_plakat">
+    <End Role="plakat" Type="Self.plakat" Multiplicity="0..1" />
+    <End Role="plakatSlika" Type="Self.plakatSlika" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plakat">
+        <PropertyRef Name="plakatId" />
+      </Principal>
+      <Dependent Role="plakatSlika">
+        <PropertyRef Name="plakatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plakatTip_cjenovnaKategorija">
+    <End Role="cjenovnaKategorija" Type="Self.cjenovnaKategorija" Multiplicity="0..1" />
+    <End Role="plakatTip" Type="Self.plakatTip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cjenovnaKategorija">
+        <PropertyRef Name="cjenovnaKategorijaId" />
+      </Principal>
+      <Dependent Role="plakatTip">
+        <PropertyRef Name="cjenovnaKategorijaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plakatTip_zaposleni">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="plakatTip" Type="Self.plakatTip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="plakatTip">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponuda_agencija">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="ponuda">
+        <PropertyRef Name="agencijaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponuda_klijent">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="ponuda">
+        <PropertyRef Name="klijentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponuda_plakatTip">
+    <End Role="plakatTip" Type="Self.plakatTip" Multiplicity="0..1" />
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plakatTip">
+        <PropertyRef Name="plakatTipId" />
+      </Principal>
+      <Dependent Role="ponuda">
+        <PropertyRef Name="plakatTipId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponuda_podklijent">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="ponuda">
+        <PropertyRef Name="podklijentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponuda_pool">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="ponuda">
+        <PropertyRef Name="poolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponuda_status">
+    <End Role="ponudaStatus" Type="Self.ponudaStatus" Multiplicity="0..1" />
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ponudaStatus">
+        <PropertyRef Name="ponudaStatusId" />
+      </Principal>
+      <Dependent Role="ponuda">
+        <PropertyRef Name="ponudaStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponuda_trajanjeKampanje">
+    <End Role="trajanjeKampanje" Type="Self.trajanjeKampanje" Multiplicity="0..1" />
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="trajanjeKampanje">
+        <PropertyRef Name="trajanjeKampanjeId" />
+      </Principal>
+      <Dependent Role="ponuda">
+        <PropertyRef Name="trajanjeKampanjeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponuda_zaposleni">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="ponuda">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponuda_zaposleni1">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="ponuda">
+        <PropertyRef Name="accountManagerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponudaStatus_zaposleni">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="ponudaStatus" Type="Self.ponudaStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="ponudaStatus">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponudaStavke_mreza">
+    <End Role="mreza" Type="Self.mreza" Multiplicity="0..1" />
+    <End Role="ponudaStavke" Type="Self.ponudaStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mreza">
+        <PropertyRef Name="mrezaId" />
+      </Principal>
+      <Dependent Role="ponudaStavke">
+        <PropertyRef Name="mrezaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponudaStavke_plakat">
+    <End Role="plakat" Type="Self.plakat" Multiplicity="0..1" />
+    <End Role="ponudaStavke" Type="Self.ponudaStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plakat">
+        <PropertyRef Name="plakatId" />
+      </Principal>
+      <Dependent Role="ponudaStavke">
+        <PropertyRef Name="plakatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponudaStavke_ponuda">
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="0..1" />
+    <End Role="ponudaStavke" Type="Self.ponudaStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ponuda">
+        <PropertyRef Name="ponudaId" />
+      </Principal>
+      <Dependent Role="ponudaStavke">
+        <PropertyRef Name="ponudaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponudaStavke_trosak">
+    <End Role="trosak" Type="Self.trosak" Multiplicity="0..1" />
+    <End Role="ponudaStavke" Type="Self.ponudaStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="trosak">
+        <PropertyRef Name="trosakId" />
+      </Principal>
+      <Dependent Role="ponudaStavke">
+        <PropertyRef Name="trosakId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ponudaStavke_zaposleni">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="ponudaStavke" Type="Self.ponudaStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="ponudaStavke">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_porukaSistemska_ponuda">
+    <End Role="ponuda" Type="Self.ponuda" Multiplicity="0..1" />
+    <End Role="porukaSistemska" Type="Self.porukaSistemska" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ponuda">
+        <PropertyRef Name="ponudaId" />
+      </Principal>
+      <Dependent Role="porukaSistemska">
+        <PropertyRef Name="ponudaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_porukaSistemska_radniNalog">
+    <End Role="radniNalog" Type="Self.radniNalog" Multiplicity="0..1" />
+    <End Role="porukaSistemska" Type="Self.porukaSistemska" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="radniNalog">
+        <PropertyRef Name="radniNalogId" />
+      </Principal>
+      <Dependent Role="porukaSistemska">
+        <PropertyRef Name="radniNalogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_porukaSistemska_zaposleni">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="porukaSistemska" Type="Self.porukaSistemska" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="porukaSistemska">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_radniNalog_ponudaStavka">
+    <End Role="ponudaStavke" Type="Self.ponudaStavke" Multiplicity="0..1" />
+    <End Role="radniNalogStavke" Type="Self.radniNalogStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ponudaStavke">
+        <PropertyRef Name="ponudaStavkeId" />
+      </Principal>
+      <Dependent Role="radniNalogStavke">
+        <PropertyRef Name="ponudaStavkaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_radniNalogSlika_radniNalogStavke">
+    <End Role="radniNalogStavke" Type="Self.radniNalogStavke" Multiplicity="0..1" />
+    <End Role="radniNalogSlika" Type="Self.radniNalogSlika" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="radniNalogStavke">
+        <PropertyRef Name="radniNalogStavke" />
+      </Principal>
+      <Dependent Role="radniNalogSlika">
+        <PropertyRef Name="radniNalogStavkaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_radniNalogStavke_radniNalog">
+    <End Role="radniNalog" Type="Self.radniNalog" Multiplicity="0..1" />
+    <End Role="radniNalogStavke" Type="Self.radniNalogStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="radniNalog">
+        <PropertyRef Name="radniNalogId" />
+      </Principal>
+      <Dependent Role="radniNalogStavke">
+        <PropertyRef Name="radniNalogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_radniNalogStavke_zaposleni">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="radniNalogStavke" Type="Self.radniNalogStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="radniNalogStavke">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stavke_plakat">
+    <End Role="plakat" Type="Self.plakat" Multiplicity="0..1" />
+    <End Role="ugovorStavke" Type="Self.ugovorStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plakat">
+        <PropertyRef Name="plakatId" />
+      </Principal>
+      <Dependent Role="ugovorStavke">
+        <PropertyRef Name="plakatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stavke_ugovor">
+    <End Role="ugovor" Type="Self.ugovor" Multiplicity="0..1" />
+    <End Role="ugovorStavke" Type="Self.ugovorStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ugovor">
+        <PropertyRef Name="ugovorId" />
+      </Principal>
+      <Dependent Role="ugovorStavke">
+        <PropertyRef Name="ugovorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stavkeFakture_stavkePonude">
+    <End Role="ponudaStavke" Type="Self.ponudaStavke" Multiplicity="0..1" />
+    <End Role="fakturaStavke" Type="Self.fakturaStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ponudaStavke">
+        <PropertyRef Name="ponudaStavkeId" />
+      </Principal>
+      <Dependent Role="fakturaStavke">
+        <PropertyRef Name="ponudaStavkaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ugovor_Klijent">
+    <End Role="klijent" Type="Self.klijent" Multiplicity="0..1" />
+    <End Role="ugovor" Type="Self.ugovor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="klijent">
+        <PropertyRef Name="klijentId" />
+      </Principal>
+      <Dependent Role="ugovor">
+        <PropertyRef Name="vlasnikId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ugovor_zaposleni">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="ugovor" Type="Self.ugovor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="ugovor">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ugovorStavke_zaposleni">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="0..1" />
+    <End Role="ugovorStavke" Type="Self.ugovorStavke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="zaposleniId" />
+      </Principal>
+      <Dependent Role="ugovorStavke">
+        <PropertyRef Name="zaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_zaposleni_mjesto">
+    <End Role="mjesto" Type="Self.mjesto" Multiplicity="0..1" />
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mjesto">
+        <PropertyRef Name="mjestoId" />
+      </Principal>
+      <Dependent Role="zaposleni">
+        <PropertyRef Name="mjestoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="importPlakat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="import" />
+  <Function Name="checkPoslanePonude" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn" />
+  <Function Name="createFaktura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="ponudaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="demontirajPlakat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="radniNalogStavke" Type="int" Mode="In" />
+    <Parameter Name="logovaniId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Fn_getBoja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn" ReturnType="varchar">
+    <Parameter Name="plakatId" Type="int" Mode="In" />
+    <Parameter Name="datumOd" Type="date" Mode="In" />
+    <Parameter Name="datumDo" Type="date" Mode="In" />
+  </Function>
+  <Function Name="Fn_getBrojFotografisanih" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn" ReturnType="int">
+    <Parameter Name="radniNalogId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fn_getPlakatKorisnik" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn" ReturnType="nvarchar">
+    <Parameter Name="plakatId" Type="int" Mode="In" />
+    <Parameter Name="pocetak" Type="date" Mode="In" />
+    <Parameter Name="kraj" Type="date" Mode="In" />
+  </Function>
+  <Function Name="fn_isZauzet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn" ReturnType="int">
+    <Parameter Name="plakatId" Type="int" Mode="In" />
+    <Parameter Name="datum" Type="date" Mode="In" />
+  </Function>
+  <Function Name="getLokacijeZauzetost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="pocetak" Type="date" Mode="In" />
+    <Parameter Name="trajanje" Type="int" Mode="In" />
+    <Parameter Name="plakatTipId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getMrezaPlakati" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="mrezaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getMrezaSlike" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="mrezaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getMrezeDTOByPonuda" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="ponudaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getPlakatiDTOByPonuda" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="ponudaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getPlakatiDTOByUgovor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="ugovorId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getPlakatiRegijaTipPeriod" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="regijaId" Type="int" Mode="In" />
+    <Parameter Name="plakatTipId" Type="int" Mode="In" />
+    <Parameter Name="pocetak" Type="date" Mode="In" />
+    <Parameter Name="kraj" Type="date" Mode="In" />
+  </Function>
+  <Function Name="getPlakatiZauzetost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="pocetak" Type="date" Mode="In" />
+    <Parameter Name="trajanje" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getPonudaPaged" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="pageNo" Type="int" Mode="In" />
+    <Parameter Name="pageSize" Type="int" Mode="In" />
+    <Parameter Name="filterDatumPonude" Type="date" Mode="In" />
+    <Parameter Name="filterPonudaStatusId" Type="int" Mode="In" />
+    <Parameter Name="filterKlijent" Type="nvarchar" Mode="In" />
+    <Parameter Name="filterKampanja" Type="nvarchar" Mode="In" />
+    <Parameter Name="filterPlakatTipId" Type="int" Mode="In" />
+    <Parameter Name="filterProtokol" Type="nvarchar" Mode="In" />
+    <Parameter Name="filterPocetak" Type="date" Mode="In" />
+    <Parameter Name="filterKraj" Type="date" Mode="In" />
+    <Parameter Name="sortPolje" Type="int" Mode="In" />
+    <Parameter Name="isMreza" Type="bit" Mode="In" />
+    <Parameter Name="brojSlogova" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="getPonudaSlike" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="ponudaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getPonudaSlike1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="ponudaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getPrihvacenaPonudaPaged" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="pageNo" Type="int" Mode="In" />
+    <Parameter Name="pageSize" Type="int" Mode="In" />
+    <Parameter Name="filterPocetak" Type="date" Mode="In" />
+    <Parameter Name="filterDatumPonude" Type="date" Mode="In" />
+    <Parameter Name="filterKlijent" Type="nvarchar" Mode="In" />
+    <Parameter Name="filterKampanja" Type="nvarchar" Mode="In" />
+    <Parameter Name="filterPlakatTipId" Type="int" Mode="In" />
+    <Parameter Name="filterProtokol" Type="nvarchar" Mode="In" />
+    <Parameter Name="brojSlogova" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="getRadneNaloge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn" />
+  <Function Name="getRadneNalogePaged" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="pageNo" Type="int" Mode="In" />
+    <Parameter Name="pageSize" Type="int" Mode="In" />
+    <Parameter Name="brojSlogova" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="getRadniNalogSlike" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="radniNalogId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getRadniNalogStavkeDemontaza" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn" />
+  <Function Name="getRadniNalogStavkeIdejno" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn" />
+  <Function Name="getRadniNalogStavkePaged" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="pageNo" Type="int" Mode="In" />
+    <Parameter Name="pageSize" Type="int" Mode="In" />
+    <Parameter Name="brojSlogova" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="getSedmice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn" />
+  <Function Name="getSlikePonuda" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="ponudaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getSlobodnePlakate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="plakatId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getStavkeRN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn" />
+  <Function Name="getStorniranePonude" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn" />
+  <Function Name="getTrajanjaLedReklama" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn" ReturnType="int">
+    <Parameter Name="brojReklama" Type="int" Mode="In" />
+    <Parameter Name="trajanje" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getTrosakDTOByPonuda" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="ponudaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getTuraDvijeSedmice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn" />
+  <Function Name="getTure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn" />
+  <Function Name="getZaposleniEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="zaposleniId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="insertPosaljiPonudu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="accountZaposleniId" Type="int" Mode="In" />
+    <Parameter Name="logovaniZaposleniId" Type="int" Mode="In" />
+    <Parameter Name="ponudaId" Type="int" Mode="In" />
+    <Parameter Name="radniNalogId" Type="int" Mode="In" />
+    <Parameter Name="putanjaUvjeti" Type="nvarchar" Mode="In" />
+    <Parameter Name="porukaSistemskaLId" Type="int" Mode="InOut" />
+    <Parameter Name="porukaSistemskaAId" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="insertPosaljiRadniNalog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="accountZaposleniId" Type="int" Mode="In" />
+    <Parameter Name="logovaniZaposleniId" Type="int" Mode="In" />
+    <Parameter Name="ponudaId" Type="int" Mode="In" />
+    <Parameter Name="radniNalogId" Type="int" Mode="In" />
+    <Parameter Name="putanjaUvjeti" Type="nvarchar" Mode="In" />
+    <Parameter Name="porukaSistemskaLId" Type="int" Mode="InOut" />
+    <Parameter Name="porukaSistemskaAId" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="isPlakatZauzet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="plakatId" Type="int" Mode="In" />
+    <Parameter Name="datumOd" Type="date" Mode="In" />
+    <Parameter Name="datumDo" Type="date" Mode="In" />
+    <Parameter Name="rezultat" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="isValidLink" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="ponudaId" Type="int" Mode="In" />
+    <Parameter Name="link" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="isValidLinkRN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="radniNalogId" Type="int" Mode="In" />
+    <Parameter Name="link" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="IsZauzetaMreza" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="plakatId" Type="int" Mode="In" />
+    <Parameter Name="mrezaId" Type="int" Mode="In" />
+    <Parameter Name="datumOd" Type="date" Mode="In" />
+    <Parameter Name="datumDo" Type="date" Mode="In" />
+    <Parameter Name="rezultat" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="odbijPonudu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="ponudaId" Type="int" Mode="In" />
+    <Parameter Name="logovaniId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="prihvatiPonudu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="ponudaId" Type="int" Mode="In" />
+    <Parameter Name="logovaniId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="realizujPonudu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="radniNalogStavkaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="stornirajPonudu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="ponudaId" Type="int" Mode="In" />
+    <Parameter Name="logovaniId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="trenutnoStanjePlakata" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn" ReturnType="nvarchar">
+    <Parameter Name="plakatId" Type="int" Mode="In" />
+    <Parameter Name="datum" Type="date" Mode="In" />
+  </Function>
+  <Function Name="updateIsRanije" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn" />
+  <Function Name="updatePorukaSistemska" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="osn">
+    <Parameter Name="porukaSistemskaLId" Type="int" Mode="In" />
+    <Parameter Name="porukaSistemskaAId" Type="int" Mode="In" />
+    <Parameter Name="ponudaId" Type="int" Mode="In" />
+    <Parameter Name="putanja" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="getKlijentPage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="page">
+    <Parameter Name="pageNo" Type="int" Mode="In" />
+    <Parameter Name="pageSize" Type="int" Mode="In" />
+    <Parameter Name="klijent" Type="nvarchar" Mode="In" />
+    <Parameter Name="klijentTipId" Type="int" Mode="In" />
+    <Parameter Name="brojSlogova" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="getPlakatiZauzetostPaged" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="page">
+    <Parameter Name="pageNo" Type="int" Mode="In" />
+    <Parameter Name="pageSize" Type="int" Mode="In" />
+    <Parameter Name="filterNaziv" Type="nvarchar" Mode="In" />
+    <Parameter Name="filterPlakatTipId" Type="int" Mode="In" />
+    <Parameter Name="pocetak" Type="date" Mode="In" />
+    <Parameter Name="trajanje" Type="int" Mode="In" />
+    <Parameter Name="filterInventarniBroj" Type="nvarchar" Mode="In" />
+    <Parameter Name="filterMjesto" Type="int" Mode="In" />
+    <Parameter Name="filterKanton" Type="int" Mode="In" />
+    <Parameter Name="brojSlogova" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="getPlakatPage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="page">
+    <Parameter Name="pageNo" Type="int" Mode="In" />
+    <Parameter Name="pageSize" Type="int" Mode="In" />
+    <Parameter Name="plakatTipId" Type="int" Mode="In" />
+    <Parameter Name="mjestoId" Type="int" Mode="In" />
+    <Parameter Name="inventarniBroj" Type="int" Mode="In" />
+    <Parameter Name="brojSlogova" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="getUgovorPlakatiPaged" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="page">
+    <Parameter Name="pageNo" Type="int" Mode="In" />
+    <Parameter Name="pageSize" Type="int" Mode="In" />
+    <Parameter Name="filterNaziv" Type="nvarchar" Mode="In" />
+    <Parameter Name="filterInventarniBroj" Type="nvarchar" Mode="In" />
+    <Parameter Name="brojSlogova" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="getPonuda" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="rpt">
+    <Parameter Name="ponudaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getPonudaMreze" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="rpt">
+    <Parameter Name="ponudaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getPonudaSlika" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="rpt">
+    <Parameter Name="ponudaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getRadniNalog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="rpt">
+    <Parameter Name="radniNalogStavka" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getKurs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="sfr" ReturnType="numeric">
+    <Parameter Name="valutaId" Type="int" Mode="In" />
+    <Parameter Name="datum" Type="date" Mode="In" />
+  </Function>
+  <Function Name="insertSedmice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="sfr" />
+  <Function Name="getGGGGMMFromDatum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="util" ReturnType="int">
+    <Parameter Name="datum" Type="date" Mode="In" />
+  </Function>
+  <Function Name="getNextGGGGMM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="util" ReturnType="int">
+    <Parameter Name="ggggmm" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getPrviFromGGGGMM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="util" ReturnType="date">
+    <Parameter Name="ggggmm" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="EuroplakatModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="atribut" EntityType="Self.atribut" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="faktura" EntityType="Self.faktura" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="fakturaStavke" EntityType="Self.fakturaStavke" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="klijent" EntityType="Self.klijent" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="klijentVeze" EntityType="Self.klijentVeze" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="link" EntityType="Self.link" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="mrezaPlakat" EntityType="Self.mrezaPlakat" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="plakat" EntityType="Self.plakat" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="plakatSlika" EntityType="Self.plakatSlika" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="ponuda" EntityType="Self.ponuda" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="ponudaKontakt" EntityType="Self.ponudaKontakt" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="ponudaStavkaDodatak" EntityType="Self.ponudaStavkaDodatak" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="ponudaStavke" EntityType="Self.ponudaStavke" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="porukaSistemska" EntityType="Self.porukaSistemska" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="radniNalog" EntityType="Self.radniNalog" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="radniNalogSlika" EntityType="Self.radniNalogSlika" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="radniNalogStavke" EntityType="Self.radniNalogStavke" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="trosak" EntityType="Self.trosak" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="turaSedmica" EntityType="Self.turaSedmica" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="turaSedmicaZaposleni" EntityType="Self.turaSedmicaZaposleni" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="ugovor" EntityType="Self.ugovor" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="ugovorStavke" EntityType="Self.ugovorStavke" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="zaposleni" EntityType="Self.zaposleni" Schema="osn" store:Type="Tables" />
+    <EntitySet Name="cjenovnaKategorija" EntityType="Self.cjenovnaKategorija" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="dimenzija" EntityType="Self.dimenzija" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="jezik" EntityType="Self.jezik" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="klijentTip" EntityType="Self.klijentTip" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="klijentTipVeza" EntityType="Self.klijentTipVeza" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="klijentVrsta" EntityType="Self.klijentVrsta" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="kurs" EntityType="Self.kurs" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="mjesto" EntityType="Self.mjesto" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="mreza" EntityType="Self.mreza" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="plakatKategorijaIzvrsnosti" EntityType="Self.plakatKategorijaIzvrsnosti" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="plakatTip" EntityType="Self.plakatTip" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="plakatTipDimenzija" EntityType="Self.plakatTipDimenzija" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="ponudaStatus" EntityType="Self.ponudaStatus" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="regija" EntityType="Self.regija" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="sedmica" EntityType="Self.sedmica" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="statusPlakat" EntityType="Self.statusPlakat" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="tipKontakta" EntityType="Self.tipKontakta" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="trajanjeKampanje" EntityType="Self.trajanjeKampanje" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="tura" EntityType="Self.tura" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="valuta" EntityType="Self.valuta" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="vrstaOkvira" EntityType="Self.vrstaOkvira" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="vrstaUgovora" EntityType="Self.vrstaUgovora" Schema="sfr" store:Type="Tables" />
+    <EntitySet Name="log" EntityType="Self.log" Schema="tmp" store:Type="Tables" />
+    <EntitySet Name="SBOK2" EntityType="Self.SBOK2" store:Type="Tables" store:Schema="imp">
+      <DefiningQuery>SELECT 
+    [SBOK2].[TipPovrsine] AS [TipPovrsine], 
+    [SBOK2].[Regija] AS [Regija], 
+    [SBOK2].[Pttbroj] AS [Pttbroj], 
+    [SBOK2].[InvBroj] AS [InvBroj], 
+    [SBOK2].[RedBroj] AS [RedBroj], 
+    [SBOK2].[Grad] AS [Grad], 
+    [SBOK2].[Tura] AS [Tura], 
+    [SBOK2].[Adresa] AS [Adresa], 
+    [SBOK2].[TrenutnoStanje] AS [TrenutnoStanje], 
+    [SBOK2].[CIJENA PO DANU] AS [CIJENA PO DANU], 
+    [SBOK2].[Cijena2] AS [Cijena2], 
+    [SBOK2].[Cijena4] AS [Cijena4], 
+    [SBOK2].[Ocjena] AS [Ocjena], 
+    [SBOK2].[DVO/JED] AS [DVO/JED], 
+    [SBOK2].[Status] AS [Status], 
+    [SBOK2].[Dimenzije] AS [Dimenzije], 
+    [SBOK2].[F17] AS [F17], 
+    [SBOK2].[Osvijetljena] AS [Osvijetljena], 
+    [SBOK2].[UGOVOR DIREKCIJA] AS [UGOVOR DIREKCIJA], 
+    [SBOK2].[BROJ] AS [BROJ], 
+    [SBOK2].[DATUM ISTEKA] AS [DATUM ISTEKA], 
+    [SBOK2].[IZNOS] AS [IZNOS], 
+    [SBOK2].[UGOVOR GRAD/OPCINA] AS [UGOVOR GRAD/OPCINA], 
+    [SBOK2].[BROJ1] AS [BROJ1], 
+    [SBOK2].[DATUM ISTEKA1] AS [DATUM ISTEKA1], 
+    [SBOK2].[IZNOS1] AS [IZNOS1], 
+    [SBOK2].[UGOVOR PRIVATNA LICA] AS [UGOVOR PRIVATNA LICA], 
+    [SBOK2].[BROJ2] AS [BROJ2], 
+    [SBOK2].[DATUM ISTEKA2] AS [DATUM ISTEKA2], 
+    [SBOK2].[IZNOS2] AS [IZNOS2], 
+    [SBOK2].[UKUPNO] AS [UKUPNO], 
+    [SBOK2].[NADLEZNI ORGAN] AS [NADLEZNI ORGAN], 
+    [SBOK2].[DOZVOLA] AS [DOZVOLA], 
+    [SBOK2].[BROJ3 ] AS [BROJ3 ], 
+    [SBOK2].[DATUM ISTEKA3] AS [DATUM ISTEKA3], 
+    [SBOK2].[Vlasnik] AS [Vlasnik]
+    FROM [imp].[SBOK2] AS [SBOK2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TNOK2" EntityType="Self.TNOK2" store:Type="Tables" store:Schema="imp">
+      <DefiningQuery>SELECT 
+    [TNOK2].[TipPovrsine] AS [TipPovrsine], 
+    [TNOK2].[Regija] AS [Regija], 
+    [TNOK2].[Pttbroj] AS [Pttbroj], 
+    [TNOK2].[InvBroj] AS [InvBroj], 
+    [TNOK2].[RedBroj] AS [RedBroj], 
+    [TNOK2].[Grad] AS [Grad], 
+    [TNOK2].[Tura] AS [Tura], 
+    [TNOK2].[Adresa] AS [Adresa], 
+    [TNOK2].[TrenutnoStanje] AS [TrenutnoStanje], 
+    [TNOK2].[CIJENA PO DANU] AS [CIJENA PO DANU], 
+    [TNOK2].[Cijena2] AS [Cijena2], 
+    [TNOK2].[Cijena4] AS [Cijena4], 
+    [TNOK2].[Ocjena] AS [Ocjena], 
+    [TNOK2].[DVO/JED] AS [DVO/JED], 
+    [TNOK2].[Status] AS [Status], 
+    [TNOK2].[Dimenzije] AS [Dimenzije], 
+    [TNOK2].[Okvir] AS [Okvir], 
+    [TNOK2].[Osvijetljena] AS [Osvijetljena], 
+    [TNOK2].[UGOVOR DIREKCIJA] AS [UGOVOR DIREKCIJA], 
+    [TNOK2].[BROJ] AS [BROJ], 
+    [TNOK2].[DATUM ISTEKA] AS [DATUM ISTEKA], 
+    [TNOK2].[IZNOS] AS [IZNOS], 
+    [TNOK2].[UGOVOR GRAD/OPCINA] AS [UGOVOR GRAD/OPCINA], 
+    [TNOK2].[BROJ1] AS [BROJ1], 
+    [TNOK2].[DATUM ISTEKA1] AS [DATUM ISTEKA1], 
+    [TNOK2].[IZNOS1] AS [IZNOS1], 
+    [TNOK2].[UGOVOR PRIVATNA LICA] AS [UGOVOR PRIVATNA LICA], 
+    [TNOK2].[BROJ2] AS [BROJ2], 
+    [TNOK2].[DATUM ISTEKA2] AS [DATUM ISTEKA2], 
+    [TNOK2].[IZNOS2] AS [IZNOS2], 
+    [TNOK2].[UKUPNO] AS [UKUPNO], 
+    [TNOK2].[NADLEZNI ORGAN] AS [NADLEZNI ORGAN], 
+    [TNOK2].[DOZVOLA] AS [DOZVOLA], 
+    [TNOK2].[BROJ3] AS [BROJ3], 
+    [TNOK2].[DATUM ISTEKA3] AS [DATUM ISTEKA3], 
+    [TNOK2].[Vlasnik] AS [Vlasnik]
+    FROM [imp].[TNOK2] AS [TNOK2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SBfi" EntityType="Self.SBfi" store:Type="Tables" store:Schema="import">
+      <DefiningQuery>SELECT 
+    [SBfi].[TipPovrsine] AS [TipPovrsine], 
+    [SBfi].[Regija] AS [Regija], 
+    [SBfi].[Pttbroj] AS [Pttbroj], 
+    [SBfi].[InvBroj] AS [InvBroj], 
+    [SBfi].[RedBroj] AS [RedBroj], 
+    [SBfi].[Grad] AS [Grad], 
+    [SBfi].[Tura] AS [Tura], 
+    [SBfi].[Adresa] AS [Adresa], 
+    [SBfi].[TrenutnoStanje] AS [TrenutnoStanje], 
+    [SBfi].[Cijena2] AS [Cijena2], 
+    [SBfi].[Cijena4] AS [Cijena4], 
+    [SBfi].[Ocjena] AS [Ocjena], 
+    [SBfi].[DVO/JED] AS [DVO/JED], 
+    [SBfi].[Status] AS [Status], 
+    [SBfi].[Dimenzije] AS [Dimenzije], 
+    [SBfi].[Osvijetljena] AS [Osvijetljena], 
+    [SBfi].[UGOVOR ] AS [UGOVOR ], 
+    [SBfi].[BROJ] AS [BROJ], 
+    [SBfi].[DATUM ISTEKA] AS [DATUM ISTEKA], 
+    [SBfi].[IZNOS] AS [IZNOS], 
+    [SBfi].[UGOVOR OPCINA] AS [UGOVOR OPCINA], 
+    [SBfi].[BROJ1] AS [BROJ1], 
+    [SBfi].[DATUM ISTEKA1] AS [DATUM ISTEKA1], 
+    [SBfi].[IZNOS1] AS [IZNOS1], 
+    [SBfi].[UGOVOR PRIVATNO] AS [UGOVOR PRIVATNO], 
+    [SBfi].[BROJ2] AS [BROJ2], 
+    [SBfi].[DATUM ISTEKA2] AS [DATUM ISTEKA2], 
+    [SBfi].[IZNOS2] AS [IZNOS2], 
+    [SBfi].[UKUPNO] AS [UKUPNO], 
+    [SBfi].[Vlasnik] AS [Vlasnik]
+    FROM [import].[SBfi] AS [SBfi]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TNfin" EntityType="Self.TNfin" store:Type="Tables" store:Schema="import">
+      <DefiningQuery>SELECT 
+    [TNfin].[TipPovrsine] AS [TipPovrsine], 
+    [TNfin].[Regija] AS [Regija], 
+    [TNfin].[Pttbroj] AS [Pttbroj], 
+    [TNfin].[InvBroj] AS [InvBroj], 
+    [TNfin].[RedBroj] AS [RedBroj], 
+    [TNfin].[Grad] AS [Grad], 
+    [TNfin].[Tura] AS [Tura], 
+    [TNfin].[Adresa] AS [Adresa], 
+    [TNfin].[TrenutnoStanje] AS [TrenutnoStanje], 
+    [TNfin].[Cijena2] AS [Cijena2], 
+    [TNfin].[Cijena4] AS [Cijena4], 
+    [TNfin].[Ocjena] AS [Ocjena], 
+    [TNfin].[DVO/JED] AS [DVO/JED], 
+    [TNfin].[Status] AS [Status], 
+    [TNfin].[Dimenzije] AS [Dimenzije], 
+    [TNfin].[Osvijetljena] AS [Osvijetljena], 
+    [TNfin].[UGOVOR ] AS [UGOVOR ], 
+    [TNfin].[BROJ] AS [BROJ], 
+    [TNfin].[DATUM ISTEKA] AS [DATUM ISTEKA], 
+    [TNfin].[IZNOS] AS [IZNOS], 
+    [TNfin].[UGOVOR OPCINA] AS [UGOVOR OPCINA], 
+    [TNfin].[BROJ1] AS [BROJ1], 
+    [TNfin].[DATUM ISTEKA1] AS [DATUM ISTEKA1], 
+    [TNfin].[IZNOS1] AS [IZNOS1], 
+    [TNfin].[UGOVOR PRIVATNO] AS [UGOVOR PRIVATNO], 
+    [TNfin].[BROJ2] AS [BROJ2], 
+    [TNfin].[DATUM ISTEKA2] AS [DATUM ISTEKA2], 
+    [TNfin].[IZNOS2] AS [IZNOS2], 
+    [TNfin].[UKUPNO] AS [UKUPNO], 
+    [TNfin].[Vlasnik] AS [Vlasnik]
+    FROM [import].[TNfin] AS [TNfin]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="plakatLog" EntityType="Self.plakatLog" store:Type="Tables" store:Schema="osn">
+      <DefiningQuery>SELECT 
+    [plakatLog].[plakatId] AS [plakatId], 
+    [plakatLog].[inventarniBroj] AS [inventarniBroj], 
+    [plakatLog].[redniBroj] AS [redniBroj], 
+    [plakatLog].[posta] AS [posta], 
+    [plakatLog].[mjestoId] AS [mjestoId], 
+    [plakatLog].[adresa] AS [adresa], 
+    [plakatLog].[plakatTipId] AS [plakatTipId], 
+    [plakatLog].[koordinate] AS [koordinate], 
+    [plakatLog].[cijena] AS [cijena], 
+    [plakatLog].[isOsvjetljen] AS [isOsvjetljen], 
+    [plakatLog].[isDvostrano] AS [isDvostrano], 
+    [plakatLog].[plakatKategorijaIzvrsnostiId] AS [plakatKategorijaIzvrsnostiId], 
+    [plakatLog].[vlasnikId] AS [vlasnikId], 
+    [plakatLog].[cjenovnaKategorijaId] AS [cjenovnaKategorijaId], 
+    [plakatLog].[statusPlakatId] AS [statusPlakatId], 
+    [plakatLog].[dimenzija] AS [dimenzija], 
+    [plakatLog].[vrstaOkviraId] AS [vrstaOkviraId], 
+    [plakatLog].[dimenzijaId] AS [dimenzijaId], 
+    [plakatLog].[turaId] AS [turaId], 
+    [plakatLog].[zaposleniId] AS [zaposleniId], 
+    [plakatLog].[akcija] AS [akcija], 
+    [plakatLog].[vrijeme] AS [vrijeme], 
+    [plakatLog].[plakatLogId] AS [plakatLogId]
+    FROM [osn].[plakatLog] AS [plakatLog]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ponudaLog" EntityType="Self.ponudaLog" store:Type="Tables" store:Schema="osn">
+      <DefiningQuery>SELECT 
+    [ponudaLog].[ponudaLogId] AS [ponudaLogId], 
+    [ponudaLog].[ponudaId] AS [ponudaId], 
+    [ponudaLog].[brojZahtjeva] AS [brojZahtjeva], 
+    [ponudaLog].[poolId] AS [poolId], 
+    [ponudaLog].[agencijaId] AS [agencijaId], 
+    [ponudaLog].[klijentId] AS [klijentId], 
+    [ponudaLog].[podklijentId] AS [podklijentId], 
+    [ponudaLog].[datumZahtjeva] AS [datumZahtjeva], 
+    [ponudaLog].[plakatTipId] AS [plakatTipId], 
+    [ponudaLog].[kampanja] AS [kampanja], 
+    [ponudaLog].[isDatumska] AS [isDatumska], 
+    [ponudaLog].[pocetakKampanje] AS [pocetakKampanje], 
+    [ponudaLog].[trajanjeKampanje] AS [trajanjeKampanje], 
+    [ponudaLog].[budzetKampanje] AS [budzetKampanje], 
+    [ponudaLog].[rabat] AS [rabat], 
+    [ponudaLog].[ponudaStatusId] AS [ponudaStatusId], 
+    [ponudaLog].[brojPonude] AS [brojPonude], 
+    [ponudaLog].[datumPonude] AS [datumPonude], 
+    [ponudaLog].[brojDanaVazenjaPonude] AS [brojDanaVazenjaPonude], 
+    [ponudaLog].[protokol] AS [protokol], 
+    [ponudaLog].[datumOtkazivanja] AS [datumOtkazivanja], 
+    [ponudaLog].[brojDanaOtk] AS [brojDanaOtk], 
+    [ponudaLog].[datumSlanja] AS [datumSlanja], 
+    [ponudaLog].[isParcijalnoPlacanje] AS [isParcijalnoPlacanje], 
+    [ponudaLog].[rokPlacanja] AS [rokPlacanja], 
+    [ponudaLog].[trajanjeKampanjeId] AS [trajanjeKampanjeId], 
+    [ponudaLog].[isMreza] AS [isMreza], 
+    [ponudaLog].[zaposleniId] AS [zaposleniId], 
+    [ponudaLog].[akcija] AS [akcija], 
+    [ponudaLog].[vrijeme] AS [vrijeme]
+    FROM [osn].[ponudaLog] AS [ponudaLog]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ponudaStavkeLog" EntityType="Self.ponudaStavkeLog" store:Type="Tables" store:Schema="osn">
+      <DefiningQuery>SELECT 
+    [ponudaStavkeLog].[ponudaStavkeId] AS [ponudaStavkeId], 
+    [ponudaStavkeLog].[ponudaId] AS [ponudaId], 
+    [ponudaStavkeLog].[plakatId] AS [plakatId], 
+    [ponudaStavkeLog].[trosakId] AS [trosakId], 
+    [ponudaStavkeLog].[kolicina] AS [kolicina], 
+    [ponudaStavkeLog].[cijena] AS [cijena], 
+    [ponudaStavkeLog].[rabat] AS [rabat], 
+    [ponudaStavkeLog].[cijenaSaPopustom] AS [cijenaSaPopustom], 
+    [ponudaStavkeLog].[mrezaId] AS [mrezaId], 
+    [ponudaStavkeLog].[zaposleniId] AS [zaposleniId], 
+    [ponudaStavkeLog].[akcija] AS [akcija], 
+    [ponudaStavkeLog].[vrijeme] AS [vrijeme], 
+    [ponudaStavkeLog].[ponudaStavkeLogId] AS [ponudaStavkeLogId]
+    FROM [osn].[ponudaStavkeLog] AS [ponudaStavkeLog]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="radniNalogStavkeLog" EntityType="Self.radniNalogStavkeLog" store:Type="Tables" store:Schema="osn">
+      <DefiningQuery>SELECT 
+    [radniNalogStavkeLog].[radniNalogStavkeLog] AS [radniNalogStavkeLog], 
+    [radniNalogStavkeLog].[radniNalogStavke] AS [radniNalogStavke], 
+    [radniNalogStavkeLog].[radniNalogId] AS [radniNalogId], 
+    [radniNalogStavkeLog].[ponudaStavkaId] AS [ponudaStavkaId], 
+    [radniNalogStavkeLog].[idejno] AS [idejno], 
+    [radniNalogStavkeLog].[isPrijeLijepiti] AS [isPrijeLijepiti], 
+    [radniNalogStavkeLog].[opis] AS [opis], 
+    [radniNalogStavkeLog].[isFotografisano] AS [isFotografisano], 
+    [radniNalogStavkeLog].[turaSedmicaId] AS [turaSedmicaId], 
+    [radniNalogStavkeLog].[isDemontirano] AS [isDemontirano], 
+    [radniNalogStavkeLog].[zaposleniId] AS [zaposleniId], 
+    [radniNalogStavkeLog].[akcija] AS [akcija], 
+    [radniNalogStavkeLog].[vrijeme] AS [vrijeme]
+    FROM [osn].[radniNalogStavkeLog] AS [radniNalogStavkeLog]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ugovorLog" EntityType="Self.ugovorLog" store:Type="Tables" store:Schema="osn">
+      <DefiningQuery>SELECT 
+    [ugovorLog].[ugovorId] AS [ugovorId], 
+    [ugovorLog].[datumUgovora] AS [datumUgovora], 
+    [ugovorLog].[vlasnikId] AS [vlasnikId], 
+    [ugovorLog].[pocetak] AS [pocetak], 
+    [ugovorLog].[kraj] AS [kraj], 
+    [ugovorLog].[vrijednost] AS [vrijednost], 
+    [ugovorLog].[vrstaUgovoraId] AS [vrstaUgovoraId], 
+    [ugovorLog].[brojUgovora] AS [brojUgovora], 
+    [ugovorLog].[zaposleniId] AS [zaposleniId], 
+    [ugovorLog].[akcija] AS [akcija], 
+    [ugovorLog].[vrijeme] AS [vrijeme], 
+    [ugovorLog].[ugovorLogId] AS [ugovorLogId]
+    FROM [osn].[ugovorLog] AS [ugovorLog]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ugovorStavkeLog" EntityType="Self.ugovorStavkeLog" store:Type="Tables" store:Schema="osn">
+      <DefiningQuery>SELECT 
+    [ugovorStavkeLog].[ugovorStavkaId] AS [ugovorStavkaId], 
+    [ugovorStavkeLog].[ugovorId] AS [ugovorId], 
+    [ugovorStavkeLog].[plakatId] AS [plakatId], 
+    [ugovorStavkeLog].[cijena] AS [cijena], 
+    [ugovorStavkeLog].[zaposleniId] AS [zaposleniId], 
+    [ugovorStavkeLog].[akcija] AS [akcija], 
+    [ugovorStavkeLog].[vrijeme] AS [vrijeme], 
+    [ugovorStavkeLog].[ugovorStavkaLogId] AS [ugovorStavkaLogId]
+    FROM [osn].[ugovorStavkeLog] AS [ugovorStavkeLog]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="cjenovnaKategorijaLog" EntityType="Self.cjenovnaKategorijaLog" store:Type="Tables" store:Schema="sfr">
+      <DefiningQuery>SELECT 
+    [cjenovnaKategorijaLog].[cjenovnaKategorijaLogId] AS [cjenovnaKategorijaLogId], 
+    [cjenovnaKategorijaLog].[cjenovnaKategorijaId] AS [cjenovnaKategorijaId], 
+    [cjenovnaKategorijaLog].[naziv] AS [naziv], 
+    [cjenovnaKategorijaLog].[aktivan] AS [aktivan], 
+    [cjenovnaKategorijaLog].[cijena] AS [cijena], 
+    [cjenovnaKategorijaLog].[vrijeme] AS [vrijeme], 
+    [cjenovnaKategorijaLog].[akcija] AS [akcija]
+    FROM [sfr].[cjenovnaKategorijaLog] AS [cjenovnaKategorijaLog]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="plakatTipLog" EntityType="Self.plakatTipLog" store:Type="Tables" store:Schema="sfr">
+      <DefiningQuery>SELECT 
+    [plakatTipLog].[plakatTipId] AS [plakatTipId], 
+    [plakatTipLog].[naziv] AS [naziv], 
+    [plakatTipLog].[oznaka] AS [oznaka], 
+    [plakatTipLog].[minimalnoVrijeme] AS [minimalnoVrijeme], 
+    [plakatTipLog].[cjenovnaKategorijaId] AS [cjenovnaKategorijaId], 
+    [plakatTipLog].[zaposleniId] AS [zaposleniId], 
+    [plakatTipLog].[akcija] AS [akcija], 
+    [plakatTipLog].[vrijeme] AS [vrijeme], 
+    [plakatTipLog].[plakatTipLogId] AS [plakatTipLogId]
+    FROM [sfr].[plakatTipLog] AS [plakatTipLog]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ponudaStatusLog" EntityType="Self.ponudaStatusLog" store:Type="Tables" store:Schema="sfr">
+      <DefiningQuery>SELECT 
+    [ponudaStatusLog].[ponudaStatusId] AS [ponudaStatusId], 
+    [ponudaStatusLog].[naziv] AS [naziv], 
+    [ponudaStatusLog].[boja] AS [boja], 
+    [ponudaStatusLog].[zaposleniId] AS [zaposleniId], 
+    [ponudaStatusLog].[akcija] AS [akcija], 
+    [ponudaStatusLog].[vrijeme] AS [vrijeme], 
+    [ponudaStatusLog].[ponudaStatusLogId] AS [ponudaStatusLogId]
+    FROM [sfr].[ponudaStatusLog] AS [ponudaStatusLog]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__ponudaKon__ponud__3864608B" Association="Self.FK__ponudaKon__ponud__3864608B">
+      <End Role="ponuda" EntitySet="ponuda" />
+      <End Role="ponudaKontakt" EntitySet="ponudaKontakt" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ponudaKon__tipKo__395884C4" Association="Self.FK__ponudaKon__tipKo__395884C4">
+      <End Role="tipKontakta" EntitySet="tipKontakta" />
+      <End Role="ponudaKontakt" EntitySet="ponudaKontakt" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ponudaSta__ponud__3B40CD36" Association="Self.FK__ponudaSta__ponud__3B40CD36">
+      <End Role="ponudaStavke" EntitySet="ponudaStavke" />
+      <End Role="ponudaStavkaDodatak" EntitySet="ponudaStavkaDodatak" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ponudaSta__trosa__3C34F16F" Association="Self.FK__ponudaSta__trosa__3C34F16F">
+      <End Role="trosak" EntitySet="trosak" />
+      <End Role="ponudaStavkaDodatak" EntitySet="ponudaStavkaDodatak" />
+    </AssociationSet>
+    <AssociationSet Name="FK__radniNalo__turaS__7DCDAAA2" Association="Self.FK__radniNalo__turaS__7DCDAAA2">
+      <End Role="turaSedmica" EntitySet="turaSedmica" />
+      <End Role="radniNalogStavke" EntitySet="radniNalogStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK__turaSedmi__sedmi__7814D14C" Association="Self.FK__turaSedmi__sedmi__7814D14C">
+      <End Role="sedmica" EntitySet="sedmica" />
+      <End Role="turaSedmica" EntitySet="turaSedmica" />
+    </AssociationSet>
+    <AssociationSet Name="FK__turaSedmi__turaI__7908F585" Association="Self.FK__turaSedmi__turaI__7908F585">
+      <End Role="tura" EntitySet="tura" />
+      <End Role="turaSedmica" EntitySet="turaSedmica" />
+    </AssociationSet>
+    <AssociationSet Name="FK__turaSedmi__turaS__7BE56230" Association="Self.FK__turaSedmi__turaS__7BE56230">
+      <End Role="turaSedmica" EntitySet="turaSedmica" />
+      <End Role="turaSedmicaZaposleni" EntitySet="turaSedmicaZaposleni" />
+    </AssociationSet>
+    <AssociationSet Name="FK__turaSedmi__zapos__7CD98669" Association="Self.FK__turaSedmi__zapos__7CD98669">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="turaSedmicaZaposleni" EntitySet="turaSedmicaZaposleni" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ugovor__vrstaUgo__37703C52" Association="Self.FK__ugovor__vrstaUgo__37703C52">
+      <End Role="vrstaUgovora" EntitySet="vrstaUgovora" />
+      <End Role="ugovor" EntitySet="ugovor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_faktura_klijent" Association="Self.FK_faktura_klijent">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="faktura" EntitySet="faktura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_faktura_ponuda" Association="Self.FK_faktura_ponuda">
+      <End Role="ponuda" EntitySet="ponuda" />
+      <End Role="faktura" EntitySet="faktura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_faktura_valuta" Association="Self.FK_faktura_valuta">
+      <End Role="valuta" EntitySet="valuta" />
+      <End Role="faktura" EntitySet="faktura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_fakturastavke_faktura" Association="Self.FK_fakturastavke_faktura">
+      <End Role="faktura" EntitySet="faktura" />
+      <End Role="fakturaStavke" EntitySet="fakturaStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_fakturaStavke_plakat" Association="Self.FK_fakturaStavke_plakat">
+      <End Role="plakat" EntitySet="plakat" />
+      <End Role="fakturaStavke" EntitySet="fakturaStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_fakturaStavke_trosak" Association="Self.FK_fakturaStavke_trosak">
+      <End Role="trosak" EntitySet="trosak" />
+      <End Role="fakturaStavke" EntitySet="fakturaStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_klijent_jezik" Association="Self.FK_klijent_jezik">
+      <End Role="jezik" EntitySet="jezik" />
+      <End Role="klijent" EntitySet="klijent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_klijent_mjesto" Association="Self.FK_klijent_mjesto">
+      <End Role="mjesto" EntitySet="mjesto" />
+      <End Role="klijent" EntitySet="klijent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_klijent_tip" Association="Self.FK_klijent_tip">
+      <End Role="klijentTip" EntitySet="klijentTip" />
+      <End Role="klijent" EntitySet="klijent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_klijent_valuta" Association="Self.FK_klijent_valuta">
+      <End Role="valuta" EntitySet="valuta" />
+      <End Role="klijent" EntitySet="klijent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_klijent_vrsta" Association="Self.FK_klijent_vrsta">
+      <End Role="klijentVrsta" EntitySet="klijentVrsta" />
+      <End Role="klijent" EntitySet="klijent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_klijentVeza_klijent" Association="Self.FK_klijentVeza_klijent">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="klijentVeze" EntitySet="klijentVeze" />
+    </AssociationSet>
+    <AssociationSet Name="FK_klijentVeza_klijentVezani" Association="Self.FK_klijentVeza_klijentVezani">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="klijentVeze" EntitySet="klijentVeze" />
+    </AssociationSet>
+    <AssociationSet Name="FK_klijentVeza_tip" Association="Self.FK_klijentVeza_tip">
+      <End Role="klijentTipVeza" EntitySet="klijentTipVeza" />
+      <End Role="klijentVeze" EntitySet="klijentVeze" />
+    </AssociationSet>
+    <AssociationSet Name="FK_kurs_valuta" Association="Self.FK_kurs_valuta">
+      <End Role="valuta" EntitySet="valuta" />
+      <End Role="kurs" EntitySet="kurs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_link_ponuda" Association="Self.FK_link_ponuda">
+      <End Role="ponuda" EntitySet="ponuda" />
+      <End Role="link" EntitySet="link" />
+    </AssociationSet>
+    <AssociationSet Name="FK_link_radniNalog" Association="Self.FK_link_radniNalog">
+      <End Role="radniNalog" EntitySet="radniNalog" />
+      <End Role="link" EntitySet="link" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mjesto_regija" Association="Self.FK_mjesto_regija">
+      <End Role="regija" EntitySet="regija" />
+      <End Role="mjesto" EntitySet="mjesto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mrezaPlakat_mreza" Association="Self.FK_mrezaPlakat_mreza">
+      <End Role="mreza" EntitySet="mreza" />
+      <End Role="mrezaPlakat" EntitySet="mrezaPlakat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mrezaPlakat_plakat" Association="Self.FK_mrezaPlakat_plakat">
+      <End Role="plakat" EntitySet="plakat" />
+      <End Role="mrezaPlakat" EntitySet="mrezaPlakat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plakat_cjenovnaKategorija" Association="Self.FK_plakat_cjenovnaKategorija">
+      <End Role="cjenovnaKategorija" EntitySet="cjenovnaKategorija" />
+      <End Role="plakat" EntitySet="plakat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plakat_dimenzija" Association="Self.FK_plakat_dimenzija">
+      <End Role="dimenzija" EntitySet="dimenzija" />
+      <End Role="plakat" EntitySet="plakat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plakat_kategorija" Association="Self.FK_plakat_kategorija">
+      <End Role="plakatKategorijaIzvrsnosti" EntitySet="plakatKategorijaIzvrsnosti" />
+      <End Role="plakat" EntitySet="plakat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plakat_mjesto" Association="Self.FK_plakat_mjesto">
+      <End Role="mjesto" EntitySet="mjesto" />
+      <End Role="plakat" EntitySet="plakat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plakat_statusPlakat" Association="Self.FK_plakat_statusPlakat">
+      <End Role="statusPlakat" EntitySet="statusPlakat" />
+      <End Role="plakat" EntitySet="plakat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plakat_tip" Association="Self.FK_plakat_tip">
+      <End Role="plakatTip" EntitySet="plakatTip" />
+      <End Role="plakat" EntitySet="plakat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plakat_tura" Association="Self.FK_plakat_tura">
+      <End Role="tura" EntitySet="tura" />
+      <End Role="plakat" EntitySet="plakat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plakat_vlasnik" Association="Self.FK_plakat_vlasnik">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="plakat" EntitySet="plakat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plakat_vrstaOkvira" Association="Self.FK_plakat_vrstaOkvira">
+      <End Role="vrstaOkvira" EntitySet="vrstaOkvira" />
+      <End Role="plakat" EntitySet="plakat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plakat_zaposleni" Association="Self.FK_plakat_zaposleni">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="plakat" EntitySet="plakat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plakatSlika_plakat" Association="Self.FK_plakatSlika_plakat">
+      <End Role="plakat" EntitySet="plakat" />
+      <End Role="plakatSlika" EntitySet="plakatSlika" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plakatTip_cjenovnaKategorija" Association="Self.FK_plakatTip_cjenovnaKategorija">
+      <End Role="cjenovnaKategorija" EntitySet="cjenovnaKategorija" />
+      <End Role="plakatTip" EntitySet="plakatTip" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plakatTip_zaposleni" Association="Self.FK_plakatTip_zaposleni">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="plakatTip" EntitySet="plakatTip" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponuda_agencija" Association="Self.FK_ponuda_agencija">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="ponuda" EntitySet="ponuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponuda_klijent" Association="Self.FK_ponuda_klijent">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="ponuda" EntitySet="ponuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponuda_plakatTip" Association="Self.FK_ponuda_plakatTip">
+      <End Role="plakatTip" EntitySet="plakatTip" />
+      <End Role="ponuda" EntitySet="ponuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponuda_podklijent" Association="Self.FK_ponuda_podklijent">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="ponuda" EntitySet="ponuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponuda_pool" Association="Self.FK_ponuda_pool">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="ponuda" EntitySet="ponuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponuda_status" Association="Self.FK_ponuda_status">
+      <End Role="ponudaStatus" EntitySet="ponudaStatus" />
+      <End Role="ponuda" EntitySet="ponuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponuda_trajanjeKampanje" Association="Self.FK_ponuda_trajanjeKampanje">
+      <End Role="trajanjeKampanje" EntitySet="trajanjeKampanje" />
+      <End Role="ponuda" EntitySet="ponuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponuda_zaposleni" Association="Self.FK_ponuda_zaposleni">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="ponuda" EntitySet="ponuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponuda_zaposleni1" Association="Self.FK_ponuda_zaposleni1">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="ponuda" EntitySet="ponuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponudaStatus_zaposleni" Association="Self.FK_ponudaStatus_zaposleni">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="ponudaStatus" EntitySet="ponudaStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponudaStavke_mreza" Association="Self.FK_ponudaStavke_mreza">
+      <End Role="mreza" EntitySet="mreza" />
+      <End Role="ponudaStavke" EntitySet="ponudaStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponudaStavke_plakat" Association="Self.FK_ponudaStavke_plakat">
+      <End Role="plakat" EntitySet="plakat" />
+      <End Role="ponudaStavke" EntitySet="ponudaStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponudaStavke_ponuda" Association="Self.FK_ponudaStavke_ponuda">
+      <End Role="ponuda" EntitySet="ponuda" />
+      <End Role="ponudaStavke" EntitySet="ponudaStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponudaStavke_trosak" Association="Self.FK_ponudaStavke_trosak">
+      <End Role="trosak" EntitySet="trosak" />
+      <End Role="ponudaStavke" EntitySet="ponudaStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ponudaStavke_zaposleni" Association="Self.FK_ponudaStavke_zaposleni">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="ponudaStavke" EntitySet="ponudaStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_porukaSistemska_ponuda" Association="Self.FK_porukaSistemska_ponuda">
+      <End Role="ponuda" EntitySet="ponuda" />
+      <End Role="porukaSistemska" EntitySet="porukaSistemska" />
+    </AssociationSet>
+    <AssociationSet Name="FK_porukaSistemska_radniNalog" Association="Self.FK_porukaSistemska_radniNalog">
+      <End Role="radniNalog" EntitySet="radniNalog" />
+      <End Role="porukaSistemska" EntitySet="porukaSistemska" />
+    </AssociationSet>
+    <AssociationSet Name="FK_porukaSistemska_zaposleni" Association="Self.FK_porukaSistemska_zaposleni">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="porukaSistemska" EntitySet="porukaSistemska" />
+    </AssociationSet>
+    <AssociationSet Name="FK_radniNalog_ponudaStavka" Association="Self.FK_radniNalog_ponudaStavka">
+      <End Role="ponudaStavke" EntitySet="ponudaStavke" />
+      <End Role="radniNalogStavke" EntitySet="radniNalogStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_radniNalogSlika_radniNalogStavke" Association="Self.FK_radniNalogSlika_radniNalogStavke">
+      <End Role="radniNalogStavke" EntitySet="radniNalogStavke" />
+      <End Role="radniNalogSlika" EntitySet="radniNalogSlika" />
+    </AssociationSet>
+    <AssociationSet Name="FK_radniNalogStavke_radniNalog" Association="Self.FK_radniNalogStavke_radniNalog">
+      <End Role="radniNalog" EntitySet="radniNalog" />
+      <End Role="radniNalogStavke" EntitySet="radniNalogStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_radniNalogStavke_zaposleni" Association="Self.FK_radniNalogStavke_zaposleni">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="radniNalogStavke" EntitySet="radniNalogStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stavke_plakat" Association="Self.FK_stavke_plakat">
+      <End Role="plakat" EntitySet="plakat" />
+      <End Role="ugovorStavke" EntitySet="ugovorStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stavke_ugovor" Association="Self.FK_stavke_ugovor">
+      <End Role="ugovor" EntitySet="ugovor" />
+      <End Role="ugovorStavke" EntitySet="ugovorStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stavkeFakture_stavkePonude" Association="Self.FK_stavkeFakture_stavkePonude">
+      <End Role="ponudaStavke" EntitySet="ponudaStavke" />
+      <End Role="fakturaStavke" EntitySet="fakturaStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ugovor_Klijent" Association="Self.FK_ugovor_Klijent">
+      <End Role="klijent" EntitySet="klijent" />
+      <End Role="ugovor" EntitySet="ugovor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ugovor_zaposleni" Association="Self.FK_ugovor_zaposleni">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="ugovor" EntitySet="ugovor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ugovorStavke_zaposleni" Association="Self.FK_ugovorStavke_zaposleni">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="ugovorStavke" EntitySet="ugovorStavke" />
+    </AssociationSet>
+    <AssociationSet Name="FK_zaposleni_mjesto" Association="Self.FK_zaposleni_mjesto">
+      <End Role="mjesto" EntitySet="mjesto" />
+      <End Role="zaposleni" EntitySet="zaposleni" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

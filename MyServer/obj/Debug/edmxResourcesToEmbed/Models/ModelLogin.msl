@@ -1,0 +1,1502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EuroplakatModelStoreContainer" CdmEntityContainer="EuroplakatEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="EuroplakatModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="EuroplakatModel.AspNetRoles">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="EuroplakatModel.AspNetUserClaims">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="EuroplakatModel.AspNetUserLogins">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="EuroplakatModel.AspNetUsers">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="EuroplakatModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="atribut">
+      <EntityTypeMapping TypeName="EuroplakatModel.atribut">
+        <MappingFragment StoreEntitySet="atribut">
+          <ScalarProperty Name="atributId" ColumnName="atributId" />
+          <ScalarProperty Name="kljuc" ColumnName="kljuc" />
+          <ScalarProperty Name="vrijednost" ColumnName="vrijednost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="faktura">
+      <EntityTypeMapping TypeName="EuroplakatModel.faktura">
+        <MappingFragment StoreEntitySet="faktura">
+          <ScalarProperty Name="fakturaId" ColumnName="fakturaId" />
+          <ScalarProperty Name="klijentId" ColumnName="klijentId" />
+          <ScalarProperty Name="datumFakture" ColumnName="datumFakture" />
+          <ScalarProperty Name="datumValute" ColumnName="datumValute" />
+          <ScalarProperty Name="fakturisanoOd" ColumnName="fakturisanoOd" />
+          <ScalarProperty Name="fakturisanoDo" ColumnName="fakturisanoDo" />
+          <ScalarProperty Name="iznosBezPdv" ColumnName="iznosBezPdv" />
+          <ScalarProperty Name="pdv" ColumnName="pdv" />
+          <ScalarProperty Name="iznosSaPdv" ColumnName="iznosSaPdv" />
+          <ScalarProperty Name="valutaId" ColumnName="valutaId" />
+          <ScalarProperty Name="iznosValuta" ColumnName="iznosValuta" />
+          <ScalarProperty Name="ponudaId" ColumnName="ponudaId" />
+          <ScalarProperty Name="brojFakture" ColumnName="brojFakture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fakturaStavke">
+      <EntityTypeMapping TypeName="EuroplakatModel.fakturaStavke">
+        <MappingFragment StoreEntitySet="fakturaStavke">
+          <ScalarProperty Name="fakturaStavkeId" ColumnName="fakturaStavkeId" />
+          <ScalarProperty Name="fakturaId" ColumnName="fakturaId" />
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="trosakId" ColumnName="trosakId" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="rabat" ColumnName="rabat" />
+          <ScalarProperty Name="cijenaSaPopustom" ColumnName="cijenaSaPopustom" />
+          <ScalarProperty Name="ponudaStavkaId" ColumnName="ponudaStavkaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="klijent">
+      <EntityTypeMapping TypeName="EuroplakatModel.klijent">
+        <MappingFragment StoreEntitySet="klijent">
+          <ScalarProperty Name="klijentId" ColumnName="klijentId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="klijentTipId" ColumnName="klijentTipId" />
+          <ScalarProperty Name="klijentVrstaId" ColumnName="klijentVrstaId" />
+          <ScalarProperty Name="JIB" ColumnName="JIB" />
+          <ScalarProperty Name="PDVBroj" ColumnName="PDVBroj" />
+          <ScalarProperty Name="posta" ColumnName="posta" />
+          <ScalarProperty Name="mjestoId" ColumnName="mjestoId" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="kontaktOsoba" ColumnName="kontaktOsoba" />
+          <ScalarProperty Name="odgovornaOsoba" ColumnName="odgovornaOsoba" />
+          <ScalarProperty Name="webStranica" ColumnName="webStranica" />
+          <ScalarProperty Name="valutaId" ColumnName="valutaId" />
+          <ScalarProperty Name="isPdv" ColumnName="isPdv" />
+          <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+          <ScalarProperty Name="jezikId" ColumnName="jezikId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="klijentVeze">
+      <EntityTypeMapping TypeName="EuroplakatModel.klijentVeze">
+        <MappingFragment StoreEntitySet="klijentVeze">
+          <ScalarProperty Name="klijentVezaId" ColumnName="klijentVezaId" />
+          <ScalarProperty Name="klijentTipVezeId" ColumnName="klijentTipVezeId" />
+          <ScalarProperty Name="klijentId" ColumnName="klijentId" />
+          <ScalarProperty Name="klijentVezaniId" ColumnName="klijentVezaniId" />
+          <ScalarProperty Name="pocetak" ColumnName="pocetak" />
+          <ScalarProperty Name="kraj" ColumnName="kraj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="link">
+      <EntityTypeMapping TypeName="EuroplakatModel.link">
+        <MappingFragment StoreEntitySet="link">
+          <ScalarProperty Name="linkId" ColumnName="linkId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="datumOd" ColumnName="datumOd" />
+          <ScalarProperty Name="datumDo" ColumnName="datumDo" />
+          <ScalarProperty Name="sifra" ColumnName="sifra" />
+          <ScalarProperty Name="ponudaId" ColumnName="ponudaId" />
+          <ScalarProperty Name="radniNalogId" ColumnName="radniNalogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mrezaPlakat">
+      <EntityTypeMapping TypeName="EuroplakatModel.mrezaPlakat">
+        <MappingFragment StoreEntitySet="mrezaPlakat">
+          <ScalarProperty Name="mrezaPlakatId" ColumnName="mrezaPlakatId" />
+          <ScalarProperty Name="mrezaId" ColumnName="mrezaId" />
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="datumOd" ColumnName="datumOd" />
+          <ScalarProperty Name="datumDo" ColumnName="datumDo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plakat">
+      <EntityTypeMapping TypeName="EuroplakatModel.plakat">
+        <MappingFragment StoreEntitySet="plakat">
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="inventarniBroj" ColumnName="inventarniBroj" />
+          <ScalarProperty Name="redniBroj" ColumnName="redniBroj" />
+          <ScalarProperty Name="posta" ColumnName="posta" />
+          <ScalarProperty Name="mjestoId" ColumnName="mjestoId" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="plakatTipId" ColumnName="plakatTipId" />
+          <ScalarProperty Name="koordinate" ColumnName="koordinate" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="isOsvjetljen" ColumnName="isOsvjetljen" />
+          <ScalarProperty Name="isDvostrano" ColumnName="isDvostrano" />
+          <ScalarProperty Name="plakatKategorijaIzvrsnostiId" ColumnName="plakatKategorijaIzvrsnostiId" />
+          <ScalarProperty Name="vlasnikId" ColumnName="vlasnikId" />
+          <ScalarProperty Name="cjenovnaKategorijaId" ColumnName="cjenovnaKategorijaId" />
+          <ScalarProperty Name="statusPlakatId" ColumnName="statusPlakatId" />
+          <ScalarProperty Name="dimenzija" ColumnName="dimenzija" />
+          <ScalarProperty Name="vrstaOkviraId" ColumnName="vrstaOkviraId" />
+          <ScalarProperty Name="dimenzijaId" ColumnName="dimenzijaId" />
+          <ScalarProperty Name="turaId" ColumnName="turaId" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plakatSlika">
+      <EntityTypeMapping TypeName="EuroplakatModel.plakatSlika">
+        <MappingFragment StoreEntitySet="plakatSlika">
+          <ScalarProperty Name="plakatSlika1" ColumnName="plakatSlika" />
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="slika" ColumnName="slika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ponuda">
+      <EntityTypeMapping TypeName="EuroplakatModel.ponuda">
+        <MappingFragment StoreEntitySet="ponuda">
+          <ScalarProperty Name="ponudaId" ColumnName="ponudaId" />
+          <ScalarProperty Name="brojZahtjeva" ColumnName="brojZahtjeva" />
+          <ScalarProperty Name="poolId" ColumnName="poolId" />
+          <ScalarProperty Name="agencijaId" ColumnName="agencijaId" />
+          <ScalarProperty Name="klijentId" ColumnName="klijentId" />
+          <ScalarProperty Name="podklijentId" ColumnName="podklijentId" />
+          <ScalarProperty Name="datumZahtjeva" ColumnName="datumZahtjeva" />
+          <ScalarProperty Name="plakatTipId" ColumnName="plakatTipId" />
+          <ScalarProperty Name="kampanja" ColumnName="kampanja" />
+          <ScalarProperty Name="isDatumska" ColumnName="isDatumska" />
+          <ScalarProperty Name="pocetakKampanje" ColumnName="pocetakKampanje" />
+          <ScalarProperty Name="trajanjeKampanje" ColumnName="trajanjeKampanje" />
+          <ScalarProperty Name="budzetKampanje" ColumnName="budzetKampanje" />
+          <ScalarProperty Name="rabat" ColumnName="rabat" />
+          <ScalarProperty Name="ponudaStatusId" ColumnName="ponudaStatusId" />
+          <ScalarProperty Name="brojPonude" ColumnName="brojPonude" />
+          <ScalarProperty Name="datumPonude" ColumnName="datumPonude" />
+          <ScalarProperty Name="brojDanaVazenjaPonude" ColumnName="brojDanaVazenjaPonude" />
+          <ScalarProperty Name="protokol" ColumnName="protokol" />
+          <ScalarProperty Name="datumOtkazivanja" ColumnName="datumOtkazivanja" />
+          <ScalarProperty Name="brojDanaOtk" ColumnName="brojDanaOtk" />
+          <ScalarProperty Name="datumSlanja" ColumnName="datumSlanja" />
+          <ScalarProperty Name="isParcijalnoPlacanje" ColumnName="isParcijalnoPlacanje" />
+          <ScalarProperty Name="rokPlacanja" ColumnName="rokPlacanja" />
+          <ScalarProperty Name="krajKampanje" ColumnName="krajKampanje" />
+          <ScalarProperty Name="trajanjeKampanjeId" ColumnName="trajanjeKampanjeId" />
+          <ScalarProperty Name="isMreza" ColumnName="isMreza" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+          <ScalarProperty Name="accountManagerId" ColumnName="accountManagerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ponudaKontakt">
+      <EntityTypeMapping TypeName="EuroplakatModel.ponudaKontakt">
+        <MappingFragment StoreEntitySet="ponudaKontakt">
+          <ScalarProperty Name="ponudaKontaktId" ColumnName="ponudaKontaktId" />
+          <ScalarProperty Name="ponudaId" ColumnName="ponudaId" />
+          <ScalarProperty Name="tipKontaktaId" ColumnName="tipKontaktaId" />
+          <ScalarProperty Name="kontaktOsoba" ColumnName="kontaktOsoba" />
+          <ScalarProperty Name="kontakt" ColumnName="kontakt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ponudaStavkaDodatak">
+      <EntityTypeMapping TypeName="EuroplakatModel.ponudaStavkaDodatak">
+        <MappingFragment StoreEntitySet="ponudaStavkaDodatak">
+          <ScalarProperty Name="ponudaStavkaDodatakId" ColumnName="ponudaStavkaDodatakId" />
+          <ScalarProperty Name="ponudaStavkeId" ColumnName="ponudaStavkeId" />
+          <ScalarProperty Name="trosakId" ColumnName="trosakId" />
+          <ScalarProperty Name="datumZahtjeva" ColumnName="datumZahtjeva" />
+          <ScalarProperty Name="datumRealizacije" ColumnName="datumRealizacije" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ponudaStavke">
+      <EntityTypeMapping TypeName="EuroplakatModel.ponudaStavke">
+        <MappingFragment StoreEntitySet="ponudaStavke">
+          <ScalarProperty Name="ponudaStavkeId" ColumnName="ponudaStavkeId" />
+          <ScalarProperty Name="ponudaId" ColumnName="ponudaId" />
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="trosakId" ColumnName="trosakId" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="rabat" ColumnName="rabat" />
+          <ScalarProperty Name="cijenaSaPopustom" ColumnName="cijenaSaPopustom" />
+          <ScalarProperty Name="cijenaDan" ColumnName="cijenaDan" />
+          <ScalarProperty Name="mrezaId" ColumnName="mrezaId" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="porukaSistemska">
+      <EntityTypeMapping TypeName="EuroplakatModel.porukaSistemska">
+        <MappingFragment StoreEntitySet="porukaSistemska">
+          <ScalarProperty Name="porukaSistemskaId" ColumnName="porukaSistemskaId" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+          <ScalarProperty Name="vrijeme" ColumnName="vrijeme" />
+          <ScalarProperty Name="sadrzaj" ColumnName="sadrzaj" />
+          <ScalarProperty Name="isPoslano" ColumnName="isPoslano" />
+          <ScalarProperty Name="ponudaId" ColumnName="ponudaId" />
+          <ScalarProperty Name="putanja" ColumnName="putanja" />
+          <ScalarProperty Name="putanjaUvjeti" ColumnName="putanjaUvjeti" />
+          <ScalarProperty Name="isAccount" ColumnName="isAccount" />
+          <ScalarProperty Name="radniNalogId" ColumnName="radniNalogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="radniNalog">
+      <EntityTypeMapping TypeName="EuroplakatModel.radniNalog">
+        <MappingFragment StoreEntitySet="radniNalog">
+          <ScalarProperty Name="radniNalogId" ColumnName="radniNalogId" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="radniNalogSlika">
+      <EntityTypeMapping TypeName="EuroplakatModel.radniNalogSlika">
+        <MappingFragment StoreEntitySet="radniNalogSlika">
+          <ScalarProperty Name="radniNalogSlikaId" ColumnName="radniNalogSlikaId" />
+          <ScalarProperty Name="radniNalogStavkaId" ColumnName="radniNalogStavkaId" />
+          <ScalarProperty Name="slika" ColumnName="slika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="radniNalogStavke">
+      <EntityTypeMapping TypeName="EuroplakatModel.radniNalogStavke">
+        <MappingFragment StoreEntitySet="radniNalogStavke">
+          <ScalarProperty Name="radniNalogStavke1" ColumnName="radniNalogStavke" />
+          <ScalarProperty Name="radniNalogId" ColumnName="radniNalogId" />
+          <ScalarProperty Name="ponudaStavkaId" ColumnName="ponudaStavkaId" />
+          <ScalarProperty Name="idejno" ColumnName="idejno" />
+          <ScalarProperty Name="isPrijeLijepiti" ColumnName="isPrijeLijepiti" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+          <ScalarProperty Name="isFotografisano" ColumnName="isFotografisano" />
+          <ScalarProperty Name="turaSedmicaId" ColumnName="turaSedmicaId" />
+          <ScalarProperty Name="isDemontirano" ColumnName="isDemontirano" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trosak">
+      <EntityTypeMapping TypeName="EuroplakatModel.trosak">
+        <MappingFragment StoreEntitySet="trosak">
+          <ScalarProperty Name="trosakId" ColumnName="trosakId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="turaSedmica">
+      <EntityTypeMapping TypeName="EuroplakatModel.turaSedmica">
+        <MappingFragment StoreEntitySet="turaSedmica">
+          <ScalarProperty Name="turaSedmicaId" ColumnName="turaSedmicaId" />
+          <ScalarProperty Name="turaId" ColumnName="turaId" />
+          <ScalarProperty Name="sedmicaId" ColumnName="sedmicaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="turaSedmicaZaposleni">
+      <EntityTypeMapping TypeName="EuroplakatModel.turaSedmicaZaposleni">
+        <MappingFragment StoreEntitySet="turaSedmicaZaposleni">
+          <ScalarProperty Name="turaSedmicaZaposleniId" ColumnName="turaSedmicaZaposleniId" />
+          <ScalarProperty Name="turaSedmicaId" ColumnName="turaSedmicaId" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ugovor">
+      <EntityTypeMapping TypeName="EuroplakatModel.ugovor">
+        <MappingFragment StoreEntitySet="ugovor">
+          <ScalarProperty Name="ugovorId" ColumnName="ugovorId" />
+          <ScalarProperty Name="datumUgovora" ColumnName="datumUgovora" />
+          <ScalarProperty Name="vlasnikId" ColumnName="vlasnikId" />
+          <ScalarProperty Name="pocetak" ColumnName="pocetak" />
+          <ScalarProperty Name="kraj" ColumnName="kraj" />
+          <ScalarProperty Name="vrijednost" ColumnName="vrijednost" />
+          <ScalarProperty Name="vrstaUgovoraId" ColumnName="vrstaUgovoraId" />
+          <ScalarProperty Name="brojUgovora" ColumnName="brojUgovora" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ugovorStavke">
+      <EntityTypeMapping TypeName="EuroplakatModel.ugovorStavke">
+        <MappingFragment StoreEntitySet="ugovorStavke">
+          <ScalarProperty Name="ugovorStavkaId" ColumnName="ugovorStavkaId" />
+          <ScalarProperty Name="ugovorId" ColumnName="ugovorId" />
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zaposleni">
+      <EntityTypeMapping TypeName="EuroplakatModel.zaposleni">
+        <MappingFragment StoreEntitySet="zaposleni">
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="jmb" ColumnName="jmb" />
+          <ScalarProperty Name="datumZaposlenja" ColumnName="datumZaposlenja" />
+          <ScalarProperty Name="datumKrajaZaposlenja" ColumnName="datumKrajaZaposlenja" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="posta" ColumnName="posta" />
+          <ScalarProperty Name="mjestoId" ColumnName="mjestoId" />
+          <ScalarProperty Name="aspNetUserId" ColumnName="aspNetUserId" />
+          <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cjenovnaKategorija">
+      <EntityTypeMapping TypeName="EuroplakatModel.cjenovnaKategorija">
+        <MappingFragment StoreEntitySet="cjenovnaKategorija">
+          <ScalarProperty Name="cjenovnaKategorijaId" ColumnName="cjenovnaKategorijaId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dimenzija">
+      <EntityTypeMapping TypeName="EuroplakatModel.dimenzija">
+        <MappingFragment StoreEntitySet="dimenzija">
+          <ScalarProperty Name="dimenzijaId" ColumnName="dimenzijaId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="jezik">
+      <EntityTypeMapping TypeName="EuroplakatModel.jezik">
+        <MappingFragment StoreEntitySet="jezik">
+          <ScalarProperty Name="jezikId" ColumnName="jezikId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="oznaka" ColumnName="oznaka" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="klijentTip">
+      <EntityTypeMapping TypeName="EuroplakatModel.klijentTip">
+        <MappingFragment StoreEntitySet="klijentTip">
+          <ScalarProperty Name="klijentTipId" ColumnName="klijentTipId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="klijentTipVeza">
+      <EntityTypeMapping TypeName="EuroplakatModel.klijentTipVeza">
+        <MappingFragment StoreEntitySet="klijentTipVeza">
+          <ScalarProperty Name="klijentTipVezaId" ColumnName="klijentTipVezaId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="klijentVrsta">
+      <EntityTypeMapping TypeName="EuroplakatModel.klijentVrsta">
+        <MappingFragment StoreEntitySet="klijentVrsta">
+          <ScalarProperty Name="klijentVrstaId" ColumnName="klijentVrstaId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kurs">
+      <EntityTypeMapping TypeName="EuroplakatModel.kurs">
+        <MappingFragment StoreEntitySet="kurs">
+          <ScalarProperty Name="kursId" ColumnName="kursId" />
+          <ScalarProperty Name="valutaId" ColumnName="valutaId" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="kurs1" ColumnName="kurs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mjesto">
+      <EntityTypeMapping TypeName="EuroplakatModel.mjesto">
+        <MappingFragment StoreEntitySet="mjesto">
+          <ScalarProperty Name="mjestoId" ColumnName="mjestoId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="regijaId" ColumnName="regijaId" />
+          <ScalarProperty Name="posta" ColumnName="posta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mreza">
+      <EntityTypeMapping TypeName="EuroplakatModel.mreza">
+        <MappingFragment StoreEntitySet="mreza">
+          <ScalarProperty Name="mrezaId" ColumnName="mrezaId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plakatKategorijaIzvrsnosti">
+      <EntityTypeMapping TypeName="EuroplakatModel.plakatKategorijaIzvrsnosti">
+        <MappingFragment StoreEntitySet="plakatKategorijaIzvrsnosti">
+          <ScalarProperty Name="plakatKategorijaIzvrsnostiId" ColumnName="plakatKategorijaIzvrsnostiId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plakatTip">
+      <EntityTypeMapping TypeName="EuroplakatModel.plakatTip">
+        <MappingFragment StoreEntitySet="plakatTip">
+          <ScalarProperty Name="plakatTipId" ColumnName="plakatTipId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="oznaka" ColumnName="oznaka" />
+          <ScalarProperty Name="minimalnoVrijeme" ColumnName="minimalnoVrijeme" />
+          <ScalarProperty Name="cjenovnaKategorijaId" ColumnName="cjenovnaKategorijaId" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plakatTipDimenzija">
+      <EntityTypeMapping TypeName="EuroplakatModel.plakatTipDimenzija">
+        <MappingFragment StoreEntitySet="plakatTipDimenzija">
+          <ScalarProperty Name="plakatTipDimenzijaId" ColumnName="plakatTipDimenzijaId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="oznaka" ColumnName="oznaka" />
+          <ScalarProperty Name="dimenzija" ColumnName="dimenzija" />
+          <ScalarProperty Name="minimalnoVrijeme" ColumnName="minimalnoVrijeme" />
+          <ScalarProperty Name="plakatTipId" ColumnName="plakatTipId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ponudaStatus">
+      <EntityTypeMapping TypeName="EuroplakatModel.ponudaStatus">
+        <MappingFragment StoreEntitySet="ponudaStatus">
+          <ScalarProperty Name="ponudaStatusId" ColumnName="ponudaStatusId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="boja" ColumnName="boja" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="regija">
+      <EntityTypeMapping TypeName="EuroplakatModel.regija">
+        <MappingFragment StoreEntitySet="regija">
+          <ScalarProperty Name="regijaId" ColumnName="regijaId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="sjediste" ColumnName="sjediste" />
+          <ScalarProperty Name="oznaka" ColumnName="oznaka" />
+          <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sedmica">
+      <EntityTypeMapping TypeName="EuroplakatModel.sedmica">
+        <MappingFragment StoreEntitySet="sedmica">
+          <ScalarProperty Name="sedmicaId" ColumnName="sedmicaId" />
+          <ScalarProperty Name="brojSedmice" ColumnName="brojSedmice" />
+          <ScalarProperty Name="datumOd" ColumnName="datumOd" />
+          <ScalarProperty Name="datumDo" ColumnName="datumDo" />
+          <ScalarProperty Name="godina" ColumnName="godina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="statusPlakat">
+      <EntityTypeMapping TypeName="EuroplakatModel.statusPlakat">
+        <MappingFragment StoreEntitySet="statusPlakat">
+          <ScalarProperty Name="statusPlakatId" ColumnName="statusPlakatId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="oznaka" ColumnName="oznaka" />
+          <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipKontakta">
+      <EntityTypeMapping TypeName="EuroplakatModel.tipKontakta">
+        <MappingFragment StoreEntitySet="tipKontakta">
+          <ScalarProperty Name="tipKontaktaId" ColumnName="tipKontaktaId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trajanjeKampanje">
+      <EntityTypeMapping TypeName="EuroplakatModel.trajanjeKampanje">
+        <MappingFragment StoreEntitySet="trajanjeKampanje">
+          <ScalarProperty Name="trajanjeKampanjeId" ColumnName="trajanjeKampanjeId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="trajanje" ColumnName="trajanje" />
+          <ScalarProperty Name="isAktivan" ColumnName="isAktivan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tura">
+      <EntityTypeMapping TypeName="EuroplakatModel.tura">
+        <MappingFragment StoreEntitySet="tura">
+          <ScalarProperty Name="turaId" ColumnName="turaId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="valuta">
+      <EntityTypeMapping TypeName="EuroplakatModel.valuta">
+        <MappingFragment StoreEntitySet="valuta">
+          <ScalarProperty Name="valutaId" ColumnName="valutaId" />
+          <ScalarProperty Name="oznaka" ColumnName="oznaka" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vrstaOkvira">
+      <EntityTypeMapping TypeName="EuroplakatModel.vrstaOkvira">
+        <MappingFragment StoreEntitySet="vrstaOkvira">
+          <ScalarProperty Name="vrstaOkviraId" ColumnName="vrstaOkviraId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="isAktivan" ColumnName="isAktivan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vrstaUgovora">
+      <EntityTypeMapping TypeName="EuroplakatModel.vrstaUgovora">
+        <MappingFragment StoreEntitySet="vrstaUgovora">
+          <ScalarProperty Name="VrstaUgovoraId" ColumnName="VrstaUgovoraId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+          <ScalarProperty Name="napomena" ColumnName="napomena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log">
+      <EntityTypeMapping TypeName="EuroplakatModel.log">
+        <MappingFragment StoreEntitySet="log">
+          <ScalarProperty Name="logId" ColumnName="logId" />
+          <ScalarProperty Name="vrijeme" ColumnName="vrijeme" />
+          <ScalarProperty Name="poruka" ColumnName="poruka" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SBOK2">
+      <EntityTypeMapping TypeName="EuroplakatModel.SBOK2">
+        <MappingFragment StoreEntitySet="SBOK2">
+          <ScalarProperty Name="TipPovrsine" ColumnName="TipPovrsine" />
+          <ScalarProperty Name="Regija" ColumnName="Regija" />
+          <ScalarProperty Name="Pttbroj" ColumnName="Pttbroj" />
+          <ScalarProperty Name="InvBroj" ColumnName="InvBroj" />
+          <ScalarProperty Name="RedBroj" ColumnName="RedBroj" />
+          <ScalarProperty Name="Grad" ColumnName="Grad" />
+          <ScalarProperty Name="Tura" ColumnName="Tura" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="TrenutnoStanje" ColumnName="TrenutnoStanje" />
+          <ScalarProperty Name="CIJENA_PO_DANU" ColumnName="CIJENA PO DANU" />
+          <ScalarProperty Name="Cijena2" ColumnName="Cijena2" />
+          <ScalarProperty Name="Cijena4" ColumnName="Cijena4" />
+          <ScalarProperty Name="Ocjena" ColumnName="Ocjena" />
+          <ScalarProperty Name="DVO_JED" ColumnName="DVO/JED" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Dimenzije" ColumnName="Dimenzije" />
+          <ScalarProperty Name="F17" ColumnName="F17" />
+          <ScalarProperty Name="Osvijetljena" ColumnName="Osvijetljena" />
+          <ScalarProperty Name="UGOVOR_DIREKCIJA" ColumnName="UGOVOR DIREKCIJA" />
+          <ScalarProperty Name="BROJ" ColumnName="BROJ" />
+          <ScalarProperty Name="DATUM_ISTEKA" ColumnName="DATUM ISTEKA" />
+          <ScalarProperty Name="IZNOS" ColumnName="IZNOS" />
+          <ScalarProperty Name="UGOVOR_GRAD_OPCINA" ColumnName="UGOVOR GRAD/OPCINA" />
+          <ScalarProperty Name="BROJ1" ColumnName="BROJ1" />
+          <ScalarProperty Name="DATUM_ISTEKA1" ColumnName="DATUM ISTEKA1" />
+          <ScalarProperty Name="IZNOS1" ColumnName="IZNOS1" />
+          <ScalarProperty Name="UGOVOR_PRIVATNA_LICA" ColumnName="UGOVOR PRIVATNA LICA" />
+          <ScalarProperty Name="BROJ2" ColumnName="BROJ2" />
+          <ScalarProperty Name="DATUM_ISTEKA2" ColumnName="DATUM ISTEKA2" />
+          <ScalarProperty Name="IZNOS2" ColumnName="IZNOS2" />
+          <ScalarProperty Name="UKUPNO" ColumnName="UKUPNO" />
+          <ScalarProperty Name="NADLEZNI_ORGAN" ColumnName="NADLEZNI ORGAN" />
+          <ScalarProperty Name="DOZVOLA" ColumnName="DOZVOLA" />
+          <ScalarProperty Name="BROJ3_" ColumnName="BROJ3 " />
+          <ScalarProperty Name="DATUM_ISTEKA3" ColumnName="DATUM ISTEKA3" />
+          <ScalarProperty Name="Vlasnik" ColumnName="Vlasnik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNOK2">
+      <EntityTypeMapping TypeName="EuroplakatModel.TNOK2">
+        <MappingFragment StoreEntitySet="TNOK2">
+          <ScalarProperty Name="TipPovrsine" ColumnName="TipPovrsine" />
+          <ScalarProperty Name="Regija" ColumnName="Regija" />
+          <ScalarProperty Name="Pttbroj" ColumnName="Pttbroj" />
+          <ScalarProperty Name="InvBroj" ColumnName="InvBroj" />
+          <ScalarProperty Name="RedBroj" ColumnName="RedBroj" />
+          <ScalarProperty Name="Grad" ColumnName="Grad" />
+          <ScalarProperty Name="Tura" ColumnName="Tura" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="TrenutnoStanje" ColumnName="TrenutnoStanje" />
+          <ScalarProperty Name="CIJENA_PO_DANU" ColumnName="CIJENA PO DANU" />
+          <ScalarProperty Name="Cijena2" ColumnName="Cijena2" />
+          <ScalarProperty Name="Cijena4" ColumnName="Cijena4" />
+          <ScalarProperty Name="Ocjena" ColumnName="Ocjena" />
+          <ScalarProperty Name="DVO_JED" ColumnName="DVO/JED" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Dimenzije" ColumnName="Dimenzije" />
+          <ScalarProperty Name="Okvir" ColumnName="Okvir" />
+          <ScalarProperty Name="Osvijetljena" ColumnName="Osvijetljena" />
+          <ScalarProperty Name="UGOVOR_DIREKCIJA" ColumnName="UGOVOR DIREKCIJA" />
+          <ScalarProperty Name="BROJ" ColumnName="BROJ" />
+          <ScalarProperty Name="DATUM_ISTEKA" ColumnName="DATUM ISTEKA" />
+          <ScalarProperty Name="IZNOS" ColumnName="IZNOS" />
+          <ScalarProperty Name="UGOVOR_GRAD_OPCINA" ColumnName="UGOVOR GRAD/OPCINA" />
+          <ScalarProperty Name="BROJ1" ColumnName="BROJ1" />
+          <ScalarProperty Name="DATUM_ISTEKA1" ColumnName="DATUM ISTEKA1" />
+          <ScalarProperty Name="IZNOS1" ColumnName="IZNOS1" />
+          <ScalarProperty Name="UGOVOR_PRIVATNA_LICA" ColumnName="UGOVOR PRIVATNA LICA" />
+          <ScalarProperty Name="BROJ2" ColumnName="BROJ2" />
+          <ScalarProperty Name="DATUM_ISTEKA2" ColumnName="DATUM ISTEKA2" />
+          <ScalarProperty Name="IZNOS2" ColumnName="IZNOS2" />
+          <ScalarProperty Name="UKUPNO" ColumnName="UKUPNO" />
+          <ScalarProperty Name="NADLEZNI_ORGAN" ColumnName="NADLEZNI ORGAN" />
+          <ScalarProperty Name="DOZVOLA" ColumnName="DOZVOLA" />
+          <ScalarProperty Name="BROJ3" ColumnName="BROJ3" />
+          <ScalarProperty Name="DATUM_ISTEKA3" ColumnName="DATUM ISTEKA3" />
+          <ScalarProperty Name="Vlasnik" ColumnName="Vlasnik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SBfi">
+      <EntityTypeMapping TypeName="EuroplakatModel.SBfi">
+        <MappingFragment StoreEntitySet="SBfi">
+          <ScalarProperty Name="TipPovrsine" ColumnName="TipPovrsine" />
+          <ScalarProperty Name="Regija" ColumnName="Regija" />
+          <ScalarProperty Name="Pttbroj" ColumnName="Pttbroj" />
+          <ScalarProperty Name="InvBroj" ColumnName="InvBroj" />
+          <ScalarProperty Name="RedBroj" ColumnName="RedBroj" />
+          <ScalarProperty Name="Grad" ColumnName="Grad" />
+          <ScalarProperty Name="Tura" ColumnName="Tura" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="TrenutnoStanje" ColumnName="TrenutnoStanje" />
+          <ScalarProperty Name="Cijena2" ColumnName="Cijena2" />
+          <ScalarProperty Name="Cijena4" ColumnName="Cijena4" />
+          <ScalarProperty Name="Ocjena" ColumnName="Ocjena" />
+          <ScalarProperty Name="DVO_JED" ColumnName="DVO/JED" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Dimenzije" ColumnName="Dimenzije" />
+          <ScalarProperty Name="Osvijetljena" ColumnName="Osvijetljena" />
+          <ScalarProperty Name="UGOVOR_" ColumnName="UGOVOR " />
+          <ScalarProperty Name="BROJ" ColumnName="BROJ" />
+          <ScalarProperty Name="DATUM_ISTEKA" ColumnName="DATUM ISTEKA" />
+          <ScalarProperty Name="IZNOS" ColumnName="IZNOS" />
+          <ScalarProperty Name="UGOVOR_OPCINA" ColumnName="UGOVOR OPCINA" />
+          <ScalarProperty Name="BROJ1" ColumnName="BROJ1" />
+          <ScalarProperty Name="DATUM_ISTEKA1" ColumnName="DATUM ISTEKA1" />
+          <ScalarProperty Name="IZNOS1" ColumnName="IZNOS1" />
+          <ScalarProperty Name="UGOVOR_PRIVATNO" ColumnName="UGOVOR PRIVATNO" />
+          <ScalarProperty Name="BROJ2" ColumnName="BROJ2" />
+          <ScalarProperty Name="DATUM_ISTEKA2" ColumnName="DATUM ISTEKA2" />
+          <ScalarProperty Name="IZNOS2" ColumnName="IZNOS2" />
+          <ScalarProperty Name="UKUPNO" ColumnName="UKUPNO" />
+          <ScalarProperty Name="Vlasnik" ColumnName="Vlasnik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TNfin">
+      <EntityTypeMapping TypeName="EuroplakatModel.TNfin">
+        <MappingFragment StoreEntitySet="TNfin">
+          <ScalarProperty Name="TipPovrsine" ColumnName="TipPovrsine" />
+          <ScalarProperty Name="Regija" ColumnName="Regija" />
+          <ScalarProperty Name="Pttbroj" ColumnName="Pttbroj" />
+          <ScalarProperty Name="InvBroj" ColumnName="InvBroj" />
+          <ScalarProperty Name="RedBroj" ColumnName="RedBroj" />
+          <ScalarProperty Name="Grad" ColumnName="Grad" />
+          <ScalarProperty Name="Tura" ColumnName="Tura" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="TrenutnoStanje" ColumnName="TrenutnoStanje" />
+          <ScalarProperty Name="Cijena2" ColumnName="Cijena2" />
+          <ScalarProperty Name="Cijena4" ColumnName="Cijena4" />
+          <ScalarProperty Name="Ocjena" ColumnName="Ocjena" />
+          <ScalarProperty Name="DVO_JED" ColumnName="DVO/JED" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Dimenzije" ColumnName="Dimenzije" />
+          <ScalarProperty Name="Osvijetljena" ColumnName="Osvijetljena" />
+          <ScalarProperty Name="UGOVOR_" ColumnName="UGOVOR " />
+          <ScalarProperty Name="BROJ" ColumnName="BROJ" />
+          <ScalarProperty Name="DATUM_ISTEKA" ColumnName="DATUM ISTEKA" />
+          <ScalarProperty Name="IZNOS" ColumnName="IZNOS" />
+          <ScalarProperty Name="UGOVOR_OPCINA" ColumnName="UGOVOR OPCINA" />
+          <ScalarProperty Name="BROJ1" ColumnName="BROJ1" />
+          <ScalarProperty Name="DATUM_ISTEKA1" ColumnName="DATUM ISTEKA1" />
+          <ScalarProperty Name="IZNOS1" ColumnName="IZNOS1" />
+          <ScalarProperty Name="UGOVOR_PRIVATNO" ColumnName="UGOVOR PRIVATNO" />
+          <ScalarProperty Name="BROJ2" ColumnName="BROJ2" />
+          <ScalarProperty Name="DATUM_ISTEKA2" ColumnName="DATUM ISTEKA2" />
+          <ScalarProperty Name="IZNOS2" ColumnName="IZNOS2" />
+          <ScalarProperty Name="UKUPNO" ColumnName="UKUPNO" />
+          <ScalarProperty Name="Vlasnik" ColumnName="Vlasnik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plakatLog">
+      <EntityTypeMapping TypeName="EuroplakatModel.plakatLog">
+        <MappingFragment StoreEntitySet="plakatLog">
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="inventarniBroj" ColumnName="inventarniBroj" />
+          <ScalarProperty Name="redniBroj" ColumnName="redniBroj" />
+          <ScalarProperty Name="posta" ColumnName="posta" />
+          <ScalarProperty Name="mjestoId" ColumnName="mjestoId" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="plakatTipId" ColumnName="plakatTipId" />
+          <ScalarProperty Name="koordinate" ColumnName="koordinate" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="isOsvjetljen" ColumnName="isOsvjetljen" />
+          <ScalarProperty Name="isDvostrano" ColumnName="isDvostrano" />
+          <ScalarProperty Name="plakatKategorijaIzvrsnostiId" ColumnName="plakatKategorijaIzvrsnostiId" />
+          <ScalarProperty Name="vlasnikId" ColumnName="vlasnikId" />
+          <ScalarProperty Name="cjenovnaKategorijaId" ColumnName="cjenovnaKategorijaId" />
+          <ScalarProperty Name="statusPlakatId" ColumnName="statusPlakatId" />
+          <ScalarProperty Name="dimenzija" ColumnName="dimenzija" />
+          <ScalarProperty Name="vrstaOkviraId" ColumnName="vrstaOkviraId" />
+          <ScalarProperty Name="dimenzijaId" ColumnName="dimenzijaId" />
+          <ScalarProperty Name="turaId" ColumnName="turaId" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+          <ScalarProperty Name="akcija" ColumnName="akcija" />
+          <ScalarProperty Name="vrijeme" ColumnName="vrijeme" />
+          <ScalarProperty Name="plakatLogId" ColumnName="plakatLogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ponudaLog">
+      <EntityTypeMapping TypeName="EuroplakatModel.ponudaLog">
+        <MappingFragment StoreEntitySet="ponudaLog">
+          <ScalarProperty Name="ponudaLogId" ColumnName="ponudaLogId" />
+          <ScalarProperty Name="ponudaId" ColumnName="ponudaId" />
+          <ScalarProperty Name="brojZahtjeva" ColumnName="brojZahtjeva" />
+          <ScalarProperty Name="poolId" ColumnName="poolId" />
+          <ScalarProperty Name="agencijaId" ColumnName="agencijaId" />
+          <ScalarProperty Name="klijentId" ColumnName="klijentId" />
+          <ScalarProperty Name="podklijentId" ColumnName="podklijentId" />
+          <ScalarProperty Name="datumZahtjeva" ColumnName="datumZahtjeva" />
+          <ScalarProperty Name="plakatTipId" ColumnName="plakatTipId" />
+          <ScalarProperty Name="kampanja" ColumnName="kampanja" />
+          <ScalarProperty Name="isDatumska" ColumnName="isDatumska" />
+          <ScalarProperty Name="pocetakKampanje" ColumnName="pocetakKampanje" />
+          <ScalarProperty Name="trajanjeKampanje" ColumnName="trajanjeKampanje" />
+          <ScalarProperty Name="budzetKampanje" ColumnName="budzetKampanje" />
+          <ScalarProperty Name="rabat" ColumnName="rabat" />
+          <ScalarProperty Name="ponudaStatusId" ColumnName="ponudaStatusId" />
+          <ScalarProperty Name="brojPonude" ColumnName="brojPonude" />
+          <ScalarProperty Name="datumPonude" ColumnName="datumPonude" />
+          <ScalarProperty Name="brojDanaVazenjaPonude" ColumnName="brojDanaVazenjaPonude" />
+          <ScalarProperty Name="protokol" ColumnName="protokol" />
+          <ScalarProperty Name="datumOtkazivanja" ColumnName="datumOtkazivanja" />
+          <ScalarProperty Name="brojDanaOtk" ColumnName="brojDanaOtk" />
+          <ScalarProperty Name="datumSlanja" ColumnName="datumSlanja" />
+          <ScalarProperty Name="isParcijalnoPlacanje" ColumnName="isParcijalnoPlacanje" />
+          <ScalarProperty Name="rokPlacanja" ColumnName="rokPlacanja" />
+          <ScalarProperty Name="trajanjeKampanjeId" ColumnName="trajanjeKampanjeId" />
+          <ScalarProperty Name="isMreza" ColumnName="isMreza" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+          <ScalarProperty Name="akcija" ColumnName="akcija" />
+          <ScalarProperty Name="vrijeme" ColumnName="vrijeme" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ponudaStavkeLog">
+      <EntityTypeMapping TypeName="EuroplakatModel.ponudaStavkeLog">
+        <MappingFragment StoreEntitySet="ponudaStavkeLog">
+          <ScalarProperty Name="ponudaStavkeId" ColumnName="ponudaStavkeId" />
+          <ScalarProperty Name="ponudaId" ColumnName="ponudaId" />
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="trosakId" ColumnName="trosakId" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="rabat" ColumnName="rabat" />
+          <ScalarProperty Name="cijenaSaPopustom" ColumnName="cijenaSaPopustom" />
+          <ScalarProperty Name="mrezaId" ColumnName="mrezaId" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+          <ScalarProperty Name="akcija" ColumnName="akcija" />
+          <ScalarProperty Name="vrijeme" ColumnName="vrijeme" />
+          <ScalarProperty Name="ponudaStavkeLogId" ColumnName="ponudaStavkeLogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="radniNalogStavkeLog">
+      <EntityTypeMapping TypeName="EuroplakatModel.radniNalogStavkeLog">
+        <MappingFragment StoreEntitySet="radniNalogStavkeLog">
+          <ScalarProperty Name="radniNalogStavkeLog1" ColumnName="radniNalogStavkeLog" />
+          <ScalarProperty Name="radniNalogStavke" ColumnName="radniNalogStavke" />
+          <ScalarProperty Name="radniNalogId" ColumnName="radniNalogId" />
+          <ScalarProperty Name="ponudaStavkaId" ColumnName="ponudaStavkaId" />
+          <ScalarProperty Name="idejno" ColumnName="idejno" />
+          <ScalarProperty Name="isPrijeLijepiti" ColumnName="isPrijeLijepiti" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+          <ScalarProperty Name="isFotografisano" ColumnName="isFotografisano" />
+          <ScalarProperty Name="turaSedmicaId" ColumnName="turaSedmicaId" />
+          <ScalarProperty Name="isDemontirano" ColumnName="isDemontirano" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+          <ScalarProperty Name="akcija" ColumnName="akcija" />
+          <ScalarProperty Name="vrijeme" ColumnName="vrijeme" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ugovorLog">
+      <EntityTypeMapping TypeName="EuroplakatModel.ugovorLog">
+        <MappingFragment StoreEntitySet="ugovorLog">
+          <ScalarProperty Name="ugovorId" ColumnName="ugovorId" />
+          <ScalarProperty Name="datumUgovora" ColumnName="datumUgovora" />
+          <ScalarProperty Name="vlasnikId" ColumnName="vlasnikId" />
+          <ScalarProperty Name="pocetak" ColumnName="pocetak" />
+          <ScalarProperty Name="kraj" ColumnName="kraj" />
+          <ScalarProperty Name="vrijednost" ColumnName="vrijednost" />
+          <ScalarProperty Name="vrstaUgovoraId" ColumnName="vrstaUgovoraId" />
+          <ScalarProperty Name="brojUgovora" ColumnName="brojUgovora" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+          <ScalarProperty Name="akcija" ColumnName="akcija" />
+          <ScalarProperty Name="vrijeme" ColumnName="vrijeme" />
+          <ScalarProperty Name="ugovorLogId" ColumnName="ugovorLogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ugovorStavkeLog">
+      <EntityTypeMapping TypeName="EuroplakatModel.ugovorStavkeLog">
+        <MappingFragment StoreEntitySet="ugovorStavkeLog">
+          <ScalarProperty Name="ugovorStavkaId" ColumnName="ugovorStavkaId" />
+          <ScalarProperty Name="ugovorId" ColumnName="ugovorId" />
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+          <ScalarProperty Name="akcija" ColumnName="akcija" />
+          <ScalarProperty Name="vrijeme" ColumnName="vrijeme" />
+          <ScalarProperty Name="ugovorStavkaLogId" ColumnName="ugovorStavkaLogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cjenovnaKategorijaLog">
+      <EntityTypeMapping TypeName="EuroplakatModel.cjenovnaKategorijaLog">
+        <MappingFragment StoreEntitySet="cjenovnaKategorijaLog">
+          <ScalarProperty Name="cjenovnaKategorijaLogId" ColumnName="cjenovnaKategorijaLogId" />
+          <ScalarProperty Name="cjenovnaKategorijaId" ColumnName="cjenovnaKategorijaId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="vrijeme" ColumnName="vrijeme" />
+          <ScalarProperty Name="akcija" ColumnName="akcija" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plakatTipLog">
+      <EntityTypeMapping TypeName="EuroplakatModel.plakatTipLog">
+        <MappingFragment StoreEntitySet="plakatTipLog">
+          <ScalarProperty Name="plakatTipId" ColumnName="plakatTipId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="oznaka" ColumnName="oznaka" />
+          <ScalarProperty Name="minimalnoVrijeme" ColumnName="minimalnoVrijeme" />
+          <ScalarProperty Name="cjenovnaKategorijaId" ColumnName="cjenovnaKategorijaId" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+          <ScalarProperty Name="akcija" ColumnName="akcija" />
+          <ScalarProperty Name="vrijeme" ColumnName="vrijeme" />
+          <ScalarProperty Name="plakatTipLogId" ColumnName="plakatTipLogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ponudaStatusLog">
+      <EntityTypeMapping TypeName="EuroplakatModel.ponudaStatusLog">
+        <MappingFragment StoreEntitySet="ponudaStatusLog">
+          <ScalarProperty Name="ponudaStatusId" ColumnName="ponudaStatusId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="boja" ColumnName="boja" />
+          <ScalarProperty Name="zaposleniId" ColumnName="zaposleniId" />
+          <ScalarProperty Name="akcija" ColumnName="akcija" />
+          <ScalarProperty Name="vrijeme" ColumnName="vrijeme" />
+          <ScalarProperty Name="ponudaStatusLogId" ColumnName="ponudaStatusLogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="EuroplakatModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="EuroplakatModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="EuroplakatModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="EuroplakatModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="EuroplakatModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="EuroplakatModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="EuroplakatModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="EuroplakatModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="importPlakat" FunctionName="EuroplakatModel.Store.importPlakat" />
+    <FunctionImportMapping FunctionImportName="checkPoslanePonude" FunctionName="EuroplakatModel.Store.checkPoslanePonude" />
+    <FunctionImportMapping FunctionImportName="createFaktura" FunctionName="EuroplakatModel.Store.createFaktura" />
+    <FunctionImportMapping FunctionImportName="demontirajPlakat" FunctionName="EuroplakatModel.Store.demontirajPlakat" />
+    <FunctionImportMapping FunctionImportName="getLokacijeZauzetost" FunctionName="EuroplakatModel.Store.getLokacijeZauzetost">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getLokacijeZauzetost_Result">
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="dimenzija" ColumnName="dimenzija" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="inventarniBroj" ColumnName="inventarniBroj" />
+          <ScalarProperty Name="redniBroj" ColumnName="redniBroj" />
+          <ScalarProperty Name="posta" ColumnName="posta" />
+          <ScalarProperty Name="mjestoId" ColumnName="mjestoId" />
+          <ScalarProperty Name="plakatTipId" ColumnName="plakatTipId" />
+          <ScalarProperty Name="isOsvjetljen" ColumnName="isOsvjetljen" />
+          <ScalarProperty Name="isDvostrano" ColumnName="isDvostrano" />
+          <ScalarProperty Name="plakatKategorijaIzvrsnostiId" ColumnName="plakatKategorijaIzvrsnostiId" />
+          <ScalarProperty Name="vlasnikId" ColumnName="vlasnikId" />
+          <ScalarProperty Name="cjenovnaKategorijaId" ColumnName="cjenovnaKategorijaId" />
+          <ScalarProperty Name="statusPlakatId" ColumnName="statusPlakatId" />
+          <ScalarProperty Name="vrstaOkviraId" ColumnName="vrstaOkviraId" />
+          <ScalarProperty Name="vrstaOkvira" ColumnName="vrstaOkvira" />
+          <ScalarProperty Name="koordinate" ColumnName="koordinate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getMrezaPlakati" FunctionName="EuroplakatModel.Store.getMrezaPlakati">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getMrezaPlakati_Result">
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="inventarniBroj" ColumnName="inventarniBroj" />
+          <ScalarProperty Name="redniBroj" ColumnName="redniBroj" />
+          <ScalarProperty Name="posta" ColumnName="posta" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="isOsvjetljen" ColumnName="isOsvjetljen" />
+          <ScalarProperty Name="isDvostrano" ColumnName="isDvostrano" />
+          <ScalarProperty Name="plakatTip" ColumnName="plakatTip" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getMrezaSlike" FunctionName="EuroplakatModel.Store.getMrezaSlike">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getMrezaSlike_Result">
+          <ScalarProperty Name="plakatSlikaId" ColumnName="plakatSlikaId" />
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="plakat" ColumnName="plakat" />
+          <ScalarProperty Name="inventarniBroj" ColumnName="inventarniBroj" />
+          <ScalarProperty Name="redniBroj" ColumnName="redniBroj" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getMrezeDTOByPonuda" FunctionName="EuroplakatModel.Store.getMrezeDTOByPonuda">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getMrezeDTOByPonuda_Result">
+          <ScalarProperty Name="MrezaId" ColumnName="MrezaId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPlakatiDTOByPonuda" FunctionName="EuroplakatModel.Store.getPlakatiDTOByPonuda">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getPlakatiDTOByPonuda_Result">
+          <ScalarProperty Name="PlakatId" ColumnName="PlakatId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Cijena" ColumnName="Cijena" />
+          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+          <ScalarProperty Name="Rabat" ColumnName="Rabat" />
+          <ScalarProperty Name="CijenaSaPopustom" ColumnName="CijenaSaPopustom" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPlakatiDTOByUgovor" FunctionName="EuroplakatModel.Store.getPlakatiDTOByUgovor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getPlakatiDTOByUgovor_Result">
+          <ScalarProperty Name="PlakatId" ColumnName="PlakatId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Cijena" ColumnName="Cijena" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPlakatiRegijaTipPeriod" FunctionName="EuroplakatModel.Store.getPlakatiRegijaTipPeriod">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getPlakatiRegijaTipPeriod_Result">
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="pocetakKampanje" ColumnName="pocetakKampanje" />
+          <ScalarProperty Name="krajKampanje" ColumnName="krajKampanje" />
+          <ScalarProperty Name="isSlobodan" ColumnName="isSlobodan" />
+          <ScalarProperty Name="ponudaId" ColumnName="ponudaId" />
+          <ScalarProperty Name="zauzetoOd" ColumnName="zauzetoOd" />
+          <ScalarProperty Name="zauzetoDo" ColumnName="zauzetoDo" />
+          <ScalarProperty Name="plakatTipId" ColumnName="plakatTipId" />
+          <ScalarProperty Name="plakatTip" ColumnName="plakatTip" />
+          <ScalarProperty Name="plakatOznaka" ColumnName="plakatOznaka" />
+          <ScalarProperty Name="plakatId1" ColumnName="plakatId1" />
+          <ScalarProperty Name="inventarniBroj" ColumnName="inventarniBroj" />
+          <ScalarProperty Name="Regija" ColumnName="Regija" />
+          <ScalarProperty Name="regijaOznaka" ColumnName="regijaOznaka" />
+          <ScalarProperty Name="mjesto" ColumnName="mjesto" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="isOsvjetljen" ColumnName="isOsvjetljen" />
+          <ScalarProperty Name="isDvostrano" ColumnName="isDvostrano" />
+          <ScalarProperty Name="klijent" ColumnName="klijent" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPlakatiZauzetost" FunctionName="EuroplakatModel.Store.getPlakatiZauzetost">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getPlakatiZauzetost_Result">
+          <ScalarProperty Name="PlakatId" ColumnName="PlakatId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Klijenti" ColumnName="Klijenti" />
+          <ScalarProperty Name="Cijena" ColumnName="Cijena" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPonudaPaged" FunctionName="EuroplakatModel.Store.getPonudaPaged" />
+    <FunctionImportMapping FunctionImportName="getPonudaSlike" FunctionName="EuroplakatModel.Store.getPonudaSlike">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getPonudaSlike_Result">
+          <ScalarProperty Name="plakatSlikaId" ColumnName="plakatSlikaId" />
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="plakat" ColumnName="plakat" />
+          <ScalarProperty Name="inventurniBroj" ColumnName="inventurniBroj" />
+          <ScalarProperty Name="rb" ColumnName="rb" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPonudaSlike1" FunctionName="EuroplakatModel.Store.getPonudaSlike1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getPonudaSlike1_Result">
+          <ScalarProperty Name="plakatSlikaId" ColumnName="plakatSlikaId" />
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="plakat" ColumnName="plakat" />
+          <ScalarProperty Name="inventarniBroj" ColumnName="inventarniBroj" />
+          <ScalarProperty Name="redniBroj" ColumnName="redniBroj" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPrihvacenaPonudaPaged" FunctionName="EuroplakatModel.Store.getPrihvacenaPonudaPaged" />
+    <FunctionImportMapping FunctionImportName="getRadneNaloge" FunctionName="EuroplakatModel.Store.getRadneNaloge">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getRadneNaloge_Result">
+          <ScalarProperty Name="radniNalogId" ColumnName="radniNalogId" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="kampanja" ColumnName="kampanja" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="brojPovrsina" ColumnName="brojPovrsina" />
+          <ScalarProperty Name="ponudaId" ColumnName="ponudaId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getRadneNalogePaged" FunctionName="EuroplakatModel.Store.getRadneNalogePaged" />
+    <FunctionImportMapping FunctionImportName="getRadniNalogSlike" FunctionName="EuroplakatModel.Store.getRadniNalogSlike">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getRadniNalogSlike_Result">
+          <ScalarProperty Name="radniNalogSlikaId" ColumnName="radniNalogSlikaId" />
+          <ScalarProperty Name="radniNalogStavkaId" ColumnName="radniNalogStavkaId" />
+          <ScalarProperty Name="plakat" ColumnName="plakat" />
+          <ScalarProperty Name="inventarniBroj" ColumnName="inventarniBroj" />
+          <ScalarProperty Name="redniBroj" ColumnName="redniBroj" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getRadniNalogStavkeDemontaza" FunctionName="EuroplakatModel.Store.getRadniNalogStavkeDemontaza" />
+    <FunctionImportMapping FunctionImportName="getRadniNalogStavkeIdejno" FunctionName="EuroplakatModel.Store.getRadniNalogStavkeIdejno" />
+    <FunctionImportMapping FunctionImportName="getRadniNalogStavkePaged" FunctionName="EuroplakatModel.Store.getRadniNalogStavkePaged" />
+    <FunctionImportMapping FunctionImportName="getSedmice" FunctionName="EuroplakatModel.Store.getSedmice">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getSedmice_Result">
+          <ScalarProperty Name="sedmicaId" ColumnName="sedmicaId" />
+          <ScalarProperty Name="sedmica" ColumnName="sedmica" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getSlikePonuda" FunctionName="EuroplakatModel.Store.getSlikePonuda">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getSlikePonuda_Result">
+          <ScalarProperty Name="plakat" ColumnName="plakat" />
+          <ScalarProperty Name="slika" ColumnName="slika" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getSlobodnePlakate" FunctionName="EuroplakatModel.Store.getSlobodnePlakate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getSlobodnePlakate_Result">
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getStavkeRN" FunctionName="EuroplakatModel.Store.getStavkeRN">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getStavkeRN_Result">
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="radniNalogStavke" ColumnName="radniNalogStavke" />
+          <ScalarProperty Name="radniNalogId" ColumnName="radniNalogId" />
+          <ScalarProperty Name="ponudaStavkaId" ColumnName="ponudaStavkaId" />
+          <ScalarProperty Name="kampanja" ColumnName="kampanja" />
+          <ScalarProperty Name="pocetakKampanje" ColumnName="pocetakKampanje" />
+          <ScalarProperty Name="trajanjeKampanje" ColumnName="trajanjeKampanje" />
+          <ScalarProperty Name="ponudaStatusId" ColumnName="ponudaStatusId" />
+          <ScalarProperty Name="ponudaStatus" ColumnName="ponudaStatus" />
+          <ScalarProperty Name="turaSedmicaId" ColumnName="turaSedmicaId" />
+          <ScalarProperty Name="tura" ColumnName="tura" />
+          <ScalarProperty Name="idejno" ColumnName="idejno" />
+          <ScalarProperty Name="isFotografisano" ColumnName="isFotografisano" />
+          <ScalarProperty Name="isPrijeLijepiti" ColumnName="isPrijeLijepiti" />
+          <ScalarProperty Name="boja" ColumnName="boja" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getStorniranePonude" FunctionName="EuroplakatModel.Store.getStorniranePonude">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getStorniranePonude_Result">
+          <ScalarProperty Name="ponudaId" ColumnName="ponudaId" />
+          <ScalarProperty Name="kampanja" ColumnName="kampanja" />
+          <ScalarProperty Name="protokol" ColumnName="protokol" />
+          <ScalarProperty Name="pocetakKampanje" ColumnName="pocetakKampanje" />
+          <ScalarProperty Name="krajKampanje" ColumnName="krajKampanje" />
+          <ScalarProperty Name="plakatTip" ColumnName="plakatTip" />
+          <ScalarProperty Name="klijent" ColumnName="klijent" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getTrosakDTOByPonuda" FunctionName="EuroplakatModel.Store.getTrosakDTOByPonuda">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getTrosakDTOByPonuda_Result">
+          <ScalarProperty Name="TrosakId" ColumnName="TrosakId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Cijena" ColumnName="Cijena" />
+          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+          <ScalarProperty Name="Rabat" ColumnName="Rabat" />
+          <ScalarProperty Name="CijenaSaPopustom" ColumnName="CijenaSaPopustom" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getTuraDvijeSedmice" FunctionName="EuroplakatModel.Store.getTuraDvijeSedmice">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getTuraDvijeSedmice_Result">
+          <ScalarProperty Name="brojSedmice" ColumnName="brojSedmice" />
+          <ScalarProperty Name="datumOd" ColumnName="datumOd" />
+          <ScalarProperty Name="datumDo" ColumnName="datumDo" />
+          <ScalarProperty Name="tura" ColumnName="tura" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getTure" FunctionName="EuroplakatModel.Store.getTure">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getTure_Result">
+          <ScalarProperty Name="turaSedmicaId" ColumnName="turaSedmicaId" />
+          <ScalarProperty Name="tura" ColumnName="tura" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getZaposleniEmail" FunctionName="EuroplakatModel.Store.getZaposleniEmail" />
+    <FunctionImportMapping FunctionImportName="insertPosaljiPonudu" FunctionName="EuroplakatModel.Store.insertPosaljiPonudu" />
+    <FunctionImportMapping FunctionImportName="insertPosaljiRadniNalog" FunctionName="EuroplakatModel.Store.insertPosaljiRadniNalog" />
+    <FunctionImportMapping FunctionImportName="isPlakatZauzet" FunctionName="EuroplakatModel.Store.isPlakatZauzet" />
+    <FunctionImportMapping FunctionImportName="isValidLink" FunctionName="EuroplakatModel.Store.isValidLink">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.isValidLink_Result">
+          <ScalarProperty Name="linkId" ColumnName="linkId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="datumOd" ColumnName="datumOd" />
+          <ScalarProperty Name="datumDo" ColumnName="datumDo" />
+          <ScalarProperty Name="sifra" ColumnName="sifra" />
+          <ScalarProperty Name="ponudaId" ColumnName="ponudaId" />
+          <ScalarProperty Name="radniNalogId" ColumnName="radniNalogId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="isValidLinkRN" FunctionName="EuroplakatModel.Store.isValidLinkRN">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.isValidLinkRN_Result">
+          <ScalarProperty Name="linkId" ColumnName="linkId" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="datumOd" ColumnName="datumOd" />
+          <ScalarProperty Name="datumDo" ColumnName="datumDo" />
+          <ScalarProperty Name="sifra" ColumnName="sifra" />
+          <ScalarProperty Name="ponudaId" ColumnName="ponudaId" />
+          <ScalarProperty Name="radniNalogId" ColumnName="radniNalogId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="IsZauzetaMreza" FunctionName="EuroplakatModel.Store.IsZauzetaMreza" />
+    <FunctionImportMapping FunctionImportName="odbijPonudu" FunctionName="EuroplakatModel.Store.odbijPonudu" />
+    <FunctionImportMapping FunctionImportName="prihvatiPonudu" FunctionName="EuroplakatModel.Store.prihvatiPonudu" />
+    <FunctionImportMapping FunctionImportName="realizujPonudu" FunctionName="EuroplakatModel.Store.realizujPonudu" />
+    <FunctionImportMapping FunctionImportName="stornirajPonudu" FunctionName="EuroplakatModel.Store.stornirajPonudu" />
+    <FunctionImportMapping FunctionImportName="updateIsRanije" FunctionName="EuroplakatModel.Store.updateIsRanije" />
+    <FunctionImportMapping FunctionImportName="updatePorukaSistemska" FunctionName="EuroplakatModel.Store.updatePorukaSistemska" />
+    <FunctionImportMapping FunctionImportName="getKlijentPage" FunctionName="EuroplakatModel.Store.getKlijentPage">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getKlijentPage_Result">
+          <ScalarProperty Name="klijentId" ColumnName="klijentId" />
+          <ScalarProperty Name="klijent" ColumnName="klijent" />
+          <ScalarProperty Name="klijentTipId" ColumnName="klijentTipId" />
+          <ScalarProperty Name="klijentTip" ColumnName="klijentTip" />
+          <ScalarProperty Name="klijentVrstaId" ColumnName="klijentVrstaId" />
+          <ScalarProperty Name="klijentVrsta" ColumnName="klijentVrsta" />
+          <ScalarProperty Name="JIB" ColumnName="JIB" />
+          <ScalarProperty Name="PDVBroj" ColumnName="PDVBroj" />
+          <ScalarProperty Name="posta" ColumnName="posta" />
+          <ScalarProperty Name="mjestoId" ColumnName="mjestoId" />
+          <ScalarProperty Name="mjesto" ColumnName="mjesto" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="kontaktOsoba" ColumnName="kontaktOsoba" />
+          <ScalarProperty Name="odgovornaOsoba" ColumnName="odgovornaOsoba" />
+          <ScalarProperty Name="webStranica" ColumnName="webStranica" />
+          <ScalarProperty Name="valutaId" ColumnName="valutaId" />
+          <ScalarProperty Name="valuta" ColumnName="valuta" />
+          <ScalarProperty Name="isPdv" ColumnName="isPdv" />
+          <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+          <ScalarProperty Name="rb" ColumnName="rb" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPlakatiZauzetostPaged" FunctionName="EuroplakatModel.Store.getPlakatiZauzetostPaged" />
+    <FunctionImportMapping FunctionImportName="getPlakatPage" FunctionName="EuroplakatModel.Store.getPlakatPage">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getPlakatPage_Result">
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="inventarniBroj" ColumnName="inventarniBroj" />
+          <ScalarProperty Name="redniBroj" ColumnName="redniBroj" />
+          <ScalarProperty Name="posta" ColumnName="posta" />
+          <ScalarProperty Name="mjestoId" ColumnName="mjestoId" />
+          <ScalarProperty Name="mjesto" ColumnName="mjesto" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="plakatTipId" ColumnName="plakatTipId" />
+          <ScalarProperty Name="oznaka" ColumnName="oznaka" />
+          <ScalarProperty Name="plakatTip" ColumnName="plakatTip" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="isOsvjetljen" ColumnName="isOsvjetljen" />
+          <ScalarProperty Name="isDvostrano" ColumnName="isDvostrano" />
+          <ScalarProperty Name="plakatKategorijaIzvrsnostiId" ColumnName="plakatKategorijaIzvrsnostiId" />
+          <ScalarProperty Name="plakatKategorijaIzvrsnosti" ColumnName="plakatKategorijaIzvrsnosti" />
+          <ScalarProperty Name="vlasnikId" ColumnName="vlasnikId" />
+          <ScalarProperty Name="vlasnik" ColumnName="vlasnik" />
+          <ScalarProperty Name="cjenovnaKategorijaId" ColumnName="cjenovnaKategorijaId" />
+          <ScalarProperty Name="cjenovnaKategorija" ColumnName="cjenovnaKategorija" />
+          <ScalarProperty Name="statusPlakatId" ColumnName="statusPlakatId" />
+          <ScalarProperty Name="statusPlakata" ColumnName="statusPlakata" />
+          <ScalarProperty Name="oznakaPlakata" ColumnName="oznakaPlakata" />
+          <ScalarProperty Name="dimenzija" ColumnName="dimenzija" />
+          <ScalarProperty Name="tura" ColumnName="tura" />
+          <ScalarProperty Name="rb" ColumnName="rb" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getUgovorPlakatiPaged" FunctionName="EuroplakatModel.Store.getUgovorPlakatiPaged" />
+    <FunctionImportMapping FunctionImportName="getPonuda" FunctionName="EuroplakatModel.Store.getPonuda">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getPonuda_Result">
+          <ScalarProperty Name="ponudaId" ColumnName="ponudaId" />
+          <ScalarProperty Name="brojZahtjeva" ColumnName="brojZahtjeva" />
+          <ScalarProperty Name="poolId" ColumnName="poolId" />
+          <ScalarProperty Name="pul" ColumnName="pul" />
+          <ScalarProperty Name="agencijaId" ColumnName="agencijaId" />
+          <ScalarProperty Name="agencija" ColumnName="agencija" />
+          <ScalarProperty Name="klijentId" ColumnName="klijentId" />
+          <ScalarProperty Name="klijent" ColumnName="klijent" />
+          <ScalarProperty Name="JIB" ColumnName="JIB" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="kontaktOsoba" ColumnName="kontaktOsoba" />
+          <ScalarProperty Name="odgovornaOsoba" ColumnName="odgovornaOsoba" />
+          <ScalarProperty Name="klijentVrstaId" ColumnName="klijentVrstaId" />
+          <ScalarProperty Name="vrstaklijenta" ColumnName="vrstaklijenta" />
+          <ScalarProperty Name="podKlijent" ColumnName="podKlijent" />
+          <ScalarProperty Name="cijenaDan" ColumnName="cijenaDan" />
+          <ScalarProperty Name="isPdv" ColumnName="isPdv" />
+          <ScalarProperty Name="PDVBroj" ColumnName="PDVBroj" />
+          <ScalarProperty Name="podklijentId" ColumnName="podklijentId" />
+          <ScalarProperty Name="datumZahtjeva" ColumnName="datumZahtjeva" />
+          <ScalarProperty Name="plakatTipId" ColumnName="plakatTipId" />
+          <ScalarProperty Name="kampanja" ColumnName="kampanja" />
+          <ScalarProperty Name="isDatumska" ColumnName="isDatumska" />
+          <ScalarProperty Name="pocetakKampanje" ColumnName="pocetakKampanje" />
+          <ScalarProperty Name="trajanjeKampanje" ColumnName="trajanjeKampanje" />
+          <ScalarProperty Name="budzetKampanje" ColumnName="budzetKampanje" />
+          <ScalarProperty Name="ponudaStatusId" ColumnName="ponudaStatusId" />
+          <ScalarProperty Name="brojPonude" ColumnName="brojPonude" />
+          <ScalarProperty Name="datumPonude" ColumnName="datumPonude" />
+          <ScalarProperty Name="brojDanaVazenjaPonude" ColumnName="brojDanaVazenjaPonude" />
+          <ScalarProperty Name="protokol" ColumnName="protokol" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="cijenaSaPopustom" ColumnName="cijenaSaPopustom" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="adresaPlakata" ColumnName="adresaPlakata" />
+          <ScalarProperty Name="dimenzija" ColumnName="dimenzija" />
+          <ScalarProperty Name="isOsvjetljen" ColumnName="isOsvjetljen" />
+          <ScalarProperty Name="inventarniBroj" ColumnName="inventarniBroj" />
+          <ScalarProperty Name="redniBroj" ColumnName="redniBroj" />
+          <ScalarProperty Name="rabat" ColumnName="rabat" />
+          <ScalarProperty Name="trosakId" ColumnName="trosakId" />
+          <ScalarProperty Name="mjesto" ColumnName="mjesto" />
+          <ScalarProperty Name="posta" ColumnName="posta" />
+          <ScalarProperty Name="regijaId" ColumnName="regijaId" />
+          <ScalarProperty Name="regija" ColumnName="regija" />
+          <ScalarProperty Name="oznakaRegije" ColumnName="oznakaRegije" />
+          <ScalarProperty Name="tipPlakata" ColumnName="tipPlakata" />
+          <ScalarProperty Name="trajanjeLed" ColumnName="trajanjeLed" />
+          <ScalarProperty Name="krajKampanje" ColumnName="krajKampanje" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="datumKrajaVazenjaPonude" ColumnName="datumKrajaVazenjaPonude" />
+          <ScalarProperty Name="account" ColumnName="account" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPonudaMreze" FunctionName="EuroplakatModel.Store.getPonudaMreze">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getPonudaMreze_Result">
+          <ScalarProperty Name="ponudaId" ColumnName="ponudaId" />
+          <ScalarProperty Name="brojZahtjeva" ColumnName="brojZahtjeva" />
+          <ScalarProperty Name="poolId" ColumnName="poolId" />
+          <ScalarProperty Name="pul" ColumnName="pul" />
+          <ScalarProperty Name="agencijaId" ColumnName="agencijaId" />
+          <ScalarProperty Name="agencija" ColumnName="agencija" />
+          <ScalarProperty Name="klijentId" ColumnName="klijentId" />
+          <ScalarProperty Name="klijent" ColumnName="klijent" />
+          <ScalarProperty Name="mrezaId" ColumnName="mrezaId" />
+          <ScalarProperty Name="mreza" ColumnName="mreza" />
+          <ScalarProperty Name="JIB" ColumnName="JIB" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="kontaktOsoba" ColumnName="kontaktOsoba" />
+          <ScalarProperty Name="odgovornaOsoba" ColumnName="odgovornaOsoba" />
+          <ScalarProperty Name="klijentVrstaId" ColumnName="klijentVrstaId" />
+          <ScalarProperty Name="vrstaklijenta" ColumnName="vrstaklijenta" />
+          <ScalarProperty Name="podKlijent" ColumnName="podKlijent" />
+          <ScalarProperty Name="cijenaDan" ColumnName="cijenaDan" />
+          <ScalarProperty Name="podklijentId" ColumnName="podklijentId" />
+          <ScalarProperty Name="datumZahtjeva" ColumnName="datumZahtjeva" />
+          <ScalarProperty Name="plakatTipId" ColumnName="plakatTipId" />
+          <ScalarProperty Name="kampanja" ColumnName="kampanja" />
+          <ScalarProperty Name="isDatumska" ColumnName="isDatumska" />
+          <ScalarProperty Name="pocetakKampanje" ColumnName="pocetakKampanje" />
+          <ScalarProperty Name="trajanjeKampanje" ColumnName="trajanjeKampanje" />
+          <ScalarProperty Name="budzetKampanje" ColumnName="budzetKampanje" />
+          <ScalarProperty Name="ponudaStatusId" ColumnName="ponudaStatusId" />
+          <ScalarProperty Name="brojPonude" ColumnName="brojPonude" />
+          <ScalarProperty Name="datumPonude" ColumnName="datumPonude" />
+          <ScalarProperty Name="brojDanaVazenjaPonude" ColumnName="brojDanaVazenjaPonude" />
+          <ScalarProperty Name="protokol" ColumnName="protokol" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="cijenaSaPopustom" ColumnName="cijenaSaPopustom" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="adresaPlakata" ColumnName="adresaPlakata" />
+          <ScalarProperty Name="dimenzija" ColumnName="dimenzija" />
+          <ScalarProperty Name="isOsvjetljen" ColumnName="isOsvjetljen" />
+          <ScalarProperty Name="inventarniBroj" ColumnName="inventarniBroj" />
+          <ScalarProperty Name="rabat" ColumnName="rabat" />
+          <ScalarProperty Name="trosakId" ColumnName="trosakId" />
+          <ScalarProperty Name="mjesto" ColumnName="mjesto" />
+          <ScalarProperty Name="posta" ColumnName="posta" />
+          <ScalarProperty Name="regijaId" ColumnName="regijaId" />
+          <ScalarProperty Name="regija" ColumnName="regija" />
+          <ScalarProperty Name="oznakaRegije" ColumnName="oznakaRegije" />
+          <ScalarProperty Name="tipPlakata" ColumnName="tipPlakata" />
+          <ScalarProperty Name="trajanjeLed" ColumnName="trajanjeLed" />
+          <ScalarProperty Name="krajKampanje" ColumnName="krajKampanje" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="datumKrajaVazenjaPonude" ColumnName="datumKrajaVazenjaPonude" />
+          <ScalarProperty Name="account" ColumnName="account" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getPonudaSlika" FunctionName="EuroplakatModel.Store.getPonudaSlika">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getPonudaSlika_Result">
+          <ScalarProperty Name="ponudaId" ColumnName="ponudaId" />
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="adresaPlakata" ColumnName="adresaPlakata" />
+          <ScalarProperty Name="rb" ColumnName="rb" />
+          <ScalarProperty Name="slika1" ColumnName="slika1" />
+          <ScalarProperty Name="slika2" ColumnName="slika2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getRadniNalog" FunctionName="EuroplakatModel.Store.getRadniNalog">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroplakatModel.getRadniNalog_Result">
+          <ScalarProperty Name="radniNalogId" ColumnName="radniNalogId" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="ponudaStavkaId" ColumnName="ponudaStavkaId" />
+          <ScalarProperty Name="idejno" ColumnName="idejno" />
+          <ScalarProperty Name="isPrijeLijepiti" ColumnName="isPrijeLijepiti" />
+          <ScalarProperty Name="plakatId" ColumnName="plakatId" />
+          <ScalarProperty Name="mjestoId" ColumnName="mjestoId" />
+          <ScalarProperty Name="mjesto" ColumnName="mjesto" />
+          <ScalarProperty Name="inventarniBroj" ColumnName="inventarniBroj" />
+          <ScalarProperty Name="posta" ColumnName="posta" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="turaSedmicaId" ColumnName="turaSedmicaId" />
+          <ScalarProperty Name="tura" ColumnName="tura" />
+          <ScalarProperty Name="trenutnoStanje" ColumnName="trenutnoStanje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="insertSedmice" FunctionName="EuroplakatModel.Store.insertSedmice" />
+  </EntityContainerMapping>
+</Mapping>
